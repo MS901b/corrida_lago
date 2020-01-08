@@ -1,0 +1,259 @@
+#calc
+{
+	width: 318px;
+	height: 248px;
+	background: url(../img_layout/fundo_calculadora.gif) no-repeat;
+	position: fixed; 
+	bottom: 58px;
+	left: 40px;
+	z-index: 301;
+}
+
+#calc a {text-decoration: none !important;}
+
+#calc_interrogacao {position:absolute; left:10px; top:3px; color: white; }
+
+#calc_painel
+{
+	position:absolute;
+	top:27px;
+	left:10px;
+	width: 284px;
+	height:86px;
+	background: url(../img_layout/calc_painel.gif) no-repeat;
+	padding-right:12px;
+}
+
+#calc_label
+{
+	position:absolute;
+	font-size: 15px;
+	line-height: 11px;
+	top:90px;
+	left:20px;
+	text-align:right;
+	width:276px;
+	color: white;
+}
+
+#calc_expressao1
+{
+	float:right;
+	font-size:11px; 
+	font-style: italic;
+	color: black;
+}
+
+#calc_resultado1
+{
+	float:right;
+	font-size:11px; 
+	font-style: italic;
+	color: RGB(187,0,0);
+}
+
+#calc_expressao2
+{
+	float:right;
+	font-size:11px; 
+	font-style: italic;
+	color: black;
+}
+
+#calc_resultado2
+{
+	float:right;
+	font-size:11px; 
+	font-style: italic;
+	color: RGB(187,0,0);
+}
+
+#calc_expressao3
+{
+	float:right;
+	font-size:11px; 
+	font-style: italic;
+	color: black;
+}
+
+#calc_resultado3
+{
+	float:right;
+	font-size:11px; 
+	font-style: italic;
+	color: RGB(187,0,0);
+}
+
+#calc_unidade {font-size: 9px; color:RGB(126,126,126); font-style: italic; position:absolute; top:24px; left:15px; }
+
+#calc_fechar
+{
+	position:absolute;
+	top:3px;
+	right:4px;
+	width: 85px;
+	height:16px;
+	background: url(../img_layout/calc_fechar_off.gif) no-repeat;
+	display:block;
+}
+
+#calc_fechar.active {background: url(../img_layout/calc_fechar_on.gif) no-repeat;}
+
+
+#calc_botoes {position:absolute; top:123px;left:3px;  width: 100%;}
+
+.calc_botao {float:left; margin-left:9px; text-align:center; line-height: 17px;}
+
+
+.calc_botao_preto
+{
+	width: 21px;
+	height:21px;
+	line-height: 19px;
+	background: url(../img_layout/calc_botao_preto.gif) no-repeat;
+	font-size: 9px;
+	color:white;	
+	font-weight: bold;
+	display:block;
+}
+.calc_botao_preto.active {background: url(../img_layout/calc_botao_pequeno_pressionado.gif) no-repeat; color:black;}
+
+.calc_botao_vermelho
+{
+	width: 21px;
+	height:21px;
+	background: url(../img_layout/calc_botao_vermelho.gif) no-repeat;
+	font-size: 9px;
+	color:white;	
+	font-weight: bold;
+	display:block;
+}
+.calc_botao_vermelho.active {background: url(../img_layout/calc_botao_pequeno_pressionado.gif) no-repeat; color:black;}
+
+
+.calc_botao_cinza
+{
+	width: 21px;
+	height:21px;
+	background: url(../img_layout/calc_botao_cinza.gif) no-repeat;
+	font-size: 9px;
+	color:white;	
+	font-weight: bold;
+	display:block;
+}
+.calc_botao_cinza.active {background: url(../img_layout/calc_botao_pequeno_pressionado.gif) no-repeat; color:black;}
+
+
+.calc_botao_cinza_medio
+{
+	width: 30px;
+	height:21px;
+	background: url(../img_layout/calc_botao_cinza_medio.gif) no-repeat;
+	font-size: 9px;
+	color:white;	
+	font-weight: bold;
+	display:block;
+}
+.calc_botao_cinza_medio.active {background: url(../img_layout/calc_botao_medio_pressionado.gif) no-repeat; color:black;}
+
+.calc_botao_cinza_grande
+{
+	width: 45px;
+	height:21px;
+	background: url(../img_layout/calc_botao_cinza_grande.gif) no-repeat;
+	font-size: 9px;
+	color:white;	
+	font-weight: bold;
+	display:block;
+}
+.calc_botao_cinza_grande.active {background: url(../img_layout/calc_botao_grande_pressionado.gif) no-repeat; color:black;}
+
+.calc_botao_azul
+{
+	width: 21px;
+	height:21px;
+	background: url(../img_layout/calc_botao_azul.gif) no-repeat;
+	font-size: 9px;
+	color:white;	
+	font-weight: bold;
+	display:block;
+}
+.calc_botao_azul.active {background: url(../img_layout/calc_botao_pequeno_pressionado.gif) no-repeat; color:black;}
+
+
+.calc_botao_azul_grande
+{
+	width: 50px;
+	height:21px;
+	background: url(../img_layout/calc_botao_azul_grande.gif) no-repeat;
+	font-size: 9px;
+	color:white;	
+	font-weight: bold;
+	display:block;
+}
+.calc_botao_azul_grande.active {background: url(../img_layout/calc_botao_grande2_pressionado.gif) no-repeat; color:black;}
+
+.calc_botao_amarelo
+{
+	width: 21px;
+	height:21px;
+	background: url(../img_layout/calc_botao_amarelo.gif) no-repeat;
+	font-size: 9px;
+	color:black;	
+	font-weight: bold;
+	display:block;
+}
+.calc_botao_amarelo.active {background: url(../img_layout/calc_botao_pequeno_pressionado.gif) no-repeat; color:black;}
+
+.calc_botao_apagar
+{
+	width: 50px;
+	height:21px;
+	background: url(../img_layout/calc_botao_apagar.gif) no-repeat;
+	font-size: 9px;
+	color:black;	
+	font-weight: bold;
+	display:block;
+}
+.calc_botao_apagar.active {background: url(../img_layout/calc_botao_apagar_pressionado.gif) no-repeat; color:white;}
+
+
+.calc_botao_pi
+{
+	width: 21px;
+	height:21px;
+	background: url(../img_layout/calc_botao_pi.gif) no-repeat;
+	font-size: 9px;
+	color:white;	
+	font-weight: bold;
+	display:block;
+}
+.calc_botao_pi.active {background: url(../img_layout/calc_botao_pi_off.gif) no-repeat; color:black;}
+
+
+.calc_botao_y2
+{
+	width: 21px;
+	height:21px;
+	background: url(../img_layout/calc_botao_y2.gif) no-repeat;
+	font-size: 9px;
+	color:white;	
+	font-weight: bold;
+	display:block;
+}
+.calc_botao_y2.active {background: url(../img_layout/calc_botao_y2_off.gif) no-repeat; color:black;}
+
+.calc_botao_mais_menos
+{
+	width: 21px;
+	height:21px;
+	background: url(../img_layout/calc_botao_mais_menos.gif) no-repeat;
+	font-size: 9px;
+	color:white;	
+	font-weight: bold;
+	display:block;
+}
+.calc_botao_mais_menos.active {background: url(../img_layout/calc_botao_mais_menos_off.gif) no-repeat; color:black;}
+
+
+.calc_limpador {clear: both; height:9px; }

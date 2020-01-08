@@ -1,0 +1,536 @@
+*
+{
+	font: 16px/19px "Lucida Sans Unicode","Lucida Sans", "Bitstream Vera Sans", "DejaVu Sans";
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	border: none;
+	color: black;
+}
+
+html
+{
+	overflow: auto;
+}
+
+body
+{
+	background-color: #C3D2D7;
+}
+
+strong { font-weight: bold; }
+em { font-style: italic; }
+big {font-size: 21px; line-height:25px;}
+small {font-size: 11px; line-height: 13px;}
+sub, sup {font-size: 10px;}
+
+a { text-decoration: underline; }
+
+
+.botao {height:29px; font-size: 14px; margin-right:7px; padding-bottom: 2px; text-align:center; border: 2px outset #CCC;}
+.botao:active{border: 2px inset #CCC;}
+.botao.desabilitado, .botao.desabilitado:active{color: #999; border: 2px outset grey;}
+.botao_pequeno {width: 50px;}
+.botao_medio {width: 80px;}
+.botao_grande {width: 110px;}
+.botao_gigante {width: 170px;}
+
+/* principais */
+
+#curiosidades
+{
+	float: left;
+	margin-top: 14px;
+	height: auto;
+	margin-left: -20px;
+	width: 40px;
+}
+
+#principal
+{
+	position: relative;
+	float: left;
+	height: auto;
+	margin-left: -20px;
+	width: 100%;
+	z-index: 1;	
+}
+
+
+.texto
+{
+	padding: 0 10px 20px 30px;
+	width: 705px;
+}
+
+.texto p
+{
+	margin-bottom: 10px;
+	width: 540px;
+	text-align: justify;
+}
+
+.texto h2
+{
+	margin-bottom: 10px;
+	font-size: 18px;
+}
+
+.texto h3
+{
+	font-size: 13px;
+	font-weight: bold;
+}
+
+.texto hr
+{
+	margin-bottom: 16px;
+	border: 1px solid #ccc;
+}
+
+.texto .apresentacao_applet p
+{
+	font-style: italic;
+	font-size: 13px !important;
+	line-height: 16px !important;
+	width: 700px;
+	text-align: left !important;
+	
+}
+
+#voltar
+{
+	margin-bottom: 10px;
+	width: 540px;
+}
+
+
+
+#container
+{
+	width: 960px;
+	margin-left: 30px;
+	margin-right: 10px;
+}
+
+#cabecalho
+{
+	width: 100%;
+	height: 80px;
+}
+
+#onde_estou
+{
+	width: 720px;
+	height: 40px;
+	margin-top: 40px;
+	background-color: #FFFF30;
+	float: left;
+	position: relative;
+}
+
+#onde_estou *
+{
+	font-size: 18px;
+	line-height: 40px;
+	display: inline;
+}
+
+#onde_estou h1
+{
+	margin-left: 20px;
+	margin-right: 10px;
+	float: left;
+}
+
+#onde_estou img { float:left; margin-top: 13px; }
+
+#onde_estou h2
+{
+	margin-left: 10px;
+	font-weight: bold;
+	float: left;
+}
+
+#onde_estou .curiosidade
+{
+	width: 26px;
+	height: 30px;
+	background: url(../img_layout/simbolo_curiosidade.png) no-repeat;
+	float: left;
+	margin-left: -13px;
+	margin-top: -15px;
+	line-height: 30px;
+	text-align: center;
+	font-size: 12px;
+}
+
+#onde_estou .transicao
+{
+	width: 26px;
+	height: 30px;
+	background: url(../img_layout/transicao.gif) no-repeat;
+	float: left;
+	margin-left: -10px;
+	margin-top: -9px;
+	line-height: 30px;
+	text-align: center;
+	font-size: 12px;
+}
+
+#onde_estou .conclusao
+{
+	width: 26px;
+	height: 30px;
+	background: url(../img_layout/conclusao.gif) no-repeat;
+	float: left;
+	margin-left: -10px;
+	margin-top: -9px;
+	line-height: 30px;
+	text-align: center;
+	font-size: 12px;
+}
+
+
+
+
+#links
+{
+	float: left;
+	width: 240px;
+	text-align: right;
+	margin-top: 5px;
+	
+}
+
+#links a
+{
+	font-size: 11px;
+	margin-left: 10px;
+	text-decoration: underline;
+}
+
+#logo
+{
+	float: right;
+	background: url(../img_layout/logo.gif) no-repeat 0 10px;
+	width: 60px;
+	height: 51px;
+}
+
+.link_curiosidade{background: url(../img_layout/curiosidadesinha.gif) right center no-repeat; padding-right: 18px; text-decoration: none !important; border-bottom: 1px solid #2E47B2; color: #2E47B2;}
+
+
+/* sistema de navegação */
+
+.curiosidade
+{
+	margin-bottom: 10px;
+	text-align: center;
+}
+
+.curiosidade_atual a
+{
+	font-weight: bold;
+	width: 20px;
+	height: 20px;
+	line-height: 30px;
+	margin-left: 5px;
+	text-align: center;
+	position: relative;
+	display: block;
+	text-decoration: none !important;
+}
+
+.curiosidade a
+{
+	font-size: 11px;
+	font-weight: normal;
+	color: #FFF;
+	width: 21px;
+	height: 21px;
+	margin-left: 10px;
+	position: relative;
+	display: block;
+	background: url(../img_layout/curiosidade.gif) no-repeat;
+	text-decoration: none !important;
+	z-index: 2;
+}
+
+.curiosidade_atual 
+{
+	font-size: 18px;
+	width: 31px;
+	height: 31px;
+	line-height: 30px;
+	margin-left: 5px;
+	margin-bottom: 10px;
+	color: #000;
+	background: url(../img_layout/parte_atual.gif) no-repeat;
+	display: block;
+	position: relative;
+	z-index: 3;
+}
+
+
+/* imagens e legendas */
+
+.imagem {margin: 10px 20px 20px 0;}
+.applet {border: 1px dotted #CCC; margin: 10px 20px 20px 0;}
+.sem_margem {margin-right: 0 !important;}
+
+.altura1 {height: 140px !important; overflow: hidden;}
+.altura2 {height: 220px !important; overflow: hidden;}
+.altura3 {height: 300px !important; overflow: hidden;}
+.altura4 {height: 380px !important; overflow: hidden;}
+
+
+.largura_a_1 {width: 140px !important; overflow: hidden;}
+.largura_a_2 {width: 220px !important; overflow: hidden;}
+.largura_a_3 {width: 300px !important; overflow: hidden;}
+.largura_a_4 {width: 380px !important; overflow: hidden;}
+.largura_a_5 {width: 460px !important; overflow: hidden;}
+.largura_a_6 {width: 540px !important; overflow: hidden;}
+.largura_a_7 {width: 620px !important; overflow: hidden;}
+.largura_a_8 {width: 700px !important; overflow: hidden;}
+
+
+.largura0 { width: 0px; }
+.largura1 { width: 20px; }
+.largura2 { width: 40px; }
+.largura3 { width: 60px; }
+.largura4 { width: 80px; }
+.largura5 { width: 100px; }
+.largura6 { width: 120px; }
+
+
+
+
+.legenda_pequena p
+{
+	font-style: italic !important;
+	font-size: 13px !important;
+	line-height: 16px !important;
+	width: 140px !important;
+	margin-top: -15px;
+	text-align: left !important;
+}
+
+
+
+.legenda_grande p
+{
+	font-style: italic !important;
+	font-size: 13px !important;
+	line-height: 16px !important;
+	width: 380px !important;
+	margin-top: -15px;
+	text-align: left !important;
+}
+
+.legenda_pequena a, .legenda_grande a
+{
+	font-style: italic !important;
+	font-size: 13px !important;
+}
+
+/* atividades para tela de transição */
+
+
+.escolha {margin-top:20px;  }
+
+.atividade
+{
+	margin-top: 10px;
+	float:left;
+	width: 235px;
+	border-top: 1px solid #000;
+}
+
+.atividade .espacador { padding-right: 20px }
+
+.atividade .qual {margin-top: 10px; }
+.atividade .titulo {float:left; width: 120px; margin-top: 10px;}
+.atividade .descricao { margin: 10px 20px 15px 60px; font-size: 13px !important; line-height: 16px !important; font-style: italic !important;}
+.atividade .tipo { margin-left: 80px; margin-top: 10px;  font-size: 13px !important; line-height: 16px !important;}
+.atividade .concluida { margin-left: 60px; margin-top: 10px;  font-size: 13px !important; line-height: 16px !important;}
+
+.atividade .qual .titulo h1 {font-size: 16px !important; line-height: 19px !important; font-weight: bold; margin-left: 0 !important;}
+
+.atividade .qual .numero_atividade
+{
+	width: 54px;
+	height: 63px;
+	margin-right: 10px;
+	float: left;
+	line-height: 55px;
+	text-align: center;
+	font-size: 24px;
+	font-weight: bold;
+}
+
+.atividade .qual .numero_atividade.aberta:hover{ background: url(../img_layout/hexagono_branco_grande_over.jpg) no-repeat; }
+.atividade .qual .numero_atividade.ja_feita:hover{ background: url(../img_layout/hexagono_amarelo_grande_over.jpg) no-repeat; }
+.atividade .qual .numero_atividade.comecada:hover{ background: url(../img_layout/hexagono_amarelinho_grande_over.jpg) no-repeat; }
+.atividade .qual .numero_atividade a { width: 54px; height: 63px; display:block; line-height: 55px; font-size: 24px; font-weight: bold; text-decoration: none; }
+.atividade .qual .aberta { background: url(../img_layout/hexagono_branco_grande.jpg) no-repeat; }
+.atividade .qual .ja_feita { background: url(../img_layout/hexagono_amarelo_grande.jpg) no-repeat; }
+.atividade .qual .comecada { background: url(../img_layout/hexagono_amarelinho_grande.jpg) no-repeat; }
+
+/* apontador e seta */
+
+
+.apontador
+{
+	padding: 0 3px 0 7px;
+	background-color: RGB(255, 254,44); 
+	border-left: 1px solid #000;
+	border-top: 1px solid #000;
+	border-bottom: 1px solid #000;
+	height: 19px;
+	float: left;
+	z-index: 2;
+	position: relative;
+}
+
+.apontador a { text-decoration: underline; }
+
+.seta_apontador
+{
+	position: relative;
+	background: url(../img_layout/apontador.jpg) no-repeat;
+	float: left;
+	width: 13px;
+	height: 21px;
+	z-index: 1;
+	margin-left: -2px;
+}
+
+
+/* conteúdo */
+
+#conteudo
+{
+	width: 100%;
+	background-color: #FFF;
+	padding-top: 20px;
+}
+
+#conteudo h1
+{
+	margin-left: 20px;
+	margin-right: 5px;
+	font-size: 23px;
+}
+
+
+/* rodapé */
+
+
+#rodape
+{
+	text-align: right;
+	line-height: 40px;
+}
+
+#rodape a
+{
+	margin-left: 10px;
+	font-size: 11px;
+	text-decoration: underline;
+}
+
+
+
+#ferramentas
+{
+	width: 240px;
+	height: 50px;
+	background: url(../img_layout/barra-ferramentas.gif) no-repeat;
+	position: fixed;
+	left: 40px;
+	bottom: 4px;
+	z-index: 2000;
+}
+
+#ferramentas a
+{
+	display: block;
+	width: 40px;
+	height: 40px;
+	margin: 5px 10px;
+	float: left;
+}
+
+#link_notas
+{	background: url(../img_layout/notas-off.gif);}
+#link_notas:hover
+{	background: url(../img_layout/notas-on.gif);}
+
+#link_bloco
+{	background: url(../img_layout/bloco-off.gif);}
+#link_bloco:hover
+{	background: url(../img_layout/bloco-on.gif);}
+
+#link_calculadora
+{	background: url(../img_layout/calculadora-off.gif);}
+#link_calculadora:hover
+{	background: url(../img_layout/calculadora-on.gif);}
+
+#link_acessibilidade
+{	background: url(../img_layout/acessibilidade-on.gif);}
+#link_acessibilidade:hover
+{	background: url(../img_layout/acessibilidade-off.gif);}
+
+.link_curiosidade{background: url(../img_layout/curiosidadesinha.gif) right center no-repeat; padding-right: 18px; text-decoration: none !important; border-bottom: 1px solid #2E47B2; color: #2E47B2;}
+
+
+.tabela th *{color: #fff;}
+.tabela th{ background: #000; height: 20px; color: #fff; text-align: center; border-right: 1px solid #FFF; font-size: 11px; overflow: hidden;}
+.tabela th.ultima_borda { border-right: 1px solid #000; }
+.tabela td
+{
+	font-size: 11px;
+	color: #000;
+	text-align: center;
+	height: 22px;
+	border-width: 1px;
+	padding: 0 2px;
+	border-style: dotted solid;
+	border-color: #AAA #000;
+	overflow: hidden;
+}
+
+
+/* calculadora */
+
+#calc
+{
+	width: 245px;
+	height: 261px;
+	background: url(../img_layout/calc.gif) no-repeat;
+	position: fixed; 
+	bottom: 58px;
+	left: 39px;
+	z-index: 1201;
+}
+
+
+
+/* Classes auxiliares*/
+
+.escondido
+{
+	visibility: hidden;
+	display: none;
+}
+
+.limpador
+{
+	height: 5px;
+	clear: both;
+}
+
+
+.a_esquerda { float: left; }
+.a_direita { float: right; }

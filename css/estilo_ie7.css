@@ -1,0 +1,19 @@
+.partes a { margin-left: -3px !important; }
+#questoes .questao .feedback  {margin-right: 0px; width: 100px;}
+#questoes .questao .pq_errei p { padding-top: 10px;  }
+#questoes .questao .input_texto .input_normal {margin-left: 0px !important; }
+#questoes .questao .input_texto .input_grande {margin-left: -40px !important; }
+#questoes .questao .input_texto .input_pequeno {margin-left: -40px !important; }
+
+.valor_dentro .input {margin-left: -40px !important; }
+
+#questoes .caderno p { margin-bottom: 10px !important; margin-top: -15px; padding-bottom: 10px;}
+
+.matriz_menor SPAN {width: 20px !important;}
+
+.matriz .margem_estranha_ie{ margin-left: -30px !important; }
+
+#questoes .caderno ol div {margin-bottom: 20px; }
+
+
+#questoes .caderno ol li {margin-bottom: 20px !important; }

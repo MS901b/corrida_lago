@@ -1,0 +1,10 @@
+.desesperados {position: absolute !important; top: 140px !important; left:280px !important;}
+#velatura {
+	background-color:#A6A6A6;
+	height:680px;
+	width:100%;
+	position:absolute;
+	top: 0;
+	left:0;
+	z-index:500;
+}

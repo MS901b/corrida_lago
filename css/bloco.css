@@ -1,0 +1,33 @@
+
+/* bloco e blocao*/
+
+#bloco{width: 225px; height: 310px; background: url(../img_layout/bloco.gif) no-repeat; position: fixed; bottom: 56px; left: 40px; z-index: 301;}
+#bloco p {margin-bottom: 15px; width: auto !important; text-align: left !important;}
+#bloco em {color: #f80a06 !important;}
+#bloco .texto {margin: 41px 22px 0 22px !important; width: auto !important; padding: 0 !important;}
+#bloco .texto *{ font: bold 12px/15px  "Segoe Print", "Tekton", "Comic Sans MS",  "Tempus Sans ITC", "cursive" !important; color: #001e86;}
+#bloco .bloco_anterior { left: 20px;  position: absolute; bottom: 10px; width:20px; height: 20px; background: url(../img_layout/ant-atv.gif) no-repeat;}
+#bloco .bloco_anterior.desativado{background: url(../img_layout/ant-des.gif) no-repeat;}
+#bloco .bloco_proxima { left: 45px; position: absolute; bottom: 10px; margin-left:2px; width:20px; height: 20px; background: url(../img_layout/prox-atv.gif) no-repeat;}
+#bloco .bloco_proxima.desativado {background: url(../img_layout/prox-des.gif) no-repeat;}
+#bloco .bloco_fechar { right: 20px; position: absolute; bottom: 10px; font: 13px/16px "Lucida Sans Unicode", "Lucida Sans"; text-decoration: underline; }
+
+#bloco.blocao{background-image: url(../img_layout/blocao.gif); width: 415px; height: 305px;}
+#bloco.blocao .texto {margin: 34px 22px 0 59px !important;}
+#bloco.blocao .bloco_anterior { left: 65px;}
+#bloco.blocao .bloco_proxima { left: 90px;}
+
+#bloco.blocao table {border: 2px solid #00227d; margin-bottom: 13px; margin-top: -3px;  table-layout:fixed; width:20px; text-align: left; border-collapse: collapse;}
+#bloco.blocao table th {border: 2px solid #00227d; padding: 0 2px;}
+#bloco.blocao table td {border: 2px solid #00227d; border-width: 0 2px; padding: 0 2px;}
+
+#bloco.super_blocao{background-image: url(../img_layout/bloco_gigante.png); width: 775px; height: 440px;}
+#bloco.super_blocao .texto {margin: 34px 22px 0 59px !important;}
+#bloco.super_blocao .bloco_anterior { left: 65px;}
+#bloco.super_blocao .bloco_proxima { left: 90px;}
+
+#bloco.super_blocao table {border: 2px solid #00227d; margin-bottom: 13px; margin-top: -3px;  table-layout:fixed; width:20px; text-align: left; border-collapse: collapse;}
+#bloco.super_blocao table th {border: 2px solid #00227d; padding: 0 2px;}
+#bloco.super_blocao table td {border: 2px solid #00227d; border-width: 0 2px; padding: 0 2px;}
+
+.link_nota{background: url(../img_layout/notinha.gif) right center no-repeat; padding-right: 18px; text-decoration: none !important; border-bottom: 1px solid #2E47B2; color: #2E47B2;}

@@ -1,0 +1,113 @@
+#painel_jogo
+{
+	margin-left:20px;
+	width:316px;
+	float:left;
+	border: 3px solid RGB(166, 166,166);
+	position: relative;
+	background: RGB(209,209,209);
+	
+}
+
+#painel_jogo #pontuacao {position:absolute; top:15px; left:15px; background: url(../img_layout/pontuacao.png) no-repeat; width: 162px; height:71px;}
+#painel_jogo #nivel1 {position:absolute; right:15px; top:15px; background: url(../img_layout/nivel1.png) no-repeat; height: 50px; width:50px;}
+#painel_jogo #nivel2 {position:absolute; right:15px; top:15px; background: url(../img_layout/nivel2.png) no-repeat; height: 50px; width:50px;}
+#painel_jogo #nivel3 {position:absolute; right:15px; top:15px; background: url(../img_layout/nivel3.png) no-repeat; height: 50px; width:50px;}
+#painel_jogo #fundo_polinomio {background: url(../img_layout/fundo_polinomio.png) no-repeat; height: 74px; width:259px; position:absolute; left:5px; top:120px; padding-top: 9px;}
+#painel_jogo #fundo_polinomio #px {float:left; margin-left: 16px; margin-top: 10px;}
+#painel_jogo #fundo_polinomio .label {margin-left: 15px; font-weight: bold;}
+#painel_jogo #fundo_polinomio .input {background: url(../img_layout/polinomio.png) no-repeat; margin-left: 4px; margin-top: 3px;  width: 145px; height:22px; padding:7px 4px; font-size:13px; float:left; }
+#painel_jogo #fundo_polinomio .button {background: url(../img_layout/plotar.png) no-repeat; float:left; margin-right:0; padding-left:0; margin-top: 2px; margin-left:0px; height:36px; width: 36px;}
+
+#painel_jogo .button {margin-right: 10px; width: 83px; height:33px; font-weight: bold; text-align: left; padding-left:13px; vertical-align: center; color: RGB(55,55,55);}
+#painel_jogo .pular_dica {background: url(../img_layout/dica_pular.png) no-repeat; position:relative;}
+#painel_jogo .pular_dica:hover {background: url(../img_layout/dica_pular-hover.png) no-repeat;}
+
+#painel_jogo #label_pontuacao {position:absolute; top: 13px; left:12px; font-size:16px; color: white;}
+#painel_jogo #label_jogadas {position:absolute; top: 44px; left: 12px; font-size: 13px; color: white;}
+
+#painel_jogo #fundo_ajuda {background: url(../img_layout/fundo_ajuda.gif); position:absolute; top:200px; width: 302px; height:112px; left: 7px;}
+#fundo_ajuda p {color: white; padding:10px; font-size:11px; line-height: 15px;}
+#painel_jogo #parabens {background: white; border-top: 3px solid RGB(65,173,73);  border-bottom: 3px solid RGB(65,173,73); padding: 10px; z-index:502; position:absolute; top:220px; width: 300px; height:auto;}
+#painel_jogo #diminui {position:absolute; right: 6px; top:14px; background: url(../img_layout/diminui.png); width:20px; height: 20px;}
+#painel_jogo #aumenta {position:absolute; right: 6px; top:42px; background: url(../img_layout/aumenta.png); width:20px; height: 20px;}
+#painel_jogo #negativo{position:absolute; right: 47px; top:14px;  color:white; font-weight: bold;}
+#painel_jogo #numeros {position:absolute; right: 37px; top:14px;  width:15px; height: 20px;}
+#painel_jogo #numeros2 {position:absolute; right: 24px; top:14px; width:15px; height: 20px;}
+#painel_jogo .n0 {background: url(../img_layout/numeros.png) 26px center;}
+#painel_jogo .n1 {background: url(../img_layout/numeros.png) 163px center;}
+#painel_jogo .n2 {background: url(../img_layout/numeros.png) 146px center;}
+#painel_jogo .n3 {background: url(../img_layout/numeros.png) 132px center;}
+#painel_jogo .n4 {background: url(../img_layout/numeros.png) 117px center;}
+#painel_jogo .n5 {background: url(../img_layout/numeros.png) 101px center;}
+#painel_jogo .n6 {background: url(../img_layout/numeros.png) 87px center;}
+#painel_jogo .n7 {background: url(../img_layout/numeros.png) 73px center;}
+#painel_jogo .n8 {background: url(../img_layout/numeros.png) 57px center;}
+#painel_jogo .n9 {background: url(../img_layout/numeros.png) 43px center;}
+
+#painel_jogo #jogadas {position:absolute; right: 47px; top:45px;  width:10px; height: 15px;}
+#painel_jogo #jogadas2 {position:absolute; right: 38px; top:45px;  width:10px; height: 15px;}
+#painel_jogo .j0 {background: url(../img_layout/jogadas.png) 15px center;}
+#painel_jogo .j1 {background: url(../img_layout/jogadas.png) 93px center;}
+#painel_jogo .j2 {background: url(../img_layout/jogadas.png) 84px center;}
+#painel_jogo .j3 {background: url(../img_layout/jogadas.png) 75px center;}
+#painel_jogo .j4 {background: url(../img_layout/jogadas.png) 67px center;}
+#painel_jogo .j5 {background: url(../img_layout/jogadas.png) 59px center;}
+#painel_jogo .j6 {background: url(../img_layout/jogadas.png) 50px center;}
+#painel_jogo .j7 {background: url(../img_layout/jogadas.png) 42px center;}
+#painel_jogo .j8 {background: url(../img_layout/jogadas.png) 34px center;}
+#painel_jogo .j9 {background: url(../img_layout/jogadas.png) 25px center;}
+
+#painel_jogo #certo {position: absolute; height: 35px; width: 45px; background: url(../img_layout/certo.png); top:148px; right:6px;}
+#painel_jogo #errado {position: absolute; height: 35px; width: 45px; background: url(../img_layout/errado.png); top:148px; right:6px;}
+
+#modo_aprender{ margin-left:20px; margin-top:10px; margin-bottom: 10px; display:block; }
+#modo_aprender #aprender {background: url(../img_layout/aprender.gif) no-repeat 0 0; height:15px; width: 74px;}
+#modo_aprender #aprender:hover, #modo_jogar #jogar:hover {background-position: 0 -15px; cursor:pointer;}
+#modo_jogar{ margin-left:19px; margin-bottom:20px; }
+#modo_jogar #jogar {background: url(../img_layout/jogar.gif) no-repeat; height:15px; width: 74px;}
+
+
+#mudar_nivel {background: url(../img_layout/mudar_nivel.gif) no-repeat 0 0; height:74px; width: 110px; z-index: 100; position:absolute; top: 10px; left:215px;}
+
+#velatura {
+	background-color:RGB(166,166,166);
+	position:absolute;
+	width: 320px;
+	height: 380px;
+	z-index:500;
+}
+
+#velatura_final {
+	background-color:#333333;
+	opacity:0.8;
+	position:absolute;
+	width: 320px;
+	height: 380px;
+	z-index:500;
+}
+
+#velatura_certo {
+	background-color:RGB(65,173,73);
+	opacity:0.8;
+	position:absolute;
+	width: 320px;
+	height: 380px;
+	z-index:500;
+}
+
+#velatura_errado {
+	background-color:RGB(210,35,42);
+	opacity:0.8;
+	position:absolute;
+	width: 320px;
+	height: 380px;
+	z-index:500;
+}
+
+#applet 
+{
+	margin: 0 0 20px 0 !important;
+	width: 400px;
+}
+	

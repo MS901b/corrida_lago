@@ -1,0 +1,91 @@
+a { text-decoration: underline;}
+
+
+.link_informativo
+{
+	border-bottom: 1px dashed #2E47B2;
+	text-decoration: none !important;
+	color: #2E47B2;
+	display: inline !important;
+	margin: 0 !important;
+	float: none !important;
+}
+
+/* Popup */
+
+.popup_container{ position: absolute; z-index: 1300;}
+.popup_container *{ cursor: default;}
+.desesperados {position: fixed; top: 200px; left:200px;}
+.aviso .popup{ background: #fff url(../img_layout/exclamacao.gif) no-repeat 0 center; border: 2px solid RGB(210, 35,42) !important; padding-left:30px !important; font-size: 11px !important; line-height: 14px !important;}
+.popup_container .popup{ background-color: #fff; border: 2px solid black; padding: 10px; }
+.desesperados .popup{ background-color: RGB(255,255,48) !important; border: 2px solid black; padding: 10px; }
+.desesperados p, .desesperados div {margin-bottom:10px; }
+.popup_container .popup a{text-decoration: underline; cursor: pointer;}
+.popup_container .seta_baixo
+{
+	background: url(../img_layout/popup-seta-baixo.gif) no-repeat;
+	width: 24px;
+	height: 14px;
+	position: absolute;
+	margin-top: -2px;
+}
+
+.popup_container .seta_baixissimo
+{
+	background: url(../img_layout/popup-seta-baixissimo.gif) no-repeat;
+	width: 24px;
+	height: 14px;
+	position: absolute;
+	margin-top: -2px;
+}
+
+.popup_container .seta_cima
+{
+	background: url(../img_layout/popup-seta-cima.gif) no-repeat;
+	width: 24px;
+	height: 14px;
+	position: absolute;
+	margin-top: -12px;
+}
+
+.popup_container .seta_direita
+{
+	background: url(../img_layout/popup-seta-direita.gif) no-repeat;
+	width: 14px;
+	height: 24px;
+	position: absolute;
+	right: 0;
+	margin-right: -12px;
+}
+
+.popup_container .sombra_direita
+{
+	background: url(../img_layout/popup-sombra-direita.gif) repeat-y;
+	width: 2px;
+	top: 2px;
+	position: absolute;
+	right: -2px;
+}
+
+.popup_container .sombra_baixo
+{
+	background: url(../img_layout/popup-sombra-baixo.gif) repeat-x;
+	height: 2px;
+	margin-left: 2px;
+	position: absolute;
+}
+
+.popup_container .sombra_direita2
+{
+	width: 2px;
+	top: 2px;
+	position: absolute;
+	right: -2px;
+}
+
+.popup_container .sombra_baixo2
+{
+	height: 2px;
+	margin-left: 2px;
+	position: absolute;
+}

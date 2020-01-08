@@ -1,0 +1,23 @@
+/* notas */
+
+
+.popup .notas {padding: 0 10px;}
+.popup .notas  h2{color: #2E48B4; margin-bottom: 10px; font-weight: bold;}
+.popup .notas p { margin-bottom: 10px; width: auto !important;}
+.popup .notas .titulo { font-weight: bold;}
+.popup .notas .texto { max-height: 250px !important; overflow: auto; margin-bottom:20px; width: auto !important; padding: 0 !important;}
+.popup .notas .fechar_popup { position: absolute; right:10px; bottom:10px; font: 13px/16px "Lucida Sans Unicode", "Lucida Sans"; text-decoration: underline; }
+.popup .notas #referencias { right: 5px; position: absolute; top: 5px;}
+.popup .notas #referencias a { float:left; text-decoration: none; background-color: #AEBED5; color: #000; width: 20px; height: 20px; line-height: 20px; text-align: center; margin-right: 2px;}
+.popup .notas #referencias a.selecionada { background-color: #3248B5; color: #FFF;}
+.popup .notas #referencias .anterior_nota {background: url(../img_layout/ant-atv.gif);}
+.popup .notas #referencias .anterior_nota.desativado {background: url(../img_layout/ant-des.gif);}
+.popup .notas #referencias .proxima_nota {background: url(../img_layout/prox-atv.gif);}
+.popup .notas #referencias .proxima_nota.desativado {background: url(../img_layout/prox-des.gif);}
+
+#notas_de_referencia
+{
+	position: fixed;
+	left: 30px;
+	bottom: 70px;
+}

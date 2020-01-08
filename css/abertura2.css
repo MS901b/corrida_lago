@@ -1,0 +1,372 @@
+*
+{
+	font: 16px/19px "Lucida Sans Unicode","Lucida Sans", "Bitstream Vera Sans", "DejaVu Sans";
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	border: none;
+	color: black;
+}
+
+html
+{
+	overflow: auto;
+}
+
+body
+{
+	background-color: #C3D2D7;
+}
+
+strong { font-weight: bold; }
+em { font-style: italic; }
+big {font-size: 21px; line-height:25px;}
+small {font-size: 11px; line-height: 13px;}
+sub, sup {font-size: 10px;}
+
+
+/* cabeçalho e textos, corpo mais geral do site */ 
+
+#abertura
+{
+	position: relative;
+	float: left;
+	height: auto;
+	width: 100%;
+	z-index: 1;	
+}
+
+#texto_abertura
+{
+	margin: 40px 20px 40px 0;
+	padding-left: 20px;
+	width: 380px;
+	float: left;
+}
+
+#texto_abertura p
+{
+	padding-bottom: 20px;
+}
+
+
+#imgs_abertura
+{
+	margin: 40px 20px;	
+	width: 380px;
+	float: left;
+}
+
+
+#apresentacao
+{
+	width: 920px;
+	padding: 20px;
+}
+
+#imagem_apresentacao {background:  RGB(255,255,47); width: 100%; height: 270px; position: relative; margin-bottom: 10px;}
+
+#texto_apresentacao
+{
+	width:360px;
+	height: auto;
+	padding: 10px;
+	position: absolute;
+	right: 10px;
+	bottom: 10px;
+	z-index: 150;
+	background-color: #FFF;
+}
+
+#patrocinio
+{
+	width: 920px;
+	padding: 0 20px 0 20px;
+	margin-top: 40px;
+}
+
+#patrocinio img
+{
+	padding-right: 20px;
+}
+
+#patrocinio_unicamp { margin-top: 3px; }
+
+#iniciar { margin-top: 5px; }
+
+#fichas
+{
+	width: 920px;
+	padding: 20px 0 20px 15px;
+}
+
+#fichas a
+{
+	display: inline;
+	text-decoration: underline;
+	padding: 0 5px;
+}
+
+#container
+{
+	width: 960px;
+	margin-left: 30px;
+	margin-right: 10px;
+}
+
+#cabecalho
+{
+	width: 100%;
+	height: 80px;
+}
+
+#onde_estou
+{
+	width: 720px;
+	height: 40px;
+	margin-top: 40px;
+	background-color: #FFFF30;
+	float: left;
+	position: relative;
+}
+
+#onde_estou *
+{
+	font-size: 18px;
+	line-height: 40px;
+	display: inline;
+}
+
+#onde_estou h1
+{
+	margin-left: 20px;
+	margin-right: 10px;
+	float: left;
+}
+
+#onde_estou img { float:left; margin-top: 13px; }
+
+#onde_estou h2
+{
+	margin-left: 10px;
+	font-weight: bold;
+	float: left;
+}
+
+
+#onde_estou .numero_atividade
+{
+	width: 26px;
+	height: 30px;
+	background: url(../img_layout/hexagono-amarelo-fraco.gif) no-repeat;
+	position: absolute;
+	margin-left: -13px;
+	margin-top: -15px;
+	line-height: 30px;
+	text-align: center;
+	font-size: 12px;
+}
+
+#links
+{
+	float: left;
+	width: 240px;
+	text-align: right;
+	margin-top: 5px;
+	
+}
+
+#links a
+{
+	font-size: 11px;
+	margin-left: 10px;
+	text-decoration: underline;
+}
+
+#links span
+{
+	font-size: 11px;
+	margin-left: 10px;
+}
+
+#logo
+{
+	float: right;
+	background: url(../img_layout/logo.gif) no-repeat 0 10px;
+	width: 60px;
+	height: 51px;
+}
+
+
+#conteudo
+{
+	width: 100%;
+	background-color: #FFF;
+	padding-top: 20px;
+}
+
+#conteudo h1
+{
+	margin-left: 20px;
+	margin-right: 5px;
+	font-size: 23px;
+}
+
+.link_curiosidade{background: url(../img_layout/curiosidadesinha.gif) right center no-repeat; padding-right: 18px; text-decoration: none !important; border-bottom: 1px solid #2E47B2; color: #2E47B2;}
+
+/* classes para o popup de ficha técnica */
+
+
+.popup .ficha_tecnica {padding: 0 10px;}
+.popup .ficha_tecnica  h2{color: #000; margin-bottom: 20px; font-weight: bold;}
+.popup .ficha_tecnica  h3{color: #000; font-style: italic;}
+.popup .ficha_tecnica p { margin-bottom: 10px;}
+.popup .ficha_tecnica .texto { height: auto; overflow: auto;}
+.popup .ficha_tecnica .fechar_popup { float: right; font: 13px/16px "Lucida Sans Unicode" "Lucida Sans"; text-decoration: underline; }
+
+
+
+
+
+/* rodapé */
+
+.apontador
+{
+	padding: 0 3px 0 7px;
+	background-color: RGB(255, 254,44); 
+	border-left: 1px solid #000;
+	border-top: 1px solid #000;
+	border-bottom: 1px solid #000;
+	height: 19px;
+	float: left;
+	z-index: 2;
+	position: relative;
+}
+
+.apontador a { text-decoration: underline; }
+
+.seta_apontador
+{
+	position: relative;
+	background: url(../img_layout/apontador.jpg) no-repeat;
+	float: left;
+	width: 13px;
+	height: 21px;
+	z-index: 1;
+	margin-left: -2px;
+}
+
+#rodape
+{
+	text-align: right;
+	line-height: 40px;
+}
+
+#rodape a
+{
+	margin-left: 10px;
+	font-size: 11px;
+	text-decoration: underline;
+}
+
+
+
+
+#ferramentas
+{
+	width: 240px;
+	height: 50px;
+	background: url(../img_layout/barra-ferramentas.gif) no-repeat;
+	position: fixed;
+	left: 40px;
+	bottom: 4px;
+	z-index: 2000;
+}
+
+#ferramentas a
+{
+	display: block;
+	width: 40px;
+	height: 40px;
+	margin: 5px 10px;
+	float: left;
+}
+
+#link_notas
+{	background: url(../img_layout/notas-off.gif);}
+#link_notas:hover
+{	background: url(../img_layout/notas-on.gif);}
+
+#link_bloco
+{	background: url(../img_layout/bloco-off.gif);}
+#link_bloco:hover
+{	background: url(../img_layout/bloco-on.gif);}
+
+#link_calculadora
+{	background: url(../img_layout/calculadora-off.gif);}
+#link_calculadora:hover
+{	background: url(../img_layout/calculadora-on.gif);}
+
+#link_acessibilidade
+{	background: url(../img_layout/acessibilidade-on.gif);}
+#link_acessibilidade:hover
+{	background: url(../img_layout/acessibilidade-off.gif);}
+
+.link_curiosidade{background: url(../img_layout/curiosidadesinha.gif) right center no-repeat; padding-right: 18px; text-decoration: none !important; border-bottom: 1px solid #2E47B2; color: #2E47B2;}
+
+
+
+/* calculadora */
+
+#calc
+{
+	width: 245px;
+	height: 261px;
+	background: url(../img_layout/calc.gif) no-repeat;
+	position: fixed; 
+	bottom: 58px;
+	left: 39px;
+	z-index: 1201;
+}
+
+
+/* Classes auxiliares*/
+
+.escondido
+{
+	visibility: hidden;
+	display: none;
+}
+
+.limpador
+{
+	height: 5px;
+	clear: both;
+}
+
+.largura1 { width: 20px; }
+.largura2 { width: 40px; }
+.largura3 { width: 60px; }
+.largura4 { width: 80px; }
+.largura5 { width: 100px; }
+
+.margem_inferior { margin-bottom: 20px; }
+.margem_questao { margin-left: 30px !important; }
+.margem_topo { margin-top: 40px !important; }
+.a_esquerda { float: left; }
+.a_direita { float: right; }
+.sem_padding { padding: 0 !important }
+
+.applet {border: 1px dotted #CCC; padding: 10px;}
+
+
+
+
+
+.botao {height:29px; font-size: 14px; margin-right:7px; padding-bottom: 2px; text-align:center; border: 2px outset #CCC;}
+.botao:active{border: 2px inset #CCC;}
+.botao.desabilitado, .botao.desabilitado:active{color: #999; border: 2px outset grey;}
+.botao_pequeno {width: 50px;}
+.botao_medio {width: 80px;}
+.botao_grande {width: 110px;}
+.botao_gigante {width: 170px;}

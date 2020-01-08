@@ -1,0 +1,57 @@
+
+/* painel especial  */
+
+.applet {
+	float:left;
+	z-index:2;
+	margin-bottom: 80px;
+}
+
+.applet1 {width: 470px; margin-left: 10px; margin-right: 20px;}
+.applet2 {width: 440px;}
+
+#painel_comandos{
+	margin-left:10px;
+	width: 940px;
+	font-size: 13px;
+}
+
+#painel_comandos * { font-size: 13px; }
+
+#painel_comandos a {float:left; font-weight: bold; text-decoration: none; padding: 7px 10px 3px 7px; height:20px; background-color: black; color: white; background-color: RGB(55, 198, 255); color: black;}
+#painel_comandos a:hover {background-color: black; color: white;}
+
+#arco, #segmento {background-color: RGB(187, 237, 244) !important; color: black !important; font-weight: bold !important;}
+#arco:hover, #segmento:hover {background-color: RGB(142, 222, 230) !important; font-weight: bold !important;}
+#mais_arco, #mais_segmento {color: white; font-weight: bold; text-align:left; float:left; background-color: RGB(55, 198, 255); padding: 7px 10px 3px 7px; height:20px;}
+
+#painel_comandos #segmento_aberto {
+	width: 496px;
+	padding: 7px 10px 3px 7px; height:20px;
+	background-color: RGB(55, 198, 255);
+	float:left; 
+}
+
+#painel_comandos #segmento_aberto #aberto_segmento {color: white; font-weight: bold; width: 100px; text-align:left; float:left;}
+#painel_comandos #segmento_aberto #seg_comprimento {color: black; width: 100px; text-align:left; float:left;}
+#painel_comandos #segmento_aberto #seg_inclinacao {color: black; width: 75px; text-align:left; float:left;}
+#painel_comandos #segmento_aberto input[type= "text"] {margin-top:-2px; color: black; width: 42px; height:16px; padding:2px; text-align:left; float:left; background-color: RGB(175,232,255); margin-right:24px;}
+#painel_comandos #segmento_aberto a {text-decoration:underline; font-weight:bold; float:left; padding:0; height: auto; margin:0; background-color: none; }
+
+#painel_comandos #arco_aberto {
+	width: 496px;
+	padding: 7px 10px 3px 7px; height:20px;
+	background-color: RGB(55, 198, 255);
+	display:block;
+	clear:both;
+	margin-right:10px; 
+}
+
+#painel_comandos .angulo {float:left; margin-left:-18px; font-size:25px;}
+
+#painel_comandos #arco_aberto #aberto_arco {color: white; font-weight: bold; width: 65px; text-align:left; float:left;}
+#painel_comandos #arco_aberto #raio {color: black; width: 40px; text-align:left; float:left;}
+#painel_comandos #arco_aberto #angulo_inicial {color: black; width: 100px; text-align:left; float:left;}
+#painel_comandos #arco_aberto #angulo_final {color: black; width: 90px; text-align:left; float:left;}
+#painel_comandos #arco_aberto input[type= "text"] {margin-top:-2px; color: black; width: 42px; height:16px; padding:2px; text-align:left; float:left; background-color: RGB(175,232,255); margin-right:24px;}
+#painel_comandos #arco_aberto a {text-decoration:underline; font-weight:bold; float:left; padding:0; height: auto; margin:0; background-color: none; }
