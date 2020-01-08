@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<software nome="corrida_lago">
+
+<msgFinal>Parabéns, você concluiu todas as atividades deste software!</msgFinal>
+
+	<!-- 1: 1a Atividade -->
+	<item>
+		<tipo>atividade</tipo>
+		<rotulo>1</rotulo>
+		<nome>Primeiras simulações</nome>
+		<descricao>Nesta atividade, você poderá simular tal corrida para diferentes competidores, elaborando, assim, suas primeiras hipóteses sobre o problema.</descricao>
+		<posicao>
+			<coluna>1</coluna>
+			<altura>1</altura>
+		</posicao>
+	</item>
+	
+	<!-- 3: 2a Atividade -->
+	<item>
+		<tipo>atividade</tipo>
+		<rotulo>2</rotulo>
+		<nome>Resolvendo o problema</nome>
+		<descricao>Nesta atividade, você usará conceitos de matemática e de física para encontrar a estratégia vencedora nesse tipo de disputa.</descricao>
+		<posicao>
+			<coluna>2</coluna>
+			<altura>-1</altura>
+		</posicao>
+		<ligacoes>
+			<com>1</com>
+		</ligacoes>
+	</item>
+	
+	<!-- 4: 3a Atividade -->
+	<item>
+		<tipo>atividade</tipo>
+		<rotulo>3</rotulo>
+		<nome>Generalizando o resultado</nome>
+		<descricao>Nesta atividade, você poderá analisar a melhor estratégia para vencer essa disputa para qualquer par de velocidades.</descricao>
+		<posicao>
+			<coluna>3</coluna>
+			<altura>1</altura>
+		</posicao>
+		<ligacoes>
+			<com>2</com>
+		</ligacoes>
+	</item>
+</software>
