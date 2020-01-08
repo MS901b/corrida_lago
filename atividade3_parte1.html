@@ -1,0 +1,187 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns = "http://www.w3.org/1999/xhtml"  xml:lang = "pt-br"  lang = "pt-br">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+		<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />		
+		<link rel="stylesheet" type="text/css" href="css/estilo.css" media="screen, projection" title="normal"/>
+		<link rel="alternate stylesheet"  type="text/css" href="css/estilo2.css" title="grande" />
+		
+		<meta name=viewport content="width=device-width,initial-scale=1">  
+        <script src="https://www.geogebra.org/apps/deployggb.js"></script>
+		
+		<link rel="stylesheet" type="text/css" href="css/popup.css" media="screen, projection" />
+		<link rel="stylesheet" type="text/css" href="css/notas.css" media="screen, projection" />
+		<link rel="stylesheet" type="text/css" href="css/bloco.css" media="screen, projection" />
+		<link rel="stylesheet" type="text/css" href="css/calculadora.css" media="screen, projection" />
+		<!--[if IE 7]>
+			<link rel="stylesheet" type="text/css" href="css/estilo_ie7.css" media="screen, projection" />
+		<![endif]-->
+		<!--[if lte IE 6]>	
+			<link rel="stylesheet" type="text/css" href="css/estilo_ie6.css" media="screen, projection" />
+		<![endif]-->
+		
+		<script type="text/javascript" src="scripts/AC_RunActiveContent.js"></script>
+		<script type="text/javascript" src="scripts/protoaculous.js"></script>
+		<script type="text/javascript" src="scripts/popup.js"></script>
+		<script type="text/javascript" src="scripts/notas.js"></script>
+		<script type="text/javascript" src="scripts/bloco.js"></script>
+		<script type="text/javascript" src="scripts/calculadora.js"></script>
+		<script type="text/javascript" src="scripts/rolagem.js"></script>
+		
+		
+		<!-- O arquivo referencias.js e curiosidades.js devem ser incluídos depois do interface -->
+		<script type="text/javascript" src="scripts/interface.js"></script>
+		<script type="text/javascript" src="scripts/referencias.js"></script>
+		<script type="text/javascript" src="scripts/curiosidades.js"></script>
+
+		
+		<!-- O arquivo exemplo_correcao.js que contem as funções que corrigem, deve ser incluido antes do exemplo_conteudo.js-->
+		
+		<script type="text/javascript" src="scripts/atividade3_correcao.js"></script>
+		<script type="text/javascript" src="scripts/atividade3_conteudo.js"></script>
+		<script type="text/javascript" src="scripts/corrida_lago.js"></script>
+		<script type="text/javascript" src="scripts/inputs.js"></script>
+		<script type="text/javascript">
+			
+			var PosicaoAtual = {Atividade: 3, Parte: 0};
+			var ProximaParte = 'mapa.html';
+	
+			var Popups = $H({
+				link_continuar: {
+					conteudo: 'Você não pode continuar',
+					layout: ['seta_baixo', 'direita'],
+					largura: 11
+				}
+			});
+				
+			var Links = $H({
+				seletor: {
+					conteudo: '<img src="imgs/seletor.png" alt=" "/>',
+					layout: ['seta_baixo', 'central'],
+					largura: 4
+				}
+			});
+
+				
+			var Perguntas = $H({
+			});
+		</script>
+		<title>Corrida no lago</title>
+	</head>
+	<body>
+	
+	<!--
+	Nunca crie um "onload" aqui, use a Classe Event do Prototype: Event.observe(window, 'load', funcaoAqui);
+	Veja um exemplo no arquivo exemplo_correcao.js
+	-->
+		<div id="container">
+			<div id="cabecalho">
+				<div id="onde_estou">
+					<div class="numero_atividade">3</div>
+					<h1>Corrida no lago</h1> <img src="img_layout/setinha-cabecalho.gif" alt=""/> <h2>Generalizando o resultado</h2>
+				</div>
+				<div id="logo"></div>
+				<div id="links">
+					<a id="mapa" href="mapa.html">Mapa</a>
+					<a href="introducao.html">Introdução</a>
+					<a href="index.html">Início</a>
+				</div>
+				
+				<div class="limpador"></div>
+			</div>
+			<ul id="partes">
+			</ul>
+			
+			<div id="software">
+				<div id="conteudo">
+						<!-- SalvaLocal -->
+					<div class="salva_local">
+						<object id="SalvaLocal" name="SalvaLocal" type="application/x-shockwave-flash" data="applets/SalvaLocal.swf" width="1" height="1">
+						   <param name="menu" value="false" />
+						   <param name="movie" value="applets/SalvaLocal.swf" />
+						</object>
+					</div>
+					<div class="texto_solto">
+						<p>No quadro ao lado, está o gráfico do tempo necessário para completar a trajeto em função do ângulo (em radianos) em que o competidor salta para a água.</p>
+						<p>Mas agora, você pode movimentar os <a id="seletor">seletores</a> que determinam as velocidades na terra e na água e ver dinamicamente como o gráfico se comporta.</p>
+					</div>
+					
+					<div id="questoes">
+						<div id="texto_generico">
+						</div>				
+						
+						<div id="parte1_q1"></div>
+						<div id="parte1_q2"></div>
+						<div class="caderno">
+							<h2>Responder no caderno</h2>
+							<ol>
+								<li>
+									<h3>Questão 1</h3>
+									<ol>
+										<li class="ultima">
+											<span class="icone_questao">A</span>
+											<p>É possível que haja empate entre dois competidores que escolham momentos diferentes para trocar de meio? Se sim, dê um exemplo.</p>
+										</li>
+									</ol>
+								</li>
+							</ol>
+						</div>
+						<a href="javascript:" id="corrigir_tudo">Corrigir todas as questões</a>
+						<a id="link_continuar">
+							<span class="escondido">Continuar</span>
+						</a>
+						<div class="limpador"></div>
+					</div>
+				</div>
+				<div class="limpador"></div>
+		<div class="limpador"></div>
+		
+			</div>
+			<br class="limpador" />
+			<div id="rodape">
+				<a target="blank"; href="http://m3.mat.br">Sobre o Matemática Multimídia</a>
+			</div>
+		</div>
+		<div id="applet">
+			<div id="borda_applet" class="altura_applet_4 borda sem_fundo">
+				
+				<div id="ggbApplet"></div> 
+                <script>  
+                    var ggbApp = new GGBApplet({"appName": "classic", 
+                    "width": 519, "height": 380, 
+                    "filename": "applets/funcao2.ggb",
+                    "showResetIcon": false,
+                    "enableRightClick": false,
+                    "showMenuBar": false,
+                    "showToolBar": false,
+                    "showToolBarHelp": false,
+                    "showAlgebraInput": false,
+                    "enableShiftDragZoom": false,
+                    "useBrowserForJS": true                
+                    }, true);
+                    window.addEventListener("load", function() { 
+                    ggbApp.inject('ggbApplet');
+                    });
+                </script>
+				
+				<div class="canto sup_esq"></div>
+				<div class="canto sup_dir"></div>
+				<div class="canto inf_esq"></div>
+				<div class="canto inf_dir"></div>
+				<div id="associacao"></div>
+			</div>
+
+			
+		</div>	
+		<div id="associado"></div>	
+		<div id="ferramentas">
+			<a href="javascript:;" onclick="return false;" id="link_notas"><span class="escondido">referencias</span></a>
+			<a href="javascript:;" onclick="return false;" id="link_bloco"><span class="escondido">bloco de notas</span></a>
+			<a href="javascript:;" id="link_calculadora" onclick="javascript:calculadora();"><span class="escondido">calculadora</span></a>
+			<a href="javascript:;" id="link_acessibilidade"><span class="escondido">acessibilidade</span></a>
+		</div>
+		<div id="calc" class="escondido"></div>	
+		
+	</body>
+</html>

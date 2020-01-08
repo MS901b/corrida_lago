@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns = "http://www.w3.org/1999/xhtml"  xml:lang = "pt-br"  lang = "pt-br">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+		<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />		<link rel="stylesheet" type="text/css" href="css/abertura.css" media="screen, projection" title="normal"/>
+		<link rel="alternate stylesheet" type="text/css" href="css/abertura2.css" media="screen, projection" title="grande"/>
+		
+		<link rel="stylesheet" type="text/css" href="css/popup.css" media="screen, projection" />
+		<link rel="stylesheet" type="text/css" href="css/notas.css" media="screen, projection" />
+		<link rel="stylesheet" type="text/css" href="css/bloco.css" media="screen, projection" />
+		<link rel="stylesheet" type="text/css" href="css/calculadora.css" media="screen, projection" />
+		
+		<script type="text/javascript" src="scripts/AC_RunActiveContent.js"></script>
+		<script type="text/javascript" src="scripts/protoaculous.js"></script>
+		<script type="text/javascript" src="scripts/popup.js"></script>
+		<script type="text/javascript" src="scripts/notas.js"></script>
+		<script type="text/javascript" src="scripts/bloco.js"></script>
+		<script type="text/javascript" src="scripts/calculadora.js"></script>
+		
+		
+		<script type="text/javascript" src="scripts/interface.js"></script>
+		<script type="text/javascript" src="scripts/referencias.js"></script>
+		<script type="text/javascript" src="scripts/curiosidades.js"></script>
+		
+		
+		<script type="text/javascript" src="scripts/conteudo_introducao.js"></script>
+		<script type="text/javascript">
+		var PosicaoAtual = {Atividade: 0, Parte: 0};
+		
+			var Links = $H({
+			});
+		</script>
+		
+		<title>Corrida no lago</title>
+	</head>
+	<body>		
+		<div id="container">
+			<div id="cabecalho">
+				<div id="onde_estou">
+					<h1>Corrida no lago</h1> <img src="img_layout/setinha-cabecalho.gif" alt=""/> <h2>Introdução</h2>
+				</div>
+				<div id="logo"></div>
+				<div id="links">
+					<a href="mapa.html">Mapa</a>
+					<span>Introdução</span>
+					<a href="index.html">Início</a>
+				</div>
+				
+				<br class="limpador" />
+			</div>
+			
+			<div id="abertura">
+				<div id="conteudo">
+
+					
+					<div id="texto_abertura">
+						<p>Se você fosse disputar uma corrida em um lago circular, saindo de um lado dele e indo até o ponto diametralmente oposto, e tivesse que escolher entre ir nadando ou correndo, o que faria? E se você pudesse correr até certo ponto e, depois, pular no lago e terminar o percurso nadando?</p>						
+						<p>Neste software, você poderá analisar essa disputa entre dois competidores que possuem o mesmo desempenho correndo e nadando. Assim, vencerá aquele que souber o melhor momento para trocar a corrida pelo nado.</p>
+						<p>Para isso, você vai usar conceitos básicos de geometria plana, funções e física.</p>
+						<div class="a_esquerda">
+							<div class="a_esquerda apontador">
+								<a href="mapa.html">Começar</a>
+							</div>
+							<div class="a_esquerda seta_apontador"></div>
+						</div>					
+					</div>
+					<div id="imgs_abertura">
+						<img src="imgs/introducao_template3.jpg" alt="Ilustração qualquer sobre o software"/>
+					</div>
+					<br class="limpador">
+
+				</div>
+			</div>
+			<br class="limpador" />
+			<div id="rodape">
+				<a target="blank"; href="http://m3.mat.br">Sobre o Matemática Multimídia</a>
+			</div>
+		</div>
+		<div id="ferramentas">
+			<a href="javascript:;" onclick="return false;" id="link_notas"><span class="escondido">referencias</span></a>
+			<a href="javascript:;" onclick="return false;" id="link_bloco"><span class="escondido">bloco de notas</span></a>
+			<a href="javascript:;" id="link_calculadora" onclick="javascript:calculadora();"><span class="escondido">calculadora</span></a>
+			<a href="javascript:setActiveStyleSheet('grande');" id="link_acessibilidade"><span class="escondido">acessibilidade</span></a>
+		</div>
+		<div id="calc" class="escondido"></div>
+	</body>
+</html>

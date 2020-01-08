@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns = "http://www.w3.org/1999/xhtml"  xml:lang = "pt-br"  lang = "pt-br">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+		<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />		<link rel="stylesheet" type="text/css" href="css/abertura.css" media="screen, projection" />
+		<link rel="stylesheet" type="text/css" href="css/popup.css" media="screen, projection" />
+		
+		<!--[if lte IE 6]>	
+			<link rel="stylesheet" type="text/css" href="css/abertura_ie6.css" media="screen, projection" />
+		<![endif]-->
+
+		<script type="text/javascript" src="scripts/protoaculous.js"></script>
+		<script type="text/javascript" src="scripts/AC_RunActiveContent.js"></script>
+		<script type="text/javascript" src="scripts/popup.js"></script>
+		<script type="text/javascript" src="scripts/abertura.js"></script>
+		<script type="text/javascript" src="scripts/AC_OETags.js"></script>
+		<script type="text/javascript" src="scripts/browser.js"></script>
+		
+		<script type="text/javascript">
+
+			var FichaUnidade = new Array(
+				{
+					titulo: 'Autor',
+					texto: 'Leonardo Barichello'
+				},
+				{
+					titulo: 'Redação',
+					texto: 'Leonardo Barichello'
+				},
+				{
+					titulo: 'Implementação',
+					texto: 'Guilherme Villalba Zardetto'
+				},
+				{
+					titulo: 'Revisão de Língua',
+					texto: 'Denis Barbosa Cacique'
+				},
+				{
+					titulo: 'Ilustração',
+					texto: 'Lucas Ogasawara'
+				}
+			);
+
+			var FichaProjeto = new Array(
+				{
+					titulo: '- Unicamp -',
+					texto: ''
+				},
+				{
+					titulo: 'Reitor',
+					texto: 'Fernando Ferreira Costa'
+				},
+				{
+					titulo: 'Vice-Reitor',
+					texto: 'Edgar Salvadori de Decca'
+				},
+				{
+					titulo: 'Pró-Reitor de Pós-Graduação',
+					texto: 'Euclides de Mesquita Neto'
+				},
+				{
+					titulo: '- IMECC -',
+					texto: ''
+				},
+				{
+					titulo: 'Diretor',
+					texto: 'Jayme Vaz Jr.'
+				},
+				{
+					titulo: 'Vice-Diretor',
+					texto: 'Edmundo Capelas de Oliveira'
+				},
+				{
+					titulo: '- Matemática Multimídia -',
+					texto: ''
+				},
+				{
+					titulo: 'Coordenação Geral',
+					texto: 'Samuel Rocha de Oliveira'
+				},
+				{
+					titulo: 'Coordenação de Software',
+					texto: 'Leonardo Barichello'
+				},
+				{
+					titulo: 'Coordenação de Implementação',
+					texto: 'Matias Costa'
+				}
+			);
+			
+			
+			var Perguntas = $H({
+				licenca: {
+					conteudo: '<p>É cedido ao Ministério da Educação o direito de utilizar esta obra sob as modalidades de distribuição, tradução e edição, excetuando-se o uso comercial.</p><p style="margin-top:10px;">Para informações mais detalhadas sobre as licenças dos recursos utilizados nesta unidade, veja "license.txt".</p>',
+					layout: ['seta_baixo','direita'],
+					largura: 25,
+					callback: function(){/*função vazia pra que não faça nada*/},
+					respostas: [{ok: 'Ok'}]
+				}
+			});
+			
+			var Links = $H({
+			});
+		
+		</script>
+		
+		<title>Corrida no Lago</title>
+	</head>
+	<body>
+		
+		
+		<div id="container" class="margem_topo">
+			
+			
+			<div id="abertura">
+				<div id="conteudo">
+					<h1>Corrida no Lago</h1> 
+					<div id="apresentacao">
+						<div id="imagem_apresentacao">
+							<img src="imgs/apresentacao.jpg" />
+							<div id="texto_apresentacao">
+								<p>Será que a matemática pode te ajudar em uma corrida em um lago, na qual os competidores podem contorná-lo correndo ou atravessá-lo a nado? Neste software, você verá que sim: basta juntar geometria plana, funções e um pouco de física.</p>
+							</div>
+						</div>
+							
+						
+						<div class="a_direita" id="iniciar_software">
+							<div class="a_esquerda apontador">
+								<a href="introducao.html">Iniciar software</a>
+							</div>
+							<div class="a_esquerda seta_apontador"></div>
+						</div>
+					</div>
+					<br class="limpador" />
+					<div id="patrocinio">
+						<div class="a_esquerda">
+							<img id="patrocinio_logo" class="a_esquerda" src="img_layout/logo_abertura.jpg" />
+							<img id="patrocinio_unicamp" class="a_esquerda" src="img_layout/unicamp.jpg" />
+						</div>
+						<div class="a_direita">
+							<img class="a_esquerda" src="img_layout/fnde.jpg" />
+							<img class="a_esquerda" src="img_layout/mct.png" />
+							<img class="a_esquerda" src="img_layout/sed.png" />
+							<img class="a_esquerda" src="img_layout/me.png" />
+							<img class="a_esquerda sem_padding" src="img_layout/brasil.jpg"/>
+						</div>
+						<br class="limpador" />
+					</div>
+					
+					<br class="limpador" />
+					
+					<div id="fichas">
+						<a href="javascript:;" onclick="return false;" id="ficha_tecnica_unidade">Ficha técnica da unidade</a>
+						<span> / </span>
+						<a href="javascript:;" onclick="return false;" id="ficha_tecnica_projeto">Ficha técnica do projeto</a>
+						
+						<br class="limpador" />
+					</div>
+
+				</div>
+			</div>
+			<br class="limpador" />
+			<div id="rodape">
+				<a id="licenca">Licença</a>&nbsp;<a href="http://m3.mat.br">Sobre o Matemática Multimídia</a>
+			</div>
+		</div>
+
+	
+	</body>
+</html>

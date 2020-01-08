@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<recurso>
+    <titulo>Corrida no Lago</titulo>
+    <descricao>Utilizar conhecimentos de Funções, Geometria Plana e Física para resolver um problema de otimização.</descricao>
+    <estado>finalizado</estado>
+    <imagem>corrida_lago.jpg</imagem>
+    <tipo>software educacional</tipo>
+    <objetivos>Utilizar conhecimentos de Funções, Geometria Plana e Física para resolver um problema de otimização.</objetivos>
+    <observacoes>É necessário plugin Flash 9.0 ou mais recente e máquina Java 1.6 ou mais recente.</observacoes>
+    <nivel>Ensio Médio</nivel>
+    <componente>Matemática</componente>
+    <temas>Números e Funções, Geometria e Medidas</temas>
+    <autores>Leonardo Barichello</autores>
+    <palavras_chaves>Unicamp, Projeto M³, software educacional, matemática, otimização, corrida, geometria plana, física, cinemática, funções, </palavras_chaves>
+    <assunto>Geometria Plana, Problemas de Otimização; Funções, Análise de Gráﬁcos; Conceitos básicos de Física.</assunto>
+</recurso>
+
+
+

@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns = "http://www.w3.org/1999/xhtml"  xml:lang = "pt-br"  lang = "pt-br">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+		<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />		<link rel="stylesheet" type="text/css" href="css/curiosidade_transicao.css" media="screen, projection" />
+		<link rel="stylesheet" type="text/css" href="css/estilo.css" media="screen, projection" />
+		<link rel="stylesheet" type="text/css" href="css/popup.css" media="screen, projection" />
+		<link rel="stylesheet" type="text/css" href="css/notas.css" media="screen, projection" />
+		<link rel="stylesheet" type="text/css" href="css/bloco.css" media="screen, projection" />
+
+		
+		<script type="text/javascript" src="scripts/AC_RunActiveContent.js"></script>
+		<script type="text/javascript" src="scripts/protoaculous.js"></script>
+		<script type="text/javascript" src="scripts/popup.js"></script>
+		<script type="text/javascript" src="scripts/notas.js"></script>
+		<script type="text/javascript" src="scripts/bloco.js"></script>
+		<script type="text/javascript" src="scripts/calculadora.js"></script>
+		<script type="text/javascript" src="scripts/rolagem.js"></script>
+		<script type="text/javascript" src="scripts/interface.js"></script>
+		<script type="text/javascript" src="scripts/referencias.js"></script>
+		<script type="text/javascript" src="scripts/curiosidades.js"></script>
+		
+		
+		<script type="text/javascript" src="scripts/conteudo_introducao.js"></script>
+		<title>Corrida no lago</title>
+		<script type="text/javascript">
+			var PosicaoAtual = {Atividade: 0, Parte: 0};
+			setResp('curiosidades1', 2);
+		</script>
+	</head>
+	<body>		
+		<div id="container">
+			<div id="cabecalho">
+				<div id="onde_estou">
+					<div class="curiosidade">&nbsp;</div>
+					<h1>Corrida no lago</h1> <img src="img_layout/setinha-cabecalho.gif" alt=""/> <h2>Curiosidades</h2>
+				</div>
+				<div id="logo"></div>
+				<div id="links">
+					<a href="mapa.html">Mapa</a>
+					<a href="introducao.html">Introdução</a>
+					<a href="entrada.html">Início</a>
+				</div>
+				<br class="limpador" />
+			</div>
+			
+			<ul id="curiosidades">
+				<li id="1" class="curiosidade" ><a href="javascript:navegaCuriosidade(1);">1</a></li>
+			</ul>
+			
+			<div id="principal">
+				<div id="conteudo">
+					<!-- SalvaLocal -->
+					<div class="salva_local">
+						<object id="SalvaLocal" name="SalvaLocal" type="application/x-shockwave-flash" data="applets/SalvaLocal.swf" width="1" height="1">
+						   <param name="menu" value="false" />
+						   <param name="movie" value="applets/SalvaLocal.swf" />
+						</object>
+					</div>
+					<div id="curiosidade1" class="texto">
+						<h2>Problemas de Otimização</h2>
+						<p>Definir o percurso que resulta no menor caminho, alocar o trabalho de forma a minimizar o tempo gasto, distribuir as tarefas de modo a maximizar a produtividade, escolher as medidas que resultem no menor custo, etc..</p>
+						<p>Todos estes são exemplos de problemas de otimização.</p>
+						<p>Dizemos que um problema é de otimização quando temos uma função objetivo que depende de uma ou mais variáveis e precisamos encontrar para quais valores essa função apresentada valores máximos ou mínimos.</p>
+						<p>No nosso caso, a função objetivo é a que nos dá o tempo total para completar o percurso em termos do ângulo em que o competidor troca da terra para a água, e queremos descobrir qual é o ângulo  que resulta no percurso com menor tempo possível.</p>
+						<p>Problemas deste tipo são muito comuns na Matemática, desde a antiguidade até os tempos modernos, e envolvendo conteúdos desde os mais básicos até os mais avançados.</p>
+						<p>Você poderá explorar problemas semelhantes em outras unidades como: Otimização de Janelas.</p>
+					</div>
+
+						<div id="voltar" class="a_esquerda">
+							<div class="a_direita">
+								<div class="a_esquerda apontador">
+									<a id="voltar_curiosidade" href="javascript:history.go(-1);">Voltar</a>
+								</div>
+								<div class="a_esquerda seta_apontador"></div>
+							</div>
+						</div>
+						
+						<br class="limpador" />
+
+					</div>
+				</div>
+			</div>
+			<br class="limpador" />
+			<div id="rodape">
+				<a target="blank"; href="http://m3.mat.br">Sobre o Matemática Multimídia</a>
+			</div>
+		</div>
+		<div id="ferramentas">
+			<a href="javascript:;" onclick="return false;" id="link_notas"><span class="escondido">referencias</span></a>
+			<a href="javascript:;" onclick="return false;" id="link_bloco"><span class="escondido">bloco de notas</span></a>
+			<a href="javascript:;" id="link_calculadora" onclick="javascript:calculadora();"><span class="escondido">calculadora</span></a>
+			<a href="javascript:;" id="link_acessibilidade"><span class="escondido">acessibilidade</span></a>
+		</div>
+		<div id="calc" class="escondido"></div>
+	</body>
+</html>
