@@ -5,12 +5,12 @@
 #bloco p {margin-bottom: 15px; width: auto !important; text-align: left !important;}
 #bloco em {color: #f80a06 !important;}
 #bloco .texto {margin: 41px 22px 0 22px !important; width: auto !important; padding: 0 !important;}
-#bloco .texto *{ font: bold 12px/15px  "Segoe Print", "Tekton", "Comic Sans MS",  "Tempus Sans ITC", "cursive" !important; color: #001e86;}
+#bloco .texto *{ font: bold 14px/17px "Fira Sans", sans-serif !important; color: #001e86;}
 #bloco .bloco_anterior { left: 20px;  position: absolute; bottom: 10px; width:20px; height: 20px; background: url(../img_layout/ant-atv.gif) no-repeat;}
 #bloco .bloco_anterior.desativado{background: url(../img_layout/ant-des.gif) no-repeat;}
 #bloco .bloco_proxima { left: 45px; position: absolute; bottom: 10px; margin-left:2px; width:20px; height: 20px; background: url(../img_layout/prox-atv.gif) no-repeat;}
 #bloco .bloco_proxima.desativado {background: url(../img_layout/prox-des.gif) no-repeat;}
-#bloco .bloco_fechar { right: 20px; position: absolute; bottom: 10px; font: 13px/16px "Lucida Sans Unicode", "Lucida Sans"; text-decoration: underline; }
+#bloco .bloco_fechar { right: 20px; position: absolute; bottom: 10px; font: 15px/18px "Fira Sans", sans-serif; text-decoration: underline; }
 
 #bloco.blocao{background-image: url(../img_layout/blocao.gif); width: 415px; height: 305px;}
 #bloco.blocao .texto {margin: 34px 22px 0 59px !important;}

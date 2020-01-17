@@ -2,14 +2,14 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns = "http://www.w3.org/1999/xhtml"  xml:lang = "pt-br"  lang = "pt-br">
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
-		<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />		
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
 		<link rel="stylesheet" type="text/css" href="css/estilo.css" media="screen, projection" title="normal"/>
 		<link rel="alternate stylesheet"  type="text/css" href="css/estilo2.css" title="grande" />
-		
-		<meta name=viewport content="width=device-width,initial-scale=1">  
-        <script src="https://www.geogebra.org/apps/deployggb.js"></script>  
-		
+
+		<meta name=viewport content="width=device-width,initial-scale=1">
+        <script src="https://www.geogebra.org/apps/deployggb.js"></script>
+
 		<link rel="stylesheet" type="text/css" href="css/popup.css" media="screen, projection" />
 		<link rel="stylesheet" type="text/css" href="css/notas.css" media="screen, projection" />
 		<link rel="stylesheet" type="text/css" href="css/bloco.css" media="screen, projection" />
@@ -17,10 +17,10 @@
 		<!--[if IE 7]>
 			<link rel="stylesheet" type="text/css" href="css/estilo_ie7.css" media="screen, projection" />
 		<![endif]-->
-		<!--[if lte IE 6]>	
+		<!--[if lte IE 6]>
 			<link rel="stylesheet" type="text/css" href="css/estilo_ie6.css" media="screen, projection" />
 		<![endif]-->
-		
+
 		<script type="text/javascript" src="scripts/AC_RunActiveContent.js"></script>
 		<script type="text/javascript" src="scripts/protoaculous.js"></script>
 		<script type="text/javascript" src="scripts/popup.js"></script>
@@ -28,25 +28,25 @@
 		<script type="text/javascript" src="scripts/bloco.js"></script>
 		<script type="text/javascript" src="scripts/calculadora.js"></script>
 		<script type="text/javascript" src="scripts/rolagem.js"></script>
-		
-		
+
+
 		<!-- O arquivo referencias.js e curiosidades.js devem ser incluídos depois do interface -->
 		<script type="text/javascript" src="scripts/interface.js"></script>
 		<script type="text/javascript" src="scripts/referencias.js"></script>
 		<script type="text/javascript" src="scripts/curiosidades.js"></script>
 
-		
+
 		<!-- O arquivo exemplo_correcao.js que contem as funções que corrigem, deve ser incluido antes do exemplo_conteudo.js-->
-		
+
 		<script type="text/javascript" src="scripts/atividade2_correcao.js"></script>
 		<script type="text/javascript" src="scripts/atividade2_conteudo.js"></script>
 		<script type="text/javascript" src="scripts/corrida_lago.js"></script>
 		<script type="text/javascript" src="scripts/inputs.js"></script>
 		<script type="text/javascript">
-			
+
 			var PosicaoAtual = {Atividade: 2, Parte: 2};
 			var ProximaParte = 'mapa.html';
-	
+
 			var Popups = $H({
 				link_continuar: {
 					conteudo: 'Você não pode continuar',
@@ -54,17 +54,17 @@
 					largura: 11
 				}
 			});
-				
+
 			var Links = $H({
 			});
-				
+
 			var Perguntas = $H({
 			});
 		</script>
 		<title>Corrida no lago</title>
 	</head>
 	<body>
-	
+
 	<!--
 	Nunca crie um "onload" aqui, use a Classe Event do Prototype: Event.observe(window, 'load', funcaoAqui);
 	Veja um exemplo no arquivo exemplo_correcao.js
@@ -81,12 +81,12 @@
 					<a href="introducao.html">Introdução</a>
 					<a href="index.html">Início</a>
 				</div>
-				
+
 				<div class="limpador"></div>
 			</div>
 			<ul id="partes">
 			</ul>
-			
+
 			<div id="software">
 				<div id="conteudo">
 						<!-- SalvaLocal -->
@@ -97,14 +97,14 @@
 						</object>
 					</div>
 					<div class="texto_solto">
-						<p>O resultado que você obteve na parte anterior mostra que, para as velocidades que você escolheu 
+						<p>O resultado que você obteve na parte anterior mostra que, para as velocidades que você escolheu
 						(<span id="tanto1"></span> m/s em terra e <span id="tanto2"></span> m/s pela água), a melhor estratégia é <span id="XXX"></span></p>
 						<p>Mas será que essa resposta é válida para qualquer situação, ou seja, para quaisquer velocidades do competidor?</p>
 						<p>Na atividade 3 você poderá investigar justamente isso.</p>
 					</div>
 					<div id="questoes">
 						<div id="texto_generico">
-						</div>				
+						</div>
 						<a id="link_continuar">
 							<span class="escondido">Continuar</span>
 						</a>
@@ -113,11 +113,11 @@
 				</div>
 				<div class="limpador"></div>
 		<div class="limpador"></div>
-		
+
 			</div>
 			<br class="limpador" />
 			<div id="rodape">
-				<a target="blank"; href="http://m3.mat.br">Sobre o Matemática Multimídia</a>
+				<a target="blank"; href="http://m3.ime.unicamp.br">Sobre o Matemática Multimídia</a>
 			</div>
 		</div>
 		<div id="applet">
@@ -125,15 +125,15 @@
 				<img src="imgs/a2p3.jpg" alt=""/>
 				<div id="associacao"></div>
 			</div>
-		</div>	
-		<div id="associado"></div>	
+		</div>
+		<div id="associado"></div>
 		<div id="ferramentas">
 			<a href="javascript:;" onclick="return false;" id="link_notas"><span class="escondido">referencias</span></a>
 			<a href="javascript:;" onclick="return false;" id="link_bloco"><span class="escondido">bloco de notas</span></a>
-			<a href="javascript:;" id="link_calculadora" onclick="javascript:calculadora();"><span class="escondido">calculadora</span></a>
-			<a href="javascript:;" id="link_acessibilidade"><span class="escondido">acessibilidade</span></a>
+		<!--	<a href="javascript:;" id="link_calculadora" onclick="javascript:calculadora();"><span class="escondido">calculadora</span></a>
+			<a href="javascript:;" id="link_acessibilidade"><span class="escondido">acessibilidade</span></a> -->
 		</div>
-		<div id="calc" class="escondido"></div>	
-		
+		<div id="calc" class="escondido"></div>
+
 	</body>
 </html>

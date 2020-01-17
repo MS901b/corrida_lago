@@ -1,6 +1,6 @@
 *
 {
-	font: 13px/16px "Lucida Sans Unicode","Lucida Sans", "Bitstream Vera Sans", "DejaVu Sans";
+	font: 15px/18px "Fira Sans", sans-serif;
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
@@ -25,7 +25,7 @@ small {font-size: 11px; line-height: 13px;}
 sub, sup {font-size: 10px;}
 
 
-/* cabeçalho e textos, corpo mais geral do site */ 
+/* cabeçalho e textos, corpo mais geral do site */
 
 #abertura
 {
@@ -33,7 +33,7 @@ sub, sup {font-size: 10px;}
 	float: left;
 	height: auto;
 	width: 100%;
-	z-index: 1;	
+	z-index: 1;
 }
 
 #texto_abertura
@@ -55,7 +55,7 @@ sub, sup {font-size: 10px;}
 {
 	padding-bottom: 20px;
 }
-#verificacoes 
+#verificacoes
 {
 	width: 700px;
 	margin: 0px 20px 20px 20px;
@@ -66,7 +66,7 @@ sub, sup {font-size: 10px;}
 {
 	margin-left: 10px;
 	width: 225px;
-	float:left; 
+	float:left;
 	margin-top:10px;
 }
 #verificacoes .coluna h2 {font-weight: bold; margin-bottom: 10px;}
@@ -82,7 +82,7 @@ sub, sup {font-size: 10px;}
 
 #imgs_abertura
 {
-	margin: 40px 20px;	
+	margin: 40px 20px;
 	width: 380px;
 	float: left;
 }
@@ -103,7 +103,7 @@ sub, sup {font-size: 10px;}
 	padding: 10px;
 	position: absolute;
 	right: 10px;
-	bottom: 160px;
+	bottom: 10px;
 	z-index: 150;
 	background-color: #FFF;
 }
@@ -203,7 +203,7 @@ sub, sup {font-size: 10px;}
 	width: 240px;
 	text-align: right;
 	margin-top: 5px;
-	
+
 }
 
 #links a
@@ -242,6 +242,13 @@ sub, sup {font-size: 10px;}
 	font-size: 23px;
 }
 
+#conteudo h1 i
+{
+	margin-left: 20px;
+	margin-right: 5px;
+	font-size: 18px;
+}
+
 .link_curiosidade{background: url(../img_layout/curiosidadesinha.gif) right center no-repeat; padding-right: 18px; text-decoration: none !important; border-bottom: 1px solid #2E47B2; color: #2E47B2;}
 
 /* classes para o popup de ficha técnica */
@@ -263,7 +270,7 @@ sub, sup {font-size: 10px;}
 .apontador
 {
 	padding: 0 3px 0 7px;
-	background-color: RGB(255, 254,44); 
+	background-color: RGB(255, 254,44);
 	border-left: 1px solid #000;
 	border-top: 1px solid #000;
 	border-bottom: 1px solid #000;
@@ -304,7 +311,7 @@ sub, sup {font-size: 10px;}
 
 #ferramentas
 {
-	width: 240px;
+	width: 125px;
 	height: 50px;
 	background: url(../img_layout/barra-ferramentas.gif) no-repeat;
 	position: fixed;
@@ -353,7 +360,7 @@ sub, sup {font-size: 10px;}
 	width: 245px;
 	height: 261px;
 	background: url(../img_layout/calc.gif) no-repeat;
-	position: fixed; 
+	position: fixed;
 	bottom: 58px;
 	left: 39px;
 	z-index: 1201;
