@@ -2,16 +2,15 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns = "http://www.w3.org/1999/xhtml"  xml:lang = "pt-br"  lang = "pt-br">
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
-		<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />		<link rel="stylesheet" type="text/css" href="css/abertura.css" media="screen, projection" title="normal"/>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link rel="stylesheet" type="text/css" href="css/abertura.css" media="screen, projection" title="normal"/>
 		<link rel="alternate stylesheet" type="text/css" href="css/abertura2.css" media="screen, projection" title="grande"/>
-		
+
 		<link rel="stylesheet" type="text/css" href="css/popup.css" media="screen, projection" />
-		
-		
+
+
 		<script type="text/javascript" src="scripts/AC_RunActiveContent.js"></script>
 		<script type="text/javascript" src="scripts/protoaculous.js"></script>
-		<script type="text/javascript" src="scripts/salvaLocal.js"></script>
 		<script type="text/javascript" src="scripts/deployJava.js"></script>
 		<script type="text/javascript" src="scripts/AC_OETags.js"></script>
 		<script type="text/javascript" src="scripts/browser.js"></script>
@@ -19,15 +18,13 @@
 
 		<script type="text/javascript">
 			var PosicaoAtual = {Atividade: 0, Parte: 0};
-			
+
 		</script>
-		
-		<title>Verificação de compatibilidade</title>
+
+		<title>Embaralhando imagens</title>
 	</head>
-	<body>		
-	
-	
-	
+	<body>
+
 		<div id="container">
 			<div id="cabecalho">
 				<div id="onde_estou">
@@ -39,12 +36,14 @@
 					<span>Introdução</span>
 					<a href="index.html">Início</a>
 				</div>
-				
+
 				<br class="limpador" />
 			</div>
-			
+
 			<div id="abertura">
 				<div id="conteudo">
+
+
 					<div id="texto_compatibilidade">
 						<p>O nosso software precisa de certos requisitos para funcionar bem, segue abaixo a verificação de compatibilidade do software com o seu sistema:</p>
 					</div>
@@ -55,14 +54,16 @@
 								O software funciona corretamente nos seguintes navegadores de internet:
 							</p>
 							<p>
-								1. Firefox 3.0+; (recomendado) <br />
-								2. Internet Explorer 7.0+; <br />
+								1. Chrome 75+ (mais recomendado) <br />
+								2. Firefox 66.0+; <br />
 							</p>
 							<p> Sua versão: </p>
 							<p><span id="browserOsInst"></span></p>
 							<p id="instnav"></p>
-							<p id="firefox"></p>
+							<p id="Chrome"></p>
 						</div>
+
+						<!--
 						<div class="coluna">
 							<h2>Java Virtual Machine</h2>
 							<p>É preciso que esteja instalada no sistema a seguinte versão do Java:</p>
@@ -72,6 +73,7 @@
 							<p id="instjava"></p>
 							<p id="java"></p>
 						</div>
+
 						<div class="coluna">
 							<h2>Adobre Flash Player</h2>
 							<p>A seguinte versão é necessária:</p>
@@ -81,46 +83,48 @@
 							<p id="instflash"></p>
 							<p id="flash"></p>
 						</div>
-						
+						-->
+
 						<br class="limpador">
-						
+
 						<div id="erro"style="font-weight:bold; font-style:italic; padding-top:10px; margin-top:20px; border-top:1px solid #CCCCCC; width: 700px;">
 						</div>
-						
+
 						<br class="limpador">
-					
+
 						<div class="a_direita" style="margin: 20px;">
 							<div class="a_esquerda apontador">
 								<a id="comeco" href="introducao.html">Começar</a>
 							</div>
 							<div class="a_esquerda seta_apontador"></div>
 						</div>
-						
-					</div>
-					
 
-					
+					</div>
+
+
+
 					<br class="limpador">
 
 				</div>
 			</div>
 			<br class="limpador" />
 			<div id="rodape">
-				<a href="http://m3.mat.br">Sobre o Matemática Multimídia</a>
+				<a href="http://m3.ime.unicamp.br" target="_blank">Sobre o Matemática Multimídia</a>
 			</div>
 		</div>
 
 		<script type="text/javascript">
-			
+
 
 			var jah_abriu = false;
 			var browser=navigator.appName;
 			var b_version=navigator.appVersion;
-			
-			var flashRequiredMajorVersion = 9.0;
+
+			//Não precisa mais de flash nem java
+			/*var flashRequiredMajorVersion = 9.0;
 			var flashRequiredMinorVersion = 0;
 			var flashRequiredRevision = 0;
-			
+
 			var javaRequiredVersion="1.4+";
 			var hasReqestedVersion = DetectFlashVer(flashRequiredMajorVersion, flashRequiredMinorVersion, flashRequiredRevision);
 
@@ -129,21 +133,22 @@
 
 			$('verJavaInst').innerHTML=deployJava.getJREs();
 			$('verJavaReq').innerHTML=javaRequiredVersion;
-			
+			*/
+
 			$('browserOsInst').innerHTML = BrowserDetect.browser + ' ' + BrowserDetect.version + ' em ' + BrowserDetect.OS ;
 
-			
+
 			var browser = 0;
 			var safari = 0;
 			var opera = 0;
-			if ((BrowserDetect.browser=='Firefox') && (BrowserDetect.version>=3)) {
+			if ((BrowserDetect.browser=='Firefox' && BrowserDetect.version>=66)) {
 				browser = 1;
 			} else {
-				if ((BrowserDetect.browser=='Internet Explorer') && (BrowserDetect.version>=7)) {
+				if ((BrowserDetect.browser=='Chrome' && BrowserDetect.version>=75)) {
 					browser = 1;
-				}
+				}/*
 				else {
-					/*
+
 					if ((BrowserDetect.browser=='Opera') && (BrowserDetect.version>=9)) {
 						browser = 1;
 						opera = 1;
@@ -154,24 +159,29 @@
 							browser = 1;
 							safari = 1;
 						}
-					}*/
-				}
-				
+					}
+				}*/
+
 			}
-			
+
 
 			if (browser == 0)
 			{
-				$('instnav').update('Instale o Firefox:');
-				$('firefox').update('<a href="http://www.mozilla.com/firefox">Mozilla Firefox</a>');
+				$('instnav').update('Instale o Chrome:');
+				$('Chrome').update('<a href="https://www.google.com/chrome/">Google Chrome</a>');
 			}
-			
 
-			var flash = 1;
-			if (hasReqestedVersion) { 
+			if (BrowserDetect.OS == "Android")
+			{
+				$('instnav').update('Acesse o site pelo computador ou notebook');
+			}
+
+			//Não precisa de Java nem de Flash
+			/*var flash = 0;
+			if (hasReqestedVersion) {
 				flash = 1;
-			} 
-			
+			}
+
 
 			if (flash == 0)
 			{
@@ -182,18 +192,19 @@
 			var java = 0;
 			if (deployJava.versionCheck(javaRequiredVersion)) {
 				java = 1;
-			} 
-			
+			}
+
+
 			if (safari || opera)
 				java = 1;
-			
+
 			if (java == 0)
 			{
 				$('instjava').update('Instale a JVM:');
 				$('java').update('<a href="http://www.java.com">Java Virtual Machine<a/>');
-			}
-			
-			if (java == 1 && flash == 1 && browser == 1)
+			}*/
+
+			if (browser == 1 && BrowserDetect.OS != "Android")
 			{
 				$('erro').update('O seu sistema é compatível, aproveite as atividades!');
 				$('erro').setStyle({color: 'RGB(0,124,0)'});
