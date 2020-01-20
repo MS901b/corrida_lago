@@ -124,10 +124,10 @@ class Mapinha {
 				pth1.setAttribute("fill", "gray");
 				break;
 			case '2':
-				pth1.setAttribute("fill", "yellow");
+				pth1.setAttribute("fill", "rgb(255,255,160)");
 				break;
 			case '3':
-				pth1.setAttribute("fill", "Dark yellow1");
+				pth1.setAttribute("fill", "rgb(255,255,48)");
 				break;
 			default:
 				pth1.setAttribute("fill", "white");
