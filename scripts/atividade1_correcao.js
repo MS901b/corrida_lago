@@ -79,7 +79,7 @@ function atualizatabela2(){
 }
 
 var ggb = 0;
-var flash = 0;
+var flash = 1;
 Event.observe(document, 'flash:SalvaLocal', function(ev){
 	flash = 1;	
 })
