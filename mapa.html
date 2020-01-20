@@ -10,7 +10,8 @@
 		<script type="text/javascript" src="scripts/salvaLocal.js"></script>
 		<script type="text/javascript" src="scripts/popup.js"></script>
 		<script type="text/javascript" src="scripts/corrida_lago.js"></script>
-		<script type="text/javascript">	
+		<script type="text/javascript" src="scripts/mapinha.js"></script>
+		<script type="text/javascript">
 
 			var Perguntas = $H({
 				limpar: {
@@ -64,12 +65,6 @@
 			<div id="abertura">
 				<div id="conteudo">
 					<a id="limpar" style="position:absolute; right:20px; top: 20px; color:RGB(210,25,42); font-weight:bold; ">Limpar dados</a>
-					<object id="Mapinha" name="Mapinha" type="application/x-shockwave-flash" data="applets/Mapinha.swf" width="960" height="480" wmode="transparent">
-						<param name="menu" value="false" />
-						<param name="movie" value="applets/Mapinha.swf" />
-						<param name="allowScriptAccess" value="sameDomain" />
-						<param name="wmode" value="transparent">
-					</object>
 				</div>
 			</div>
 			<br class="limpador" />
@@ -79,4 +74,19 @@
 		</div>
 
 	</body>
+
+	<script>
+	fetch("scripts/estrutura.xml")
+			.then(function(response){
+			response.text().then(function(data){
+				const m = new Mapinha("conteudo","Corrida no Lago");
+				m.parseXml(data);
+				m.adicionaBotoesItens();
+				});
+			})
+			.catch(function(err){
+			console.error('Failed retrieving information', err);
+			});
+	</script>
+
 </html>

@@ -4,7 +4,7 @@
 <msgFinal>Parabéns, você concluiu todas as atividades deste software!</msgFinal>
 
 	<!-- 1: 1a Atividade -->
-	<item>
+	<item><id>a1</id>
 		<tipo>atividade</tipo>
 		<rotulo>1</rotulo>
 		<nome>Primeiras simulações</nome>
@@ -14,9 +14,9 @@
 			<altura>1</altura>
 		</posicao>
 	</item>
-	
+
 	<!-- 3: 2a Atividade -->
-	<item>
+	<item><id>a2</id>
 		<tipo>atividade</tipo>
 		<rotulo>2</rotulo>
 		<nome>Resolvendo o problema</nome>
@@ -26,12 +26,12 @@
 			<altura>-1</altura>
 		</posicao>
 		<ligacoes>
-			<com>1</com>
+			<com>a1</com>
 		</ligacoes>
 	</item>
-	
+
 	<!-- 4: 3a Atividade -->
-	<item>
+	<item><id>a3</id>
 		<tipo>atividade</tipo>
 		<rotulo>3</rotulo>
 		<nome>Generalizando o resultado</nome>
@@ -41,7 +41,7 @@
 			<altura>1</altura>
 		</posicao>
 		<ligacoes>
-			<com>2</com>
+			<com>a2</com>
 		</ligacoes>
 	</item>
 </software>
