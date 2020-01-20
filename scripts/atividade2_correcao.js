@@ -32,7 +32,7 @@ function compararFuncao(func1,func2) {
 }
 
 var ggb = 0;
-var flash = 0;
+var flash = 1;
 var doc = 0;
 Event.observe(document, 'flash:SalvaLocal', function(ev){
 	flash = 1;

@@ -2,7 +2,6 @@ var PopupReferencias = null;
 var BlocoNotas = null;
 var CorrigeTudoPopup;
 var Calculadora;
-var nomeSoft;
 var Partes;
 
 var ultimaLista = null;
@@ -15,7 +14,7 @@ var Alertou = false, iQuestao = 0;
 var incorreta = null;
 
 var corrigindo = false;
-var interface_salva_local_loaded = false;
+var interface_salva_local_loaded = true;
 var interface_document_loaded = false;
 
 var Letras = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','X','W','Y','Z'];
@@ -54,6 +53,7 @@ Event.observe(document, 'flash:SalvaLocal', function(ev)
 
 document.observe("dom:loaded", function()
 {
+	gerencia_partes();
 	var protocol = window.location.protocol;
 	if (protocol != 'http:' && protocol != 'https:')
 	{

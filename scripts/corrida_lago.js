@@ -1,26 +1,21 @@
 /******************************************************************************************************************************************************
  ****    Flash                         *******
  ******************************************************************************************************************************************************/
-// Retorna o elemento do video Flash com o nome movieName
-function getFlashMovie(movieName) {
- var isIE = navigator.appName.indexOf("Microsoft") != -1;
- return (isIE) ? window[movieName] : document[movieName];
-}
 
 function getResp(id) {
- return getFlashMovie('SalvaLocal').Pega(nomeSoft,id);
+ return $('SalvaLocal').Pega(nomeSoft,id);
 }
  
 function setResp(id,valor) {
- getFlashMovie('SalvaLocal').Salva(nomeSoft,id,valor);
+ $('SalvaLocal').Salva(nomeSoft,id,valor);
 }
 
 function apagaTodasResp() {
- return (getFlashMovie('SalvaLocal').apagaTudo(nomeSoft));
+ return ($('SalvaLocal').ApagaTudo(nomeSoft));
 }
 
 function init() {
- return (getFlashMovie('SalvaLocal').apagaTudo(nomeSoft));
+ return ($('SalvaLocal').ApagaTudo(nomeSoft));
 }
 
 
