@@ -79,7 +79,7 @@
 	fetch("scripts/estrutura.xml")
 			.then(function(response){
 			response.text().then(function(data){
-				const m = new Mapinha("conteudo","Corrida no Lago");
+				const m = new Mapinha("conteudo",nomeSoft);
 				m.parseXml(data);
 				m.adicionaBotoesItens();
 				});
