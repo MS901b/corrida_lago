@@ -49,7 +49,7 @@
 		},
 		requisitos: {
 			titulo: 'Requisitos de software',
-			conteudo:  'Navegador moderno (Chrome 75+ ou Firefox 66.0+). O suporte não é garantido para dispositivos mobiles.'
+			conteudo: 'Navegador moderno (Chrome 70+ ou Firefox 62+). O suporte não é garantido para dispositivos mobiles.'
 		},
 		acessibilidade: {
 			titulo: 'Restrições de acessibilidade',

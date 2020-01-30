@@ -12,7 +12,7 @@
 		<script type="text/javascript" src="scripts/corrida_lago.js"></script>
 		<script type="text/javascript" src="scripts/mapinha.js"></script>
 		<script type="text/javascript">
-
+			var nomeSoft = 'corrida_lago';
 			var Perguntas = $H({
 				limpar: {
 					conteudo: '<p>Isso irá apagar todos os dados armazenados, como respostas guardadas, para essa unidade.</p><p style="margin-top:10px;">Você tem certeza?</p>',
@@ -25,23 +25,11 @@
 				}
 			});
 
-
-			function resetar()
-			{
-				if (this.resultado == 'sim')
-					{
-						$('Mapinha').ApagaTudo(nomeSoft);
-						$('Mapinha').Salva(nomeSoft, 'atividade_1', '1');
-						$('Mapinha').Salva(nomeSoft, 'atividade_2', '1');
-						$('Mapinha').Salva(nomeSoft, 'atividade_3', '1');
-						location.reload();
-//						$('Mapinha').Salva(nomeSoft, 'automacao_atividade_2_parte_0',2);
-						//$('Mapinha').Salva(nomeSoft, 'automacao_atividade_2_parte_1',2);
-						//$('Mapinha').Salva(nomeSoft, 'automacao_atividade_2_parte_2',2);
-
-					}
-				else{
-					}
+			function resetar() {
+				if (this.resultado == 'sim') {
+					$('SalvaLocal').ApagaTudo(nomeSoft);
+					location.reload();
+				}
 			}
 		</script>
 		<title>Corrida no lago</title>
@@ -79,7 +67,7 @@
 	fetch("scripts/estrutura.xml")
 			.then(function(response){
 			response.text().then(function(data){
-				const m = new Mapinha("conteudo",nomeSoft);
+				const m = new Mapinha("conteudo", nomeSoft);
 				m.parseXml(data);
 				m.adicionaBotoesItens();
 				});

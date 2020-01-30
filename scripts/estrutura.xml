@@ -13,6 +13,7 @@
 			<coluna>1</coluna>
 			<altura>1</altura>
 		</posicao>
+		<estadoinicial>1</estadoinicial>
 	</item>
 
 	<!-- 3: 2a Atividade -->
@@ -28,6 +29,7 @@
 		<ligacoes>
 			<com>a1</com>
 		</ligacoes>
+		<estadoinicial>1</estadoinicial>
 	</item>
 
 	<!-- 4: 3a Atividade -->
@@ -43,5 +45,6 @@
 		<ligacoes>
 			<com>a2</com>
 		</ligacoes>
+		<estadoinicial>1</estadoinicial>
 	</item>
 </software>

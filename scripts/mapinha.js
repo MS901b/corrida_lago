@@ -37,6 +37,7 @@ class Mapinha {
 		}
 
 		variavelSL = $('SalvaLocal').Pega(this.nomeSoft, variavelSL);
+		variavelSL = ((variavelSL == null || variavelSL == undefined)?(""):(variavelSL.toString()));
 		//console.log(variavelSL);
 		if (variavelSL == "0" || variavelSL == "1" || variavelSL == "2" || variavelSL == "3")
 			item.status = variavelSL;
@@ -124,10 +125,10 @@ class Mapinha {
 				pth1.setAttribute("fill", "gray");
 				break;
 			case '2':
-				pth1.setAttribute("fill", "rgb(255,255,160)");
+				pth1.setAttribute("fill", "#ffffa0");
 				break;
 			case '3':
-				pth1.setAttribute("fill", "rgb(255,255,48)");
+				pth1.setAttribute("fill", "#ffff30");
 				break;
 			default:
 				pth1.setAttribute("fill", "white");
@@ -151,10 +152,10 @@ class Mapinha {
 				pth1.setAttribute("fill", "gray");
 				break;
 			case '2':
-				pth1.setAttribute("fill", "orange");
+				pth1.setAttribute("fill", "#ffffa0");
 				break;
 			case '3':
-				pth1.setAttribute("fill", "yellow");
+				pth1.setAttribute("fill", "#ffff30");
 				break;
 			default:
 				pth1.setAttribute("fill", "white");

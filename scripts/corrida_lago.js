@@ -5,7 +5,7 @@
 function getResp(id) {
  return $('SalvaLocal').Pega(nomeSoft,id);
 }
- 
+
 function setResp(id,valor) {
  $('SalvaLocal').Salva(nomeSoft,id,valor);
 }
@@ -26,44 +26,44 @@ function roundNumber(num, dec) {
 	return result;
 }
 
-function processaNumero(respStr) 
-{	
+function processaNumero(respStr)
+{
 	var respStrSplited = respStr.split('/');
-	
+
 	var respostaValida = true;
-	if (respStrSplited.length>1) 
+	if (respStrSplited.length>1)
 	{
-		
+
 		for (var i=0;i<respStrSplited.length;i++)
-		{	
+		{
 			respStrSplited[i]=processaNumero(respStrSplited[i]);
 			if (respStrSplited[i]==null) respostaValida=false;
-			if (respostaValida) 
+			if (respostaValida)
 			{
-				if (i==0) 
+				if (i==0)
 				{
 					var resp=respStrSplited[i];
-				} 
-				else 
+				}
+				else
 				{
 					resp=resp/respStrSplited[i];
 				}
-				
+
 			}
 		}
 		if (respostaValida) return resp;
 		else return null;
-	} 
+	}
 	else
 	{
-		if (respStr.indexOf('%')>-1) 
+		if (respStr.indexOf('%')>-1)
 		{
 			respStr=respStr.replace(/%/,'');
 			var porcento=true;
 		} else var procento=false;
-		
+
 		respStr=respStr.replace(/,/g,'.');
-		if ( !isNaN(respStr) && (respStr.length>0) ) 
+		if ( !isNaN(respStr) && (respStr.length>0) )
 		{
 			if (porcento) respStr=respStr/100;
 		} else respStr=null;
@@ -99,20 +99,20 @@ function addRow(valorMax,valorDado1,valorDado2){
     var row = document.createElement("TR");
 
 	//adiciona os dois primeiros dados
-	td = document.createElement("TD");	
+	td = document.createElement("TD");
 	doc = document.createTextNode(valorDado1);td.appendChild(doc);
-    row.appendChild(td);	
-	td = document.createElement("TD");	
-	doc = document.createTextNode(valorDado2);	td.appendChild(doc);	
-	
-    row.appendChild(td);	
-	
+    row.appendChild(td);
+	td = document.createElement("TD");
+	doc = document.createTextNode(valorDado2);	td.appendChild(doc);
+
+    row.appendChild(td);
+
 
 	//adiciona os valores de Maximo e Vencedor
-    td = document.createElement("TD");	
-	doc = document.createTextNode(valorMax); td.appendChild(doc);	
+    td = document.createElement("TD");
+	doc = document.createTextNode(valorMax); td.appendChild(doc);
     row.appendChild(td);
-	
+
 	// adiciona a row no tbody.
     tbody.appendChild(row);
 }

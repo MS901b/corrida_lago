@@ -1,11 +1,11 @@
-var PopupFichaTecnica = null;
+﻿var PopupFichaTecnica = null;
 
 Event.observe(window, 'load', function ()
 {
 	PopupFichaTecnica = new FichaTecnica('Ficha técnica da unidade', FichaUnidade, 'ficha_tecnica_unidade');
 	PopupFichaProjeto = new FichaTecnica('Ficha técnica do projeto', FichaProjeto, 'ficha_tecnica_projeto');
 
-	analisaAmbiente();
+     analisaAmbiente();
 });
 
 
@@ -64,7 +64,6 @@ function analisaAmbiente()
 	/*var flashRequiredMajorVersion = 9.0;
 	var flashRequiredMinorVersion = 0;
 	var flashRequiredRevision = 0;
-
 	var javaRequiredVersion="1.4+";
 	var hasReqestedVersion = DetectFlashVer(flashRequiredMajorVersion, flashRequiredMinorVersion, flashRequiredRevision);*/
 
@@ -85,9 +84,11 @@ function analisaAmbiente()
 	}
 
 
-	if ((BrowserDetect.browser=='Firefox' && BrowserDetect.version>=66)) {
-		if ((BrowserDetect.browser=='Chrome' && BrowserDetect.version>=75)) {
-			var conteudo = '<p><strong>Erro de compatibilidade – Navegador</strong></p><p>O seu navegador não é compatível com este software, para usar este software você precisa ter um dos seguintes navegadores de internet: </p><p>1. Chrome 75+ (mais recomendado)<br />2. Firefox 66.0+';
+	if (!(BrowserDetect.browser=='Firefox' && BrowserDetect.version>=62))
+	{
+		if (!(BrowserDetect.browser=='Chrome' && BrowserDetect.version>=70))
+		{
+			var conteudo = '<p><strong>Erro de compatibilidade – Navegador</strong></p><p>O seu navegador não é compatível com este software, para usar este software você precisa ter um dos seguintes navegadores de internet: </p><p>1. Chrome 70+ (mais recomendado)<br />2. Firefox 65+';
 			conteudo += '<p style="float:right;"><a href="detect.html">Ver relatório de compatibilidade completo</a></p><br class="limpador" />';
 			conteudo += '<p><a id="fechar_desesperado" style="float:right; href="#">Fechar</a><a id="continuar_mesmo_assim" style="float:right; margin-right:10px;"" href="#">Continuar mesmo assim</a><a style="float:right; margin-right:10px;" href="https://www.google.com/chrome/">Instalar o Chrome</a></p><br class="limpador" />';
 			var tmp = new PopupDesesperados(conteudo, 20);
@@ -95,7 +96,6 @@ function analisaAmbiente()
 		}
 
 	}
-
 	if (detectar_mobile())
 	{
 		var conteudo = '<p><strong>Dispositivo não recomendado</strong></p><p>Este software não foi testado para o uso em dispositivo mobile, por conta disso é aconselhado o acesso pelo navegador de um computador ou notebook.</p>';
@@ -104,8 +104,8 @@ function analisaAmbiente()
 		var tmp = new PopupDesesperados(conteudo, 20);
 		return;
 	}
-	/* Não utiliza mais Java e nem flash
-	if (!hasReqestedVersion)
+	//Flash e java não são mais necessarios
+	/*if (!hasReqestedVersion)
 	{
 		var conteudo = '<p><strong>Erro de compatibilidade – Adobe Flash Player</strong></p><p>A versão mínima necessária do plugin para usar este software é <strong><em>Adobe Flash Player '+flashRequiredMajorVersion+'</em></strong>.</p>';
 		conteudo += '<p style="float:right;"><a href="detect.html">Ver relatório de compatibilidade completo</a></p><br class="limpador" />';

@@ -11,7 +11,7 @@ function compararFuncao(func1,func2) {
 
 	primeirafuncao = 'func_1(x)=' + func1;
 	segundafuncao = 'func_2(x)=' + func2;
-	
+
 	applet.evalCommand(primeirafuncao);
 	applet.setVisible('func_1',false);
 	applet.evalCommand(segundafuncao);
@@ -24,8 +24,8 @@ function compararFuncao(func1,func2) {
 	}
 	applet.setVisible('RespComparador',false);
 	saida = applet.getValue('RespComparador');
-	
-	if (saida<0.01) 
+
+	if (saida<0.01)
 		return [true];
 	else
 		return [false];
@@ -36,9 +36,9 @@ var flash = 1;
 var doc = 0;
 Event.observe(document, 'flash:SalvaLocal', function(ev){
 	flash = 1;
-	
+
 	checkInits();
-	
+
 	if (PosicaoAtual.Parte == 0){
 		if (getResp('atividade_2') != 3){
 				setResp('atividade_2',2);
@@ -49,28 +49,31 @@ Event.observe(document, 'flash:SalvaLocal', function(ev){
 function ggbOnInit(){
 
 	registerListeners_a1_p1();
-	
+
 	var applet = document.ggbApplet;
 	applet.setErrorDialogsActive(false);
 
 	ggb = 1;
-	
+
+	if (getResp('atividade_2') != 3){
+			setResp('atividade_2',2);
+	}
+
 	checkInits();
-	
+
 
 	if (PosicaoAtual.Parte == 1){
 		if (flash){
-		}	
+		}
 	}
 }
 
 function checkInits()
-{	
-
+{
 	// Para partes sem Geogebra
 	if  (PosicaoAtual.Parte==2) ggb = 1;
-	
-	
+
+
 	// Checagem se tanto SalvaLocal e Geogebra foram carregados.
 	if  (flash && ggb && doc) initOnLoad();
 }
@@ -78,7 +81,6 @@ function checkInits()
 function initOnLoad()
 
 {
-
 
 	if (!isNaN(getResp('a2p1_vel_terra'))){
 		MeuBloco[0]='<em>Velocidades escolhidas como referência na parte 1<\/em>';
@@ -91,7 +93,7 @@ function initOnLoad()
 		if ($('init01')){
 			$('init01').removeAttribute('disabled');
 		}
-		
+
 		if ($('init02')){
 			$('init02').removeAttribute('disabled');
 		}
@@ -106,13 +108,13 @@ function initOnLoad()
 				$('init01').value = getResp('a2p1_vel_terra');
 			}
 		}
-			
+
 		if (((getResp('a2p1_vel_agua') != '0'))&&((getResp('a2p1_vel_terra') != '0'))){
 			if (((!isNaN(getResp('a2p1_vel_agua'))))&&((!isNaN(getResp('a2p1_vel_terra'))))){
 				set_inicial();
 			}
 		}
-			
+
 		if(getResp('parte1_q1_a') != 'undefined'){
 			if ($('parte1_q1_a')){
 				$('parte1_q1_a').value = getResp('parte1_q1_a');
@@ -138,7 +140,7 @@ function initOnLoad()
 				$('parte1_q3_b').value = getResp('parte1_q3_b');
 			}
 		}
-			
+
 		Event.observe('parte1_q1_a', 'change', function(evento){
 			if ($('parte1_q1_a')){
 				if ($('parte1_q1_a').value != ""){
@@ -146,7 +148,7 @@ function initOnLoad()
 				}
 			}
 		});
-			
+
 		Event.observe('parte1_q2_a', 'change', function(evento){
 			if ($('parte1_q2_a')){
 				if ($('parte1_q2_a').value != ""){
@@ -154,7 +156,7 @@ function initOnLoad()
 			}
 			}
 		});
-			
+
 		Event.observe('parte1_q2_b', 'change', function(evento){
 			if ($('parte1_q2_b')){
 				if ($('parte1_q2_b').value != ""){
@@ -162,17 +164,17 @@ function initOnLoad()
 			}
 			}
 		});
-			
+
 		Event.observe('parte1_q3_b', 'change', function(evento){
 			if ($('parte1_q3_b')){
 				if ($('parte1_q3_b').value != ""){
 				setResp('parte1_q3_b',$('parte1_q3_b').value);
 			}
 			}
-		});	
+		});
 	break;
 	case 1:
-	
+
 		$('a2p2_a').update(getResp('q3a'));
 		$('a2p2_b').update(getResp('q3b'));
 		if (getResp('atividade_2') != 3){
@@ -204,37 +206,37 @@ function initOnLoad()
 				setResp('parte2_q4_a',$('parte2_q4_a').value);
 			}
 		});
-			
+
 		Event.observe('parte2_q4_b', 'change', function(evento){
-			
+
 			if ($('parte2_q4_b').value != ""){
 				setResp('parte2_q4_b',$('parte2_q4_b').value);
 			}
 		});
-		
+
 		Event.observe('parte2_q4_c', 'change', function(evento){
 			if ($('parte2_q4_c').value != ""){
 				setResp('parte2_q4_c',$('parte2_q4_c').value);
 			}
 		});
-		
+
 		Event.observe('parte2_q5_a', 'change', function(evento){
 			if ($('parte2_q5_a').value != ""){
 				setResp('parte2_q5_a',$('parte2_q5_a').value);
 			}
 		});
-		
+
 		Event.observe('parte2_q5_b', 'change', function(evento){
 			if ($('parte2_q5_b').value != ""){
 				setResp('parte2_q5_b',$('parte2_q5_b').value);
 			}
 		});
-		
+
 		Event.observe('parte2_q6_a', 'change', function(evento){
 			if ($('parte2_q6_a').value != ""){
 				setResp('parte2_q6_a',$('parte2_q6_a').value);
 			}
-		});		
+		});
 
 
 		//Geogebra
@@ -265,7 +267,7 @@ function initOnLoad()
 						applet.setCoordSystem(-0.3, 3.53, -30, applet.getValue("yMaximoA") + 20);
 					}
 				}
-		
+
 	break;
 	case 2:
 		if (($('XXX'))&&($('tanto1'))&&($('tanto2'))){
@@ -325,7 +327,7 @@ function tudoCerto()
 
 
 
-function corrige_q_1_a(valor)	
+function corrige_q_1_a(valor)
 {
 	var resp = (compararFuncao(valor[0],'50*x'));
 	if (resp == 'true'){
@@ -336,17 +338,17 @@ function corrige_q_1_a(valor)
 	}
 }
 
-function corrige_q_1_b(valor)	
+function corrige_q_1_b(valor)
 {
 	setResp('parte1_q1_b',valor[0]);
 	return [valor[0]?true:null, valor[1]?false:null, valor[2]?false:null];
 }
 
-function corrige_q_2_a(valor)	
+function corrige_q_2_a(valor)
 {
 	var applet = document.ggbApplet;
 	var resp =  (compararFuncao(valor[0],'pi-x'));
-	
+
 	if (resp == 'true'){
 		setResp('parte1_q2_a',valor[0]);
 		applet.setLabelVisible("beta", true);
@@ -355,18 +357,18 @@ function corrige_q_2_a(valor)
 		return [false];
 	}
 }
-function corrige_q_2_b(valor)	
+function corrige_q_2_b(valor)
 {
 	var applet = document.ggbApplet;
 
-	applet.setErrorDialogsActive(false);	
+	applet.setErrorDialogsActive(false);
 	var expressao = valor[0];
 	for (var i = 0; i < expressao.length/3; i++){
 		expressao = expressao.replace(/sen/i,"sin");
 		expressao = expressao.replace(/,/i,".");
 	}
 	expressao = expressao.replace("X","x");
-	
+
 	var resp = (compararFuncao(expressao,'100*cos(x/2)'));
 	if (resp == 'true'){
 		setResp('parte1_q2_b',expressao);
@@ -376,7 +378,7 @@ function corrige_q_2_b(valor)
 	}
 }
 
-function corrige_q_3_a(valor)	
+function corrige_q_3_a(valor)
 {
 	var expressao = valor[0];
 	for (var i = 0; i < expressao.length/3; i++){
@@ -395,11 +397,11 @@ function corrige_q_3_a(valor)
 	}
 }
 
-function corrige_q_3_b(valor)	
+function corrige_q_3_b(valor)
 {
 	var applet = document.ggbApplet;
 
-	applet.setErrorDialogsActive(false);	
+	applet.setErrorDialogsActive(false);
 	var expressao = valor[0];
 	for (var i = 0; i < expressao.length/3; i++){
 		expressao = expressao.replace(/sen/i,"sin");
@@ -407,7 +409,7 @@ function corrige_q_3_b(valor)
 	}
 	expressao = expressao.replace("X","x");
 	var resp = compararFuncao(expressao,'100*cos(x/2)/'+getResp('a2p1_vel_agua'));
-	
+
 	if (resp == 'true'){
 		setResp('parte1_q3_b',valor[0]);
 		setResp('q3b', valor[0]);
@@ -418,10 +420,10 @@ function corrige_q_3_b(valor)
 }
 
 var resp4a = 0;
-function corrige_q_4_a(valor)	
+function corrige_q_4_a(valor)
 {
 	var applet = document.ggbApplet;
-	
+
 	var x_derivada = applet.getXcoord("pDerivada");
 	var xMaximo = applet.getValue("Xraiz");
 	var yMaximo = applet.getValue("maximo");
@@ -445,7 +447,7 @@ function corrige_q_4_a(valor)
 			if (yMaximo > applet.getValue("fZero")){
 				resp4a = 2;
 			if (((valor[0] - yMaximo) < 0.26)&&((valor[0] - yMaximo) > - 0.26)){
-				
+
 				return [true];
 			}else{
 				return [false];
@@ -457,7 +459,7 @@ function corrige_q_4_a(valor)
 		}
 }
 
-function corrige_q_4_b(valor)	
+function corrige_q_4_b(valor)
 {
 	var applet = document.ggbApplet;
 	var xMaximo = applet.getValue("Xraiz");
@@ -480,10 +482,10 @@ function corrige_q_4_b(valor)
 			}
 		}
 	if (resp4a == 0){
-			if (valor[0] == '0'){ 
+			if (valor[0] == '0'){
 				return [true];
 			}
-			else{ 
+			else{
 				return [false]
 			}
 		}else{
@@ -507,7 +509,7 @@ function corrige_q_4_c(valor){
 	expressao = expressao.replace(",",".");
 	valor[0] = expressao;
 	setResp('parte2_q4_c',valor[0]);
-	
+
 		if (applet.getValue("fZero") > applet.getValue("fPi")){
 			if (yMaximo > applet.getValue("fZero")){
 			resp4a = 2;
@@ -522,10 +524,10 @@ function corrige_q_4_c(valor){
 			}
 		}
 	if (resp4a == 0){
-			if (valor[0] == '0'){ 
+			if (valor[0] == '0'){
 				return [true];
 			}
-			else{ 
+			else{
 				return [false]
 			}
 		}else{
@@ -541,7 +543,7 @@ function corrige_q_4_c(valor){
 	}
 }
 
-function corrige_q_5_a(valor)	
+function corrige_q_5_a(valor)
 {
 	var applet = document.ggbApplet;
 	var expressao = valor[0];
@@ -555,7 +557,7 @@ function corrige_q_5_a(valor)
 	}
 }
 
-function corrige_q_5_b(valor)	
+function corrige_q_5_b(valor)
 {
 	var applet = document.ggbApplet;
 	var expressao = valor[0];
@@ -571,7 +573,7 @@ function corrige_q_5_b(valor)
 
 var resp = -1;
 
-function corrige_q_6_a(valor)	
+function corrige_q_6_a(valor)
 {
 	var applet = document.ggbApplet;
 	setResp('parte2_q6_a',valor[0]);
@@ -586,7 +588,7 @@ function corrige_q_6_a(valor)
 	}
 }
 
-function corrige_q_6_b(valor)	
+function corrige_q_6_b(valor)
 {
 	var applet = document.ggbApplet;
 
@@ -606,7 +608,7 @@ function corrige_q_6_b(valor)
 	}else{
 		return [valor[0]?false:null, valor[1]?false:null, valor[2]?false:null,  valor[3]?false:null,  valor[4]?true:null];
 	}
-	
+
 }
 
 
@@ -653,15 +655,15 @@ function selecionou_q_3_a(){
 	applet.setVisible("e", true);
 	applet.setVisible("beta", false);
 }
-function definirAngulos()	
+function definirAngulos()
 {
 }
 
-function largada()	
+function largada()
 {
 }
 
-function recomecar()	
+function recomecar()
 {
 	var applet = document.ggbApplet;
 	applet.stopAnimation();
@@ -681,8 +683,8 @@ function set_inicial(){
 	$('init01').value = init01;
 	$('init02').value = init02;
 	if  ((init01 < 0.5)||(init01 >10)||(init02 < 0.1)||(init02 > 2)){
-	
-	var Perg =  
+
+	var Perg =
 		{
 			conteudo: 'O software aceita apenas valores entre 0.1 e 2 m/s para a velocidade nadando e 0.5 e 10 para a velocidade correndo.',
 			layout: ['seta_baixo','direita'],
@@ -693,7 +695,7 @@ function set_inicial(){
 		var tmp = new PopupCallback($('link_valor_inicial'), Perg.conteudo,Perg.layout, Perg.largura, Perg.callback, Perg.respostas);
 		tmp.abre();
 		Event.stopObserving($('link_valor_inicial'),'click');
-		//$('link_valor_inicial').writeAttribute({onclick: 'javascript:set_inicial();'});		
+		//$('link_valor_inicial').writeAttribute({onclick: 'javascript:set_inicial();'});
 		Event.observe($('link_valor_inicial'), 'click', set_inicial);
 
 
@@ -740,7 +742,7 @@ function unset_inicial()
 			setResp('a2p1_vel_terra', 0);
 			setResp('a2p1_vel_agua', 0);
 		}
-		 permiteContinuar(false);    
+		 permiteContinuar(false);
 		setResp('automacao_atividade_2_parte_1',0);
 		gerencia_partes();
 
