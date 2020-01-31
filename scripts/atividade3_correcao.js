@@ -1,3 +1,4 @@
+flash = 1;
 function compararFuncao(func1,func2) {
 	if ((func1 == '')||(func2 == '')){
 		return [false];
