@@ -3,12 +3,14 @@
 <html xmlns = "http://www.w3.org/1999/xhtml"  xml:lang = "pt-br"  lang = "pt-br">
 	<head>
 		<script type="text/javascript" src="scripts/protoaculous.js"></script>
+		<script type="text/javascript" src="scripts/salvaLocal.js"></script>
 		<script type="text/javascript" src="scripts/conteudovisualizar.js"></script>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
-		<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />		<style type="text/css" media="screen, projection">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
+		<style type="text/css" media="screen, projection">
 		*
 		{
-			font: 12px/15px "Lucida Sans Unicode", "Lucida Sans", "Bitstream Vera Sans", Sans-serif;
+			font: 15px/18px "Fira Sans", sans-serif;
 			list-style-type: none;
 			margin: 0;
 			padding: 0;
@@ -31,7 +33,7 @@
 		em { font-style: italic; }
 
 
-		/* cabeçalho e textos, corpo mais geral do site */ 
+		/* cabeçalho e textos, corpo mais geral do site */
 
 
 		#container
@@ -73,19 +75,19 @@
 			padding: 10px 10px 10px 0px;
 		}
 
-		#conteudo #esquerda h2 {font-family: "Lucida Sans", "Lucida Sans Unicode", "Bitstream Vera Sans", Sans-serif; font-size: 16px; font-weight: bold; margin-bottom: 5px;}
-		#conteudo #esquerda h3 {font-family: "Lucida Sans", "Lucida Sans Unicode", "Bitstream Vera Sans", Sans-serif; font-size: 11px; font-weight: 600; margin-top: 20px;}
-		#conteudo #esquerda p {font-size: 11px; font-family: "Lucida Sans", "Lucida Sans Unicode", "Bitstream Vera Sans", Sans-serif; font-style: italic; width:392px;}
+		#conteudo #esquerda h2 {font-family: "Fira Sans", sans-serif; font-size: 18px; font-weight: bold; margin-bottom: 5px;}
+		#conteudo #esquerda h3 {font-family: "Fira Sans", sans-serif; font-size: 13px; font-weight: 600; margin-top: 20px;}
+		#conteudo #esquerda p {font-size: 13px; font-family: "Fira Sans", sans-serif; font-style: italic; width:392px;}
 		#conteudo #esquerda a {font-size: 11px; color: RGB(0,0,170); text-decoration: underline;}
 
 		#conteudo #esquerda #sobre { border-top: 2px solid RGB(238, 52, 36); width: 390px; padding-top:20px;  }
-		#conteudo #esquerda #sobre h2 {font-size: 16px; font-family: "Lucida Sans", "Lucida Sans Unicode", "Bitstream Vera Sans", Sans-serif; font-weight: bold; margin-bottom: 20px; }
+		#conteudo #esquerda #sobre h2 {font-size: 18px; font-family: "Fira Sans", sans-serif; font-weight: bold; margin-bottom: 20px; }
 		#conteudo #esquerda #sobre p {margin-bottom:15px; width:392px; font-style: normal; font-size: 12px;}
 
 		.desabilitado {text-decoration: none !important; background: RGB(245, 248, 244) !important;}
 		.desabilitado:visited { background: RGB(245, 248, 244) !important;}
 		.desabilitado:hover   { color: black !important; background: RGB(245, 248, 244) !important; }
-		
+
 		#conteudo #direita
 		{
 			float:left;
@@ -96,7 +98,7 @@
 		}
 
 		#conteudo #direita h2 {font-size: 16px; line-height:15px; margin-bottom: 5px;}
-		#conteudo #direita h3 {font-family: "Lucida Sans", "Lucida Sans Unicode", "Bitstream Vera Sans", Sans-serif; font-size: 11px; line-height:15px; font-weight: 600; margin-top: 20px;}
+		#conteudo #direita h3 {font-family: "Fira Sans", sans-serif; font-size: 13px; line-height:15px; font-weight: 600; margin-top: 20px;}
 		#conteudo #direita p {font-size: 11px; line-height:15px;}
 
 
@@ -125,9 +127,9 @@
 		.a_direita {float: right; }
 		.sem_padding {padding: 0 !important; }
 		.espaco_superior {margin-top:15px;}
-		
-		
-		#conteudo #esquerda a 
+
+
+		#conteudo #esquerda a
 		{
 			display: block;
 			padding: 4px;
@@ -135,21 +137,21 @@
 			background: #ffc;
 			color: black;
 		}
-		
+
 		#conteudo #esquerda a:visited { background: RGB(245, 248, 244); }
 		#conteudo #esquerda a:hover   { color: #fff; background: RGB(238, 52, 36); }
-		
-		
+
+
 		#conteudo #esquerda #sobre a
 		{
 			display: inline;
-			font-size: 12px;
-			font-family: "Lucida Sans", "Lucida Sans Unicode", "Bitstream Vera Sans", Sans-serif;
+			font-size: 14px;
+			font-family: "Fira Sans", sans-serif;
 			background: none;
 			padding: 0;
 			margin: 0;
 		}
-		
+
 		#conteudo #esquerda #sobre a:visited { color: #111; }
 		#conteudo #esquerda #sobre a:hover   { color: #fff; background: RGB(238, 52, 36);  text-decoration: none }
 
@@ -159,18 +161,18 @@
 			color: white !important;
 			font-weight: bold;
 		}
-		
+
 		#patrocinio .a_esquerda p *
-		{	
-			font-size: 11px;
+		{
+			font-size: 13px;
 		}
-		
+
 		em
 		{
-			font-family: "Lucida Sans", "Lucida Sans Unicode", "Bitstream Vera Sans", Sans-serif;
+			font-family: "Fira Sans", sans-serif;
 			font-style: italic;
 		}
-		
+
 		hr
 		{
 			border-top: 2px solid RGB(238, 52, 36);
@@ -180,14 +182,14 @@
 		</style>
 
 
-	
+
 		<title>
 			Experimento
 		</title>
 	</head>
 	<body>
-		
-		
+
+
 		<div id="container">
 			<div id="cabecalho">
 				<h1>
@@ -205,7 +207,7 @@
 						document.write('<a href="' + site_projeto + '">');
 					</script>
 						<img id="projeto" alt="logo da Matemática Multimídia" src="imgs/logo.png" />
-					<script>					
+					<script>
 						document.write('</a>');
 					</script>
 					<a href="http://www.unicamp.br">
@@ -223,15 +225,15 @@
 					</p>
 					<hr />
 					<h2>Os documentos</h2>
-					
+
 					<div id="impressao"></div>
 					<div id="visualizacao"></div>
 
 					<br class="limpador" />
-					
+
 					<div id="sobre">
 						<h2>Sobre o M³ &ndash; Matemática Multimídia</h2>
-						<p> 
+						<p>
 							<script type="text/javascript">
 								document.write(sobre_projeto);
 							</script>
@@ -245,11 +247,11 @@
 				</div>
 				<div id="ficha_tecnica"></div>
 			</div>
-			
+
 			<br class="limpador" />
 			<div id="patrocinio">
 				<div class="a_esquerda">
-					
+
 				</div>
 				<div class="a_esquerda">
 					<p>
@@ -296,17 +298,17 @@
 				</div>
 				<br class="limpador" />
 			</div>
-			
+
 		</div>
 
 	</body>
-	
+
 	<script type="text/javascript">
 		document.title = nome_do_software;
 		var titulo_impressao = 0;
 		var titulo_visualizacao = 0;
 		var ficha_tecnica = 0;
-		
+
 		Impressao.each(function(item)
 		{
 			dados = item.value;
@@ -319,7 +321,7 @@
 			pai.insert(new Element('a', {id: dados.id, href: dados.arquivo}).update(dados.titulo));
 			pai.insert(new Element('p', {id: 'conteudo_'+dados.id}).update(dados.conteudo));
 		});
-		
+
 		Visualizacao.each(function(item)
 		{
 			dados = item.value;
@@ -332,7 +334,7 @@
 			pai.insert(new Element('a', {href: dados.arquivo}).update(dados.titulo));
 			pai.insert(new Element('p').update(dados.conteudo));
 		});
-		
+
 		FichaTecnica.each(function(item)
 		{
 			dados = item.value;
@@ -345,13 +347,13 @@
 			div_ficha.insert(new Element('h3').update(dados.titulo));
 			div_ficha.insert(new Element('p').update(dados.conteudo));
 		});
-		
+
 		if (div_ficha)
 		{
 			var pai = $('ficha_tecnica');
 			pai.insert(div_ficha);
 		}
-		
+
 		var endereco = window.location;
 		endereco = endereco.toString();
 		if (endereco.substr(0,7) == 'http://' || endereco.substr(0,8) == 'https://')
@@ -362,7 +364,7 @@
 			$('software').addClassName('desabilitado');
 			$('conteudo_software').update('Você deve ter aberto este arquivo html diretamente. O software deve ser visualizado de um servidor na internet ou utilizando o programa AcessarProdutos fornecido com ele.');
 		}
-		
+
 	</script>
 
 </html>

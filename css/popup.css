@@ -18,7 +18,7 @@ a { text-decoration: underline;}
 .desesperados {position: fixed; top: 200px; left:200px;}
 .aviso .popup{ background: #fff url(../img_layout/exclamacao.gif) no-repeat 0 center; border: 2px solid RGB(210, 35,42) !important; padding-left:30px !important; font-size: 11px !important; line-height: 14px !important;}
 .popup_container .popup{ background-color: #fff; border: 2px solid black; padding: 10px; }
-.desesperados .popup{ background-color: RGB(255,255,48) !important; border: 2px solid black; padding: 10px; }
+.desesperados .popup{ background-color: RGB(191,255,128) !important; border: 2px solid black; padding: 10px; }
 .desesperados p, .desesperados div {margin-bottom:10px; }
 .popup_container .popup a{text-decoration: underline; cursor: pointer;}
 .popup_container .seta_baixo

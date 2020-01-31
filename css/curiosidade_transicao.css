@@ -1,6 +1,6 @@
 *
 {
-	font: 13px/16px "Lucida Sans Unicode","Lucida Sans", "Bitstream Vera Sans", "DejaVu Sans";
+	font: 15px/18px "Fira Sans", sans-serif;
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
@@ -54,7 +54,7 @@ a { text-decoration: underline; }
 	height: auto;
 	margin-left: -20px;
 	width: 100%;
-	z-index: 1;	
+	z-index: 1;
 }
 
 
@@ -96,7 +96,7 @@ a { text-decoration: underline; }
 	line-height: 16px !important;
 	width: 700px;
 	text-align: left !important;
-	
+
 }
 
 #voltar
@@ -201,7 +201,7 @@ a { text-decoration: underline; }
 	width: 240px;
 	text-align: right;
 	margin-top: 5px;
-	
+
 }
 
 #links a
@@ -258,7 +258,7 @@ a { text-decoration: underline; }
 	z-index: 2;
 }
 
-.curiosidade_atual 
+.curiosidade_atual
 {
 	font-size: 18px;
 	width: 31px;
@@ -383,7 +383,7 @@ a { text-decoration: underline; }
 .apontador
 {
 	padding: 0 3px 0 7px;
-	background-color: RGB(255, 254,44); 
+	background-color: RGB(255, 254,44);
 	border-left: 1px solid #000;
 	border-top: 1px solid #000;
 	border-bottom: 1px solid #000;
@@ -509,7 +509,7 @@ a { text-decoration: underline; }
 	width: 245px;
 	height: 261px;
 	background: url(../img_layout/calc.gif) no-repeat;
-	position: fixed; 
+	position: fixed;
 	bottom: 58px;
 	left: 39px;
 	z-index: 1201;

@@ -23,9 +23,9 @@ function updateListener_a1_p1(objName) {
 
 // Quando terminarmos de animar, definimos o valor exato dos dois pontos
 function func_stop() {
-	
+
 	var applet = document.ggbApplet;
-	
+
 	if (applet.isAnimationRunning()) {
 		applet.stopAnimation();
 		largadas++;
@@ -35,7 +35,7 @@ function func_stop() {
 		}
 		applet.setAnimating('kk',false);
 	}
-	
+
 }
 
 function atualizatabela(){
@@ -63,25 +63,25 @@ function atualizatabela(){
 }
 
 function atualizatabela2(){
-	
+
 	var applet = document.ggbApplet;
 	var aux = ((largadas%5) + 2);
 	$('parte2_q4_a_' + aux + '1').value = (applet.getValue("angA"));
 	$('parte2_q4_a_' + aux + '2').value = (applet.getValue("angB"));
-	
+
 	if ((applet.getXcoord("A")) < (applet.getXcoord("B"))){
 		$('parte2_q4_a_' + aux + '3').value = "A";
 	}else{
 		$('parte2_q4_a_' + aux + '3').value = "B";
 	}
-	
-	
+
+
 }
 
 var ggb = 0;
-var flash = 0;
+var flash = 1;
 Event.observe(document, 'flash:SalvaLocal', function(ev){
-	flash = 1;	
+	flash = 1;
 })
 
 function ggbOnInit(){
@@ -98,7 +98,7 @@ Event.observe(window, 'load', function(){
 		$('largada').trava();
 		$('init01').removeAttribute('disabled');
 		$('init02').removeAttribute('disabled');
-	
+
 		Event.observe('link_continuar', 'focus', function(evento){
 			if(($('link_continuar').className) == 'ativado'){
 				setResp('atividade_1',3);
@@ -111,19 +111,19 @@ Event.observe(window, 'load', function(){
 
 function executa(){
 	if (flash){
-		if ((getResp('atividade_1') == 1) || (getResp('atividade_1') == 'undefined')){
+		if ((getResp('atividade_1') == 1) || (getResp('atividade_1') == null)){
 			setResp('atividade_1',2);
 		}
 		if (PosicaoAtual.Parte == 0){
 		if(getResp('a1_box_parte1_q1') != 'undefined'){
-		
+
 			$('parte1_q1_a_' + getResp('a1_box_parte1_q1')).setChecked(true);
-			
+
 		}
 		if(getResp('a1_box_parte1_q2') != 'undefined'){
 			$('parte1_q2_a_' + getResp('a1_box_parte1_q2')).setChecked(true);
 		}
-			
+
 		if(getResp('a1_box_parte1_q3') != 'undefined'){
 			$('parte1_q3_a_' + getResp('a1_box_parte1_q3')).setChecked(true);
 		}
@@ -143,7 +143,7 @@ function tudoCerto()
 
 
 
-function corrige_q_1_a(valor)	
+function corrige_q_1_a(valor)
 {
 	for (var i = 0; i <= valor.length; i++){
 		if (valor[i] == true) setResp('a1_box_parte1_q1', i+1);
@@ -151,7 +151,7 @@ function corrige_q_1_a(valor)
 	return [valor[0]?true:null, valor[1]?false:null, valor[2]?false:null];
 }
 
-function corrige_q_2_a(valor)	
+function corrige_q_2_a(valor)
 {
 	for (var i = 0; i <= valor.length; i++){
 		if (valor[i] == true) setResp('a1_box_parte1_q2', i+1);
@@ -159,7 +159,7 @@ function corrige_q_2_a(valor)
 	return [valor[0]?false:null, valor[1]?true:null, valor[2]?false:null];
 }
 
-function corrige_q_3_a(valor)	
+function corrige_q_3_a(valor)
 {
 	for (var i = 0; i <= valor.length; i++){
 		if (valor[i] == true) setResp('a1_box_parte1_q3', i+1);
@@ -167,7 +167,7 @@ function corrige_q_3_a(valor)
 	return [valor[0]?true:null, valor[1]?false:null, valor[2]?false:null];
 }
 
-function corrige_q_4_a(valor)	
+function corrige_q_4_a(valor)
 {
 	var diferentes = 0;
 	var acertos = 0;
@@ -180,7 +180,7 @@ function corrige_q_4_a(valor)
 				}
 		}
 	}
-	
+
 	if (minhasLargadas.length >= 5 ){
 		return [true];
 	}else{
@@ -188,9 +188,9 @@ function corrige_q_4_a(valor)
 	}
 }
 
-function definirAngulos()	
+function definirAngulos()
 {
-	
+
 	var applet = document.ggbApplet;
 	var valor01 = Number($('valor01').value).toFixed(2);
 	if (!isNaN(valor01)){
@@ -237,9 +237,9 @@ function definirAngulos()
 	}
 }
 
-function largada()	
+function largada()
 {
-	
+
 	var applet = document.ggbApplet;
 	if (!applet.isAnimationRunning()) {
 		definirAngulos();
@@ -259,7 +259,7 @@ function largada()
 	}
 }
 
-function recomecar()	
+function recomecar()
 {
 	var applet = document.ggbApplet;
 	applet.stopAnimation();
@@ -278,8 +278,8 @@ function set_inicial(){
 	var init02 = $('init02').value;
 	init02 = init02.replace(",",".");
 	if  ((init01 < 0.5)||(init01 > 10)||(init02 < 0.1)||(init02 > 2)){
-	
-	var Perg =  
+
+	var Perg =
 		{
 			conteudo: 'O software aceita apenas valores entre 0.1 e 2 m/s para a velocidade nadando e 0.5 e 10 para a velocidade correndo.',
 			layout: ['seta_baixo','direita'],
@@ -290,7 +290,7 @@ function set_inicial(){
 		var tmp = new PopupCallback($('link_valor_inicial'), Perg.conteudo,Perg.layout, Perg.largura, Perg.callback, Perg.respostas);
 		tmp.abre();
 		Event.stopObserving($('link_valor_inicial'),'click');
-		//$('link_valor_inicial').writeAttribute({onclick: 'javascript:set_inicial();'});		
+		//$('link_valor_inicial').writeAttribute({onclick: 'javascript:set_inicial();'});
 		Event.observe($('link_valor_inicial'), 'click', set_inicial);
 
 	}else{

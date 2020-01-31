@@ -6,7 +6,7 @@
 .popup .notas p { margin-bottom: 10px; width: auto !important;}
 .popup .notas .titulo { font-weight: bold;}
 .popup .notas .texto { max-height: 250px !important; overflow: auto; margin-bottom:20px; width: auto !important; padding: 0 !important;}
-.popup .notas .fechar_popup { position: absolute; right:10px; bottom:10px; font: 13px/16px "Lucida Sans Unicode", "Lucida Sans"; text-decoration: underline; }
+.popup .notas .fechar_popup { position: absolute; right:10px; bottom:10px; font: 15px/18px "Fira Sans", sans-serif; text-decoration: underline; }
 .popup .notas #referencias { right: 5px; position: absolute; top: 5px;}
 .popup .notas #referencias a { float:left; text-decoration: none; background-color: #AEBED5; color: #000; width: 20px; height: 20px; line-height: 20px; text-align: center; margin-right: 2px;}
 .popup .notas #referencias a.selecionada { background-color: #3248B5; color: #FFF;}

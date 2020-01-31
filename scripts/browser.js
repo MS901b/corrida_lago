@@ -108,10 +108,16 @@ var BrowserDetect = {
 			   identity: "iPhone/iPod"
 	    },
 		{
-			string: navigator.platform,
-			subString: "Linux",
-			identity: "Linux"
-		}
+			string: navigator.userAgent,
+			subString: "Android",
+			identity: "Android"
+		},
+		{
+				string: navigator.platform,
+	 			subString: "Linux",
+	 			identity: "Linux"
+	  }
+
 	]
 
 };

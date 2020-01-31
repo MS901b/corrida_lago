@@ -1,6 +1,6 @@
 *
 {
-	font: 13px/16px "Lucida Sans Unicode","Lucida Sans", "Bitstream Vera Sans", "DejaVu Sans";
+	font: 15px/18px "Fira Sans", sans-serif;
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
@@ -35,7 +35,7 @@ sub, sup {font-size: 10px;}
 	text-indent:-9999px;
 	width:15px;
 	height:15px;
-	
+
 }
 
 .esperando .input_radio .radio { background-position: -30px 0 !important; }
@@ -43,8 +43,6 @@ sub, sup {font-size: 10px;}
 .input_radio .radio { margin-left:30px; margin-bottom: 5px; margin-right: 5px; }
 #questoes .questao .input_radio .incorreto .radio { background-color:transparent !important;}
 #questoes .questao .input_radio .correto .radio { background-color:transparent !important;}
-
-
 
 .check {
 	background: transparent url(../img_layout/check.gif) no-repeat scroll -20px 0;
@@ -55,7 +53,7 @@ sub, sup {font-size: 10px;}
 	width:20px;
 	height:20px;
 	margin-right: 10px;
-	
+
 }
 
 .check_checado { background-position: 0 0; }
@@ -64,14 +62,14 @@ sub, sup {font-size: 10px;}
 
 /* definições básicas */
 
-.ancora 
+.ancora
 {
 	list-style-type: none !important;
 	margin: 0 !important;
 	padding: 0 !important;
 	text-decoration: none !important;
 	border: none !important;
-}	
+}
 
 .botao {height:21px; font-size: 11px; margin-right:7px; padding-bottom: 2px; text-align:center; border: 2px outset #CCC;}
 .botao:active{border: 2px inset #CCC;}
@@ -102,7 +100,7 @@ sub, sup {font-size: 10px;}
 	height: auto;
 	margin-left: -20px;
 	width: 100%;
-	z-index: 1;	
+	z-index: 1;
 }
 
 #fichas
@@ -121,8 +119,6 @@ sub, sup {font-size: 10px;}
 .texto_solto { width: 380px; margin: 0 20px;}
 .texto_solto p { margin-bottom: 20px;}
 .texto_solto  h2{ font-size: 13px; margin-bottom: 15px; margin-left: 0px; font-weight: bold;}
-
-
 
 .partes
 {
@@ -145,20 +141,20 @@ sub, sup {font-size: 10px;}
 
 .parte_feita a
 {
-	
+
 	background: url(../img_layout/parte_feita.gif) no-repeat;
 	z-index: 3;
 }
 
 .parte_quase_feita a
 {
-	
+
 	background: url(../img_layout/parte_quase_feita.gif) no-repeat;
 	z-index: 3;
 }
 
 
-.parte_atual 
+.parte_atual
 {
 	font-size: 18px;
 	width: 31px;
@@ -350,7 +346,7 @@ sub, sup {font-size: 10px;}
 	width: 240px;
 	text-align: right;
 	margin-top: 5px;
-	
+
 }
 
 #links a
@@ -406,7 +402,6 @@ sub, sup {font-size: 10px;}
 	margin: 0 20px 20px 40px;	min-height: 20px;
 }
 
-
 .instrucoes p
 {
 	background:  url(../img_layout/instrucoes.gif) no-repeat;
@@ -417,6 +412,7 @@ sub, sup {font-size: 10px;}
 .msg_valor_inicial * {color: black !important; font-style: italic;}
 .msg_valor_inicial  {margin: -2px -18px 10px -10px; border-bottom: 2px dotted #FFF; padding:0 0 5px 40px; height: 20px; }
 .msg_valor_inicial .depois {color: #a5a5a5 !important;}
+
 
 .valor_inicial .item{background: url(../img_layout/seta.gif) no-repeat 10px 0;}
 .valor_inicial .item.sem_titulo{margin-top: 10px;}
@@ -537,13 +533,14 @@ sub, sup {font-size: 10px;}
 
 /* Cada item de questão*/
 
-#questoes .questao .colchao{margin: 10px 20px 10px 10px; position: relative;}
+#questoes .questao .colchao{margin: 10px 20px 10px 10px;}
 
+#questoes .questao .questao_item_hack{border: 2px solid white; margin: -2px 0px 0px -2px; width: 380px; float: left; position: relative; cursor: pointer;}
 #questoes .questao .questao_item{border: 2px solid white; margin: -2px 0px 0px -2px; width: 380px; float: left; position: relative; cursor: pointer;}
 #questoes .questao .questao_item:hover{border: 2px dashed black; z-index: 10;}
 #questoes .questao .questao_item.selecionada:hover{border: 2px solid black !important; z-index: 10;}
 
-#questoes .questao .grande{width: 763px !important;}
+#questoes .questao .grande{width: 763px !important; float: none;}
 
 #questoes .questao .borda_esquerda
 {
@@ -626,13 +623,13 @@ p .formula
 .selecionada .esperando .matriz .infe_dir {background: url(../img_layout/matriz_cd22_sel.gif) no-repeat !important; }
 
 
+
 #questoes .questao .input_texto input{ width: 306px; border: 1px solid black; padding: 0 5px;}
 #questoes .questao .input_texto .input_normal{ width: 64px; border: 1px solid black; padding: 0 2px; margin: 0 20px 0 0 !important; height: 20px; font-size: 11px;}
 #questoes .questao .input_texto .input_grande{  width: 118px; border: 1px solid black; padding: 0 2px; margin: 0px !important; height: 20px; font-size: 11px;}
 #questoes .questao .input_texto .input_pequeno{ width: 49px; border: 1px solid black; padding: 0 2px; margin-left: 0px !important; height: 20px; font-size: 11px;}
 #questoes .questao .input_texto .com_quebra{ float: left; }
 #questoes .questao .input_texto .label_multiplo{ float:left; width: 70px; font-size: 11px; padding-right: 10px; height: 18px;}
-#questoes .questao .input_texto div{  position: relative; }
 #questoes .questao .correto input{background: #beff73 url(../img_layout/certinho.gif) bottom right no-repeat;}
 #questoes .questao .incorreto input {background: #ffb47f url(../img_layout/erradinho.gif) bottom right no-repeat;}
 
@@ -640,13 +637,17 @@ p .formula
 #questoes .questao .input_texto .sem_margem {margin: 0 !important;}
 .sem_margem {margin: 0 !important;}
 
-#questoes .questao .input_radio input{ margin-right: 5px;}
+#questoes .questao .input_radio input{ margin-right: 5px; border: 0 !important; height: auto; background: none !important;}
 #questoes .questao .input_radio label span{ padding: 0 3px; margin-right: 12px;}
 #questoes .questao .questao_item.grande .input_radio div{ width: 648px; float: left;}
 #questoes .questao .input_radio .correto label{background: url(../img_layout/certinho.gif) bottom right no-repeat; }
 #questoes .questao .input_radio .correto span{background-color: #beff73;}
 #questoes .questao .input_radio .incorreto label{background: url(../img_layout/erradinho.gif) bottom right no-repeat; }
 #questoes .questao .input_radio .incorreto span{background-color: #ffb47f;}
+
+#questoes .questao .input_check input{ margin-right: 5px; border: 0 !important; height: auto !important; background: none !important;}
+#questoes .questao .input_check label span{ padding: 0 3px; margin-right: 12px;}
+#questoes .questao .questao_item.grande .input_check div{ width: 648px; float: left;}
 
 #questoes .questao .texto p{ margin-left: 30px; width: 318px !important;}
 
@@ -675,8 +676,8 @@ p .formula
 	z-index: 10;
 	position:absolute;
 	background: url(../img_layout/interrogacao.gif) top center no-repeat;
-	margin-right: -30px;
-	margin-top: -5px;
+	margin-right:-10px;
+	margin-top:5px;
 	width: 20px;
 	height: 20px;
 	cursor: help;
@@ -704,7 +705,7 @@ p .formula
 
 #questoes .questao .selecionada .ajuda:hover, #questoes .questao .selecionada .ajuda.ativo
 {
-	background-position: bottom center; 
+	background-position: bottom center;
 }
 
 
@@ -864,7 +865,7 @@ p .formula
 	width: 245px;
 	height: 261px;
 	background: url(../img_layout/calc.gif) no-repeat;
-	position: fixed; 
+	position: fixed;
 	bottom: 58px;
 	left: 39px;
 	z-index: 1201;
@@ -890,7 +891,7 @@ p .formula
 
 #link_continuar.ativado
 {
-	background: url(../img_layout/continuar-amarelo-ativado.gif) no-repeat;	
+	background: url(../img_layout/continuar-amarelo-ativado.gif) no-repeat;
 }
 
 #rodape
@@ -909,8 +910,9 @@ p .formula
 
 /* SLIDER */
 
-.slider{height: 2px; width: 348px; position: relative; margin: 25px 0 10px 27px }
-.slider .face {background-color: black; position: absolute; top: 0; height: 2px; width: 318px; margin: 0 15px;}
+.slider{height: 2px !important; width: 348px !important; position: relative !important; margin: 25px 0 10px 27px !important; }
+.questao .slider{margin-left:-10px !important;}
+.slider .face {background-color: black !important; position: absolute !important; top: 0 !important; height: 2px !important; width: 318px !important; margin: 0 15px !important;}
 .slider .handle{
 	height: 35px !important;
 	width: 30px;
@@ -934,38 +936,31 @@ p .formula
 
 .spinner{border: 1px solid black; height: 20px; float: left;}
 .spinner *{float: left; height: 20px; font-style: italic;}
-.spinner input{padding: 0 2px;}
-.spinner .up{background: url(../img_layout/spin-up.gif) center center no-repeat; width: 20px; cursor: pointer; border-left: 1px solid black;}
-.spinner .down{background: url(../img_layout/spin-down.gif) center center no-repeat; width: 20px; cursor: pointer; border-left: 1px solid black;}
+.spinner input{padding: 0 2px !important; margin: 0 !important; border: none !important;}
+.spinner .up{background: white url(../img_layout/spin-up.gif) center center no-repeat; width: 20px; cursor: pointer; border-left: 1px solid black;}
+.spinner .down{background: white url(../img_layout/spin-down.gif) center center no-repeat; width: 20px; cursor: pointer; border-left: 1px solid black;}
 .spinner.desabilitado .up, .spinner.desabilitado .down, .spinner .press{background-color: #DDD;}
-
-
-
 
 /* SELECT */
 
-.select{border: 1px solid black; height: 20px; float: left;}
+.select{border: 1px solid black; height: 20px; float: left}
 .select span{display: block; height: 20px; padding: 0 2px; line-height: 20px;}
-.select span.selecionado{background-color: black; color: white;}
-.select .value{float: left;}
-.select .seta{background: url(../img_layout/spin-down.gif) center center no-repeat; width: 20px; height: 20px; cursor: pointer; border-left: 1px solid black; float: right;}
-.select .opcoes{position: absolute; border: 1px solid black; background-color: white;}
-.select .opcoes span{display: block; cursor: pointer;}
+.select .seta{float:none; margin:0; background: url(../img_layout/spin-down.gif) center center no-repeat; width: 20px; height: 20px; display:block; border-left: 1px solid black; top:-20px; position: relative;}
+.opcoes{position: absolute; border: 1px solid black; background-color: white;}
+.opcoes span{display: block; cursor: pointer;}
+.opcoes span.selecionado{background-color: black; color: white;}
 .select.desabilitado, .select.desabilitado * {background-color: #DDD;}
-
-#questoes .questao .incorreto .select {
-	background:#FFB47F url(../img_layout/erradinho.gif) no-repeat scroll;
-}
+#questoes .questao .incorreto .select {background:#FFB47F url(../img_layout/erradinho.gif) no-repeat scroll;}
 #questoes .questao .correto .select{background: #beff73 url(../img_layout/certinho.gif) no-repeat;}
-
-
+#questoes .questao .incorreto .select.especial {background:none;}
+#questoes .questao .correto .select.especial {background:none;}
 
 
 /* Classes auxiliares*/
 
 .escondido{visibility: hidden; display: none;}
-.some { margin-left: -6000px !important; }
-.limpador{clear: both;}
+.some {position: absolute; left: -6000px;}
+.limpador{clear: both; height: 0px;}
 
 
 .recipiente.errado {background: #ffb47f url(../img_layout/erradinho.gif) bottom right no-repeat !important;}

@@ -1,6 +1,6 @@
 *
 {
-	font: 16px/19px "Lucida Sans Unicode","Lucida Sans", "Bitstream Vera Sans", "DejaVu Sans";
+	font: 15px/18px "Fira Sans", sans-serif;
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
@@ -25,7 +25,7 @@ small {font-size: 11px; line-height: 13px;}
 sub, sup {font-size: 10px;}
 
 
-/* cabeçalho e textos, corpo mais geral do site */ 
+/* cabeçalho e textos, corpo mais geral do site */
 
 #abertura
 {
@@ -33,7 +33,7 @@ sub, sup {font-size: 10px;}
 	float: left;
 	height: auto;
 	width: 100%;
-	z-index: 1;	
+	z-index: 1;
 }
 
 #texto_abertura
@@ -52,7 +52,7 @@ sub, sup {font-size: 10px;}
 
 #imgs_abertura
 {
-	margin: 40px 20px;	
+	margin: 40px 20px;
 	width: 380px;
 	float: left;
 }
@@ -173,7 +173,7 @@ sub, sup {font-size: 10px;}
 	width: 240px;
 	text-align: right;
 	margin-top: 5px;
-	
+
 }
 
 #links a
@@ -222,7 +222,7 @@ sub, sup {font-size: 10px;}
 .popup .ficha_tecnica  h3{color: #000; font-style: italic;}
 .popup .ficha_tecnica p { margin-bottom: 10px;}
 .popup .ficha_tecnica .texto { height: auto; overflow: auto;}
-.popup .ficha_tecnica .fechar_popup { float: right; font: 13px/16px "Lucida Sans Unicode" "Lucida Sans"; text-decoration: underline; }
+.popup .ficha_tecnica .fechar_popup { float: right; font: 15px/18px "Fira Sans", sans-serif; text-decoration: underline; }
 
 
 
@@ -233,7 +233,7 @@ sub, sup {font-size: 10px;}
 .apontador
 {
 	padding: 0 3px 0 7px;
-	background-color: RGB(255, 254,44); 
+	background-color: RGB(255, 254,44);
 	border-left: 1px solid #000;
 	border-top: 1px solid #000;
 	border-bottom: 1px solid #000;
@@ -323,7 +323,7 @@ sub, sup {font-size: 10px;}
 	width: 245px;
 	height: 261px;
 	background: url(../img_layout/calc.gif) no-repeat;
-	position: fixed; 
+	position: fixed;
 	bottom: 58px;
 	left: 39px;
 	z-index: 1201;
