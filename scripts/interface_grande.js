@@ -26,9 +26,9 @@ Event.observe(window, 'load', function()
 	css = readCookie('css');
 	if (css == 'grande')
 	{
-		for(i=0; (a = document.getElementsByTagName("link")[i]); i++) 
+		for(i=0; (a = document.getElementsByTagName("link")[i]); i++)
 		{
-			if(a.getAttribute("rel").indexOf("style") != -1 && a.getAttribute("title")) 
+			if(a.getAttribute("rel").indexOf("style") != -1 && a.getAttribute("title"))
 			{
 				a.disabled = true;
 				if(a.getAttribute("title") == 'grande') a.disabled = false;
@@ -60,37 +60,37 @@ document.observe("dom:loaded", function()
 		location.href = 'index.html';
 		return;
 	}
-	
+
 	var Questao = null, Item = null, ajuda = null,
 		PartesAnteriores = 0;
-	
+
 	for(var a = 0; a < PosicaoAtual.Parte; a++)
 		PartesAnteriores+= $H(Questoes[a]).keys().length;
-	
-	
+
+
 	if (Questoes != null)
 		QuestoesDados = $H(Questoes[PosicaoAtual.Parte]);
 	else
 		QuestoesDados = [];
-	
-	
+
+
 	QuestoesDados.each( function (dados)
 	{
 		var QuestaoCont = $(dados.key);
 		var Conteudo = $H(dados.value);
 		var paragrafo = false;
-		
+
 		if(!QuestaoCont)
 		{
 			alerta('Não foi possível encontrar a div \''+dados.key+'\' \npara inserir a questão na página.\n\n O script foi cancelado.');
 			throw $break;
 		}
-		
+
 		var Questao = new Element('div', {className: 'questao'});
 		var EnunciadoGeral = Conteudo.get('enunciadoGeral');
 		var QuestaoDados = Conteudo.get('itens');
 		var Iniciais = Conteudo.get('itens');
-		
+
 		var iItem = 0;
 		var Contador = 0;
 		var ContadorEfetivo = 0;
@@ -102,34 +102,34 @@ document.observe("dom:loaded", function()
 			if (teste.get('tamanho') != 'grande')
 				simples = true;
 		}
-		
+
 		while (Contador < QuestaoDados.length)
 		{
 			ItemDados = $H(QuestaoDados[Contador]);
-			
+
 			var idItem = 'Item_'+(iQuestao+1)+'_'+((iItem)+1);
-			var classeItem = ''; 
-			
+			var classeItem = '';
+
 			if (ItemDados.get('tipo') == 'valor_inicial')
 			{
 				idItem += 'a';
-				classeItem += 'cor_valor_dentro '; 
+				classeItem += 'cor_valor_dentro ';
 			}
-			
+
 			ContadorEfetivo++;
 			if (ItemDados.get('tamanho') == 'grande')
 			{
 				ContadorEfetivo = 2;
 				classeItem += 'grande ';
 			}
-			
+
 			Item = new Element('div', {id: idItem, className: 'questao_item '+classeItem});
-			
-			
+
+
 			if (ItemDados.get('tipo') != 'valor_inicial')
 			{
 				divCont = new Element('div', {className: 'colchao'});
-				
+
 				if(ItemDados.get('esperando') == true)
 				{
 					if (Iniciais[iInicial].Selecao)
@@ -147,10 +147,10 @@ document.observe("dom:loaded", function()
 						else
 							alert('É preciso ter uma div com o id chamada valor_inicial no seu html');
 					}
-					
+
 				}
-				
-				
+
+
 				divCont.insert(new Element('span', {className: 'icone_questao'}).update(Letras[iItem]));
 				if (ItemDados.get('enunciado'))
 				{
@@ -177,7 +177,7 @@ document.observe("dom:loaded", function()
 						tem_borda = 'sem_borda';
 					else
 						tem_borda = '';
-						
+
 					if (paragrafo)
 						divCont.insert(new Element('p').update(new Element('img', {src: ItemDados.get('imagem'), className: 'margem_questao imagem_dentro '+ tem_borda}).insert('')));
 					else
@@ -189,36 +189,36 @@ document.observe("dom:loaded", function()
 				}
 				divCont.insert(new Element('br', {className: 'limpador'}));
 				Item.insert(divCont);
-				
+
 				if(ItemDados.get('esperando'))
 				{
 					divCont.addClassName('esperando');
 				}
 			}
-			
-			
-			
+
+
+
 			switch(ItemDados.get('tipo'))
 			{
-			
+
 				case 'valor_inicial':
-					
+
 					var dateObject = new Date();
 					var nome =
 						dateObject.getFullYear() + '' +
 						dateObject.getMonth() + '' +
 						dateObject.getDate() + '' +
 						dateObject.getTime();
-					
+
 					var Caixa = new Element('div', {className: 'item sem_titulo'});
 					Caixa.insert(new Element('a', {name: nome, className: 'ancora'}));
 					Caixa.insert(new Element('p').insert(ItemDados.get('enunciado')));
 					Caixa.insert(new Element('br', {className: 'limpador'}));
 
-					
+
 					var Dentro = new Element('div', {className: 'conteudo'});
 					var itens = new Array();
-					
+
 					for (var a = 0; a < ItemDados.get('dados').length; a++)
 					{
 						//alert(ItemDados.get('dados')[a].length);
@@ -231,13 +231,13 @@ document.observe("dom:loaded", function()
 							divisinha.insert(label);
 							divisinha.insert(new Element('br', {className: 'limpador'}));
 							divisinha.insert(input);
-							
+
 							Dentro.insert(divisinha);
 						}
 						if (a+1 != ItemDados.get('dados').length)
 							Dentro.insert(new Element('div', {className: 'limpador entre_linhas'}));
 					}
-					
+
 					//Caixa.insert(new Element('input').insert());
 					Caixa.insert(Dentro);
 					Caixa.insert(new Element('br', {className: 'limpador'}));
@@ -245,20 +245,20 @@ document.observe("dom:loaded", function()
 					Caixa.insert(setaValor);
 					Caixa.insert(new Element('p').insert(new Element('em').insert(ItemDados.get('usado'))));
 					Caixa.insert(new Element('br', {className: 'limpador'}));
-					
+
 					var divCont = new Element('div', {className: 'valor_dentro'}).insert(Caixa);
-					
+
 					Item.insert(divCont);
 					iInicial = iItem;
-					
+
 					Iniciais[iItem].Selecao = new Selecao(divCont, itens, setaValor, ItemDados.get('seta'), ItemDados.get('tira'));
 					Iniciais[iItem].Selecao.posicao = {Parte: PosicaoAtual.Parte, Questao: dados.key, Item:iItem};
 					Iniciais[iItem].Selecao.nome = nome;
-					
+
 					iItem--;
-					
+
 				break;
-				
+
 				case 'drag':
 					var verdadeiro = new Element('input', {className: 'some', type: 'checkbox', id: MontaID(PosicaoAtual.Parte+1, iQuestao+1+PartesAnteriores, iItem+1), name: MontaID(PosicaoAtual.Parte+1, iQuestao+1+PartesAnteriores, iItem+1)});
 					divCont.insert(new Element('div', {className: 'input_texto'}).insert(new Element('div').insert(verdadeiro)));
@@ -271,7 +271,7 @@ document.observe("dom:loaded", function()
 					colocaAjuda(ItemDados, divCont);
 					QuestaoDados[iItem].Corrigir = new Corrigir(ItemDados.get('selecionada'), ItemDados.get('corrigir'),[verdadeiro], ItemDados.get('msgErro'), '', 'drag')
 				break;
-				
+
 				case 'input':
 					var antes = '';
 					var depois = '';
@@ -297,25 +297,25 @@ document.observe("dom:loaded", function()
 					if (ItemDados.get('depois'))
 					{
 						depois = new Element('span', {className:'a_esquerda antes_depois depois'}).insert(ItemDados.get('depois'));
-						
-						if (ItemDados.get('depois').length > 8 )						
+
+						if (ItemDados.get('depois').length > 8 )
 							largura = largura - 130;
-						else if (ItemDados.get('depois').length <= 4 )						
+						else if (ItemDados.get('depois').length <= 4 )
 							largura = largura - 70;
-						else if (ItemDados.get('depois').length <= 8 )						
+						else if (ItemDados.get('depois').length <= 8 )
 							largura = largura - 40;
-							
-						
+
+
 					}
-					
+
 					var input = new Element('input', {type: 'text', id: MontaID(PosicaoAtual.Parte+1, iQuestao+1+PartesAnteriores, iItem+1), name: MontaID(PosicaoAtual.Parte+1, iQuestao+1+PartesAnteriores, iItem+1)});
-					
+
 					var resultado = new Element('div').insert(antes);
 					resultado.insert(input);
 					resultado.insert(depois);
 					divCont.insert(new Element('div', {className: 'input_texto'}).insert(resultado));
-					
-					
+
+
 					//alert(largura);
 					if (largura > 220 )
 						largura = 250;
@@ -331,24 +331,24 @@ document.observe("dom:loaded", function()
 						largura = 110;
 					if (largura > 20 && largura <= 80 )
 						largura = 80;
-						
+
 					largura = largura - 13;
-					
+
 					if (antes != '' || depois != '')
 						input.setStyle({width:largura+'px'});
 					if (antes != '')
 						input.setStyle({marginLeft: '0px'});
 					if (depois != '')
 						input.setStyle({marginRight: '5px'});
-					
+
 					colocaAjuda(ItemDados, divCont);
 					if(ItemDados.get('esperando'))
 						QuestaoDados[iItem].Corrigir = new Corrigir(ItemDados.get('selecionada'), ItemDados.get('corrigir'),[input], ItemDados.get('msgErro'), null,null,true)
 					else
 						QuestaoDados[iItem].Corrigir = new Corrigir(ItemDados.get('selecionada'), ItemDados.get('corrigir'),[input], ItemDados.get('msgErro'))
-					
+
 				break;
-				
+
 				case 'instrucao':
 					var verdadeiro = new Element('input', {className: 'some', type: 'checkbox', id: MontaID(PosicaoAtual.Parte+1, iQuestao+1+PartesAnteriores, iItem+1), name: MontaID(PosicaoAtual.Parte+1, iQuestao+1+PartesAnteriores, iItem+1)});
 					divCont.insert(new Element('div', {className: 'input_texto'}).insert(new Element('div').insert(verdadeiro)));
@@ -358,26 +358,26 @@ document.observe("dom:loaded", function()
 					else
 						QuestaoDados[iItem].Corrigir = new Corrigir(ItemDados.get('selecionada'), ItemDados.get('corrigir'),[verdadeiro], ItemDados.get('msgErro'), '', 'radio')
 				break;
-				
+
 				case 'generico':
 					var verdadeiro = new Element('input', {className: 'some', type: 'checkbox', id: MontaID(PosicaoAtual.Parte+1, iQuestao+1+PartesAnteriores, iItem+1), name: MontaID(PosicaoAtual.Parte+1, iQuestao+1+PartesAnteriores, iItem+1)});
 					divCont.insert(new Element('div', {className: 'input_texto'}).insert(new Element('div').insert(verdadeiro)));
-					
+
 					colocaAjuda(ItemDados, divCont);
 					if(ItemDados.get('esperando'))
 						QuestaoDados[iItem].Corrigir = new Corrigir(ItemDados.get('selecionada'), ItemDados.get('corrigir'),[verdadeiro], ItemDados.get('msgErro'), '', 'radio', true)
 					else
 						QuestaoDados[iItem].Corrigir = new Corrigir(ItemDados.get('selecionada'), ItemDados.get('corrigir'),[verdadeiro], ItemDados.get('msgErro'), '', 'radio')
 				break;
-				
+
 				case 'multipla_escolha':
 					var dadosArray = ItemDados.get('dados');
 					var dadosObj = new Hash();
 					for (var a = 0; a < dadosArray.length; a++)
 						dadosObj.set(MontaID(PosicaoAtual.Parte+1, iQuestao+1+PartesAnteriores, iItem+1, a+1), dadosArray[a]);
-					
+
 					var mp = new MultiplaEscolha(dadosObj);
-					
+
 					divCont.insert(mp.divCont);
 					colocaAjuda(ItemDados, divCont);
 					if(ItemDados.get('esperando'))
@@ -385,11 +385,11 @@ document.observe("dom:loaded", function()
 					else
 						QuestaoDados[iItem].Corrigir = new Corrigir(ItemDados.get('selecionada'), ItemDados.get('corrigir'), mp.itens, ItemDados.get('msgErro'), divCont, 'radio');
 				break;
-				
+
 				case 'multiplo_input':
 					var dependente = ItemDados.get('dependente');
 					var multiplo = new Multiplo(ItemDados.get('dados'),[PosicaoAtual.Parte+1, iQuestao+1+PartesAnteriores, iItem+1]);
-					
+
 					divCont.insert(multiplo.divCampos);
 					divCont.insert(new Element('br',{className: 'limpador'}));
 					colocaAjuda(ItemDados, divCont);
@@ -404,14 +404,14 @@ document.observe("dom:loaded", function()
 						else
 							QuestaoDados[iItem].Corrigir = new Corrigir(ItemDados.get('selecionada'), ItemDados.get('corrigir'), multiplo.itens, ItemDados.get('msgErro'), divCont, 'multiplo');
 				break;
-				
-				
+
+
 				case 'multiplo_input_com_unidade':
 					var multiplo = new MultiploUnidade(ItemDados.get('dados'),[PosicaoAtual.Parte+1, iQuestao+1+PartesAnteriores, iItem+1]);
-					
+
 					divCont.insert(multiplo.divCampos);
 					divCont.insert(new Element('br',{className: 'limpador'}));
-					colocaAjuda(ItemDados, divCont);					
+					colocaAjuda(ItemDados, divCont);
 					if (!dependente)
 						if(ItemDados.get('esperando'))
 							QuestaoDados[iItem].Corrigir = new Corrigir(ItemDados.get('selecionada'), ItemDados.get('corrigir'), multiplo.itens, ItemDados.get('msgErro'), divCont, null, true);
@@ -423,7 +423,7 @@ document.observe("dom:loaded", function()
 						else
 							QuestaoDados[iItem].Corrigir = new Corrigir(ItemDados.get('selecionada'), ItemDados.get('corrigir'), multiplo.itens, ItemDados.get('msgErro'), divCont, 'multiplo');
 				break;
-				
+
 				case 'matriz':
 					var antes = '';
 					var depois = '';
@@ -449,14 +449,14 @@ document.observe("dom:loaded", function()
 							tem_antes =  true;
 						}
 					}
-					
+
 					if (ItemDados.get('depois'))
 						depois = new Element('span', {className:'a_esquerda antes_depois depois'}).insert(ItemDados.get('depois'));
-					
+
 					for (var a = 0; a < ItemDados.get('dados').length; a++)
 						for (var b = 0; b < ItemDados.get('dados')[a].length; b++)
 							ItemDados.get('dados')[a][b].id = MontaID(PosicaoAtual.Parte+1, iQuestao+1+PartesAnteriores, iItem+1, [a+1,b+1].join(''));
-					
+
 					var matriz = new Matriz(ItemDados.get('dados'), tem_antes);
 					if (antes != '')
 					{
@@ -466,13 +466,13 @@ document.observe("dom:loaded", function()
 						matriz.divCont.setStyle({marginLeft:0});
 					}
 					divCont.insert(matriz.divCont);
-					
+
 					if (depois != '')
 					{
 						divCont.insert(depois);
 						depois.setStyle({marginTop: (matriz.linhas*11)+'px', marginLeft: '10px'});
 					}
-					
+
 					divCont.insert(new Element('br',{className: 'limpador'}));
 					colocaAjuda(ItemDados, divCont);
 					if(ItemDados.get('esperando'))
@@ -480,12 +480,12 @@ document.observe("dom:loaded", function()
 					else
 						QuestaoDados[iItem].Corrigir = new Corrigir(ItemDados.get('selecionada'), ItemDados.get('corrigir'), matriz.itens, ItemDados.get('msgErro'), divCont);
 				break;
-					
+
 				case 'tabela':
 					for (var a = 0; a < ItemDados.get('dados').length; a++)
 						for (var b = 0; b < ItemDados.get('dados')[a].length; b++)
 							ItemDados.get('dados')[a][b].id = MontaID(PosicaoAtual.Parte+1, iQuestao+1+PartesAnteriores, iItem+1, [a+1,b+1].join(''));
-					
+
 					var tabela = new Tabela(ItemDados.get('dados'),[PosicaoAtual.Parte+1, iQuestao+1+PartesAnteriores, iItem+1], ItemDados.get('id'));
 					divCont.insert(tabela.divCont);
 					divCont.insert(new Element('br',{className: 'limpador'}));
@@ -495,12 +495,12 @@ document.observe("dom:loaded", function()
 					else
 						QuestaoDados[iItem].Corrigir = new Corrigir(ItemDados.get('selecionada'), ItemDados.get('corrigir'), tabela.itens, ItemDados.get('msgErro'), divCont);
 				break;
-				
+
 				case 'tabela_adjacencia':
 					for (var a = 0; a < ItemDados.get('dados').length; a++)
 						for (var b = 0; b < ItemDados.get('dados')[a].length; b++)
 							ItemDados.get('dados')[a][b].id = MontaID(PosicaoAtual.Parte+1, iQuestao+1+PartesAnteriores, iItem+1, [a+1,b+1].join(''));
-					
+
 					var tabela = new TabelaAdjacencia(ItemDados.get('dados'),[PosicaoAtual.Parte+1, iQuestao+1+PartesAnteriores, iItem+1], ItemDados.get('id'));
 					divCont.insert(tabela.divCont);
 					divCont.insert(new Element('br',{className: 'limpador'}));
@@ -511,62 +511,62 @@ document.observe("dom:loaded", function()
 						QuestaoDados[iItem].Corrigir = new Corrigir(ItemDados.get('selecionada'), ItemDados.get('corrigir'), tabela.itens, ItemDados.get('msgErro'), divCont);
 				break;
 			}
-			
+
 			if(QuestaoDados[iItem])
 			{
 				if(QuestaoDados[iItem].Corrigir != undefined)
 					QuestaoDados[iItem].Corrigir.posicao = {Parte: PosicaoAtual.Parte, Questao: dados.key, Item:iItem};
 			}
-			
-			
+
+
 			Item.insert(new Element('div', {className: 'limpador'}));
 			Item.insert(new Element('div', {className: 'canto sup_esq'})); Item.insert(new Element('div', {className: 'canto sup_dir'}));
 			Item.insert(new Element('div', {className: 'canto inf_esq'})); Item.insert(new Element('div', {className: 'canto inf_dir'}));
-			
-			
+
+
 			if(ItemDados.get('tamanho') == 'grande')
 				Questao.insert(new Element('div', {className: 'limpador'}));
-				
+
 			Questao.insert(Item);
-			
+
 			if(ContadorEfetivo%2 == 0)
 				Questao.insert(new Element('div', {className: 'limpador'}));
-			
+
 			iItem++;
 			Contador++;
 		}
-		
+
 		QuestaoCont.insert(new Element('h2').insert('Questão '+(iQuestao+1+PartesAnteriores)));
 		if(EnunciadoGeral)
 			QuestaoCont.insert(new Element('div', {className: 'enunciado_geral'}).update(new Element('p').insert(EnunciadoGeral)));
-		
+
 		QuestaoCont.insert(Questao);
 		QuestaoCont.insert(new Element('div', {className: 'limpador'}));
-		
+
 		if (simples)
 			QuestaoCont.addClassName('questao_container2');
 		else
 			QuestaoCont.addClassName('questao_container');
 		iQuestao++;
 	});
-	
+
 	Event.observe('link_bloco', 'click', function(){
 		fechaFerramentas();
 		BlocoNotas.abre();
 	});
-	
+
 	PopupReferencias = new Notas();
 	Event.observe('link_notas', 'click', function(){
 		fechaFerramentas();
 		PopupReferencias.abre();
 	});
-	
-	
+
+
 	interface_document_loaded = true;
-	
+
 	gerencia_corrige_tudo();
 	gerencia_partes();
-	
+
 	document.fire('dom:afterLoaded');
 });
 
@@ -580,10 +580,10 @@ function colocaAjuda(ItemDados, divCont)
 		var popup = new PopupClick(ajuda, ItemDados.get('msgAjuda'), ['seta_direita','central'], 10);
 		popup.tempo = 10;
 		divCont.insert(ajuda);
-		
+
 		Event.observe(ajuda, 'focus', function(ev){Event.element(ev).addClassName('ativo');});
 		Event.observe(ajuda, 'blur', function(ev){Event.element(ev).removeClassName('ativo');});
-		
+
 		ajuda.hide();
 	}
 }
@@ -615,13 +615,13 @@ function MontaID(parte, questao, item, subitem)
 				tmp = tmp.replace(/\/subitem/, subitem);
 			else
 				tmp = tmp.replace(/\/subitem/, '');
-			
+
 			if(!tmp.blank())
 				Id.push(tmp);
 		}
-		
+
 		Id = Id.join(IdPadrao[1]);
-		
+
 		if(Letras.indexOf(Id.substr(0,1).toUpperCase()) == -1)
 		{
 			alerta('Não se pode começar um ID com um número.\n\nCorrija o código, retirando o número do primeiro caractere,\nou não defina a variável IdPadrao.');
@@ -636,26 +636,26 @@ function MontaID(parte, questao, item, subitem)
 
 
 var ValorInicial = Class.create({
-	pai: null, divCont: null, a:null, p:null, depois:null, 
+	pai: null, divCont: null, a:null, p:null, depois:null,
 	initialize: function (pai, divCont)
 	{
 		this.pai = pai;
 		this.divCont = divCont;
-		
+
 		this.p = new Element('p').insert('Aguardando definição de ');
 		this.a = new Element('a', {href: '#'}).insert('valor acima.');
-		
+
 		if (this.pai)
 			this.a.observe('click', function(ev){ev.stop(); this.seleciona(); this.pai.scrollTo()}.bind(this));
 		else
 			this.a.observe('click', function(ev){ev.stop(); $('valor_inicial').scrollTo();});
-		
+
 		this.p.insert(this.a);
-		
+
 		this.depois = new Element('p', {className: 'depois'}).insert('');
 		var div = new Element('div', {className: 'msg_valor_inicial'}).insert(this.p);
 		div.insert(this.depois);
-		this.depois.hide();		
+		this.depois.hide();
 		this.divCont.insert(div);
 
 	},
@@ -668,7 +668,7 @@ var ValorInicial = Class.create({
 
 
 var Selecao = Class.create({
-	li: null, divCont: null, posicao: null, selecionada : null, inputs: null, 
+	li: null, divCont: null, posicao: null, selecionada : null, inputs: null,
 	link:null, setar: null, tirar:null,
 	initialize: function (divCont, ids, link, setar, tirar)
 	{
@@ -677,12 +677,12 @@ var Selecao = Class.create({
 		this.link = link;
 		this.setar = setar;
 		this.tirar = tirar;
-		
+
 		Event.observe(this.li, 'click', this.seleciona.bind(this));
 		Event.observe(this.link, 'click', this.desabilita.bind(this));
-		
+
 		this.inputs = new Array();
-		
+
 		ids.each(function(item)
 		{
 			var it = $(item);
@@ -695,15 +695,15 @@ var Selecao = Class.create({
 		{
 			if(PegaQuestao(PosicaoAtual))
 				PegaQuestao(PosicaoAtual).desseleciona();
-			
+
 			this.li.addClassName('selecionada');
 			this.selecionada = true;
-			
+
 			altura = this.li.cumulativeOffset().top;
 			$('ir_applet').setStyle({top: (altura-90)+'px'});
 			$('ir_applet').show();
 			$('voltar_questao').show();
-			
+
 			atividade = PosicaoAtual.Atividade;
 			PosicaoAtual = this.posicao;
 			PosicaoAtual.Atividade = atividade;
@@ -716,7 +716,7 @@ var Selecao = Class.create({
 
 	},
 	desseleciona: function ()
-	{		
+	{
 		this.li.removeClassName('selecionada');
 		this.selecionada = false;
 	},
@@ -726,16 +726,16 @@ var Selecao = Class.create({
 		this.divCont.addClassName('desabilitada');
 		this.divCont.up().addClassName('desabilitada');
 		this.link.update('Alterar valor');
-		
+
 		for (a=0; a<this.inputs.length; a++)
 		{
 			this.inputs[a].writeAttribute({disabled: 'disabled'});
 		}
-		
+
 		Event.stopObserving(this.link, 'click');
 		//Event.observe(this.link, 'click', this.habilita.bind(this));
-		
-		var Perg =  
+
+		var Perg =
 			{
 				conteudo: 'Você deseja alterar o valor, isto fará com que você precise refazer as questões que tinham como base este valor?',
 				layout: ['seta_baixo','direita'],
@@ -746,35 +746,35 @@ var Selecao = Class.create({
 				respostas: [{sim: 'Sim'}, {nao: 'Não'}]
 			};
 		var tmp = new PopupCallback(this.link,Perg.conteudo,Perg.layout, Perg.largura, Perg.callback, Perg.respostas, this);
-		
-		
+
+
 		ProximoItem = PegaQuestao(this.posicao);
 		if (ProximoItem)
 		{
 			window.setTimeout(function(){this.inputs[0].focus();}.bind(ProximoItem), 100);
 		}
-		
-		
+
+
 	},
 	habilita: function ()
 	{
-	
+
 
 		var args = $A(arguments);
 		var este = args[0];
 
-		if (this.resultado=='sim') 
+		if (this.resultado=='sim')
 		{
 			este.tirar();
 			este.divCont.removeClassName('desabilitada');
 			este.divCont.up().removeClassName('desabilitada');
 			este.link.update('OK');
-			
+
 			for (a=0; a<este.inputs.length; a++)
 			{
 				este.inputs[a].removeAttribute('disabled');
 			}
-			
+
 			Event.stopObserving(este.link, 'click');
 			Event.observe(este.link, 'click', este.desabilita.bind(este));
 		}
@@ -782,21 +782,21 @@ var Selecao = Class.create({
 });
 
 var Corrigir = Class.create({
-	a: null, span: null, li: null, divCont: null, inputs:null, 
+	a: null, span: null, li: null, divCont: null, inputs:null,
 	corrigir: null, radio: null, multiplo: null, MsgErro: null, correto: null, selecionou: null,
 	posicao: null, jaAbriu: false, travado: null, selecionada: null, associado:null, drag: null,
 	initialize: function (selecionou, corrigir, ids, msg, divCont, tipo, travado)
 	{
-	
+
 		this.corrigir = corrigir;
 		this.selecionou = selecionou;
 		this.travado = travado == true;
-		
+
 		this.radio = false;
 		this.multiplo = false;
 		this.drag = false;
-		
-		
+
+
 		if(tipo)
 		{
 			if(tipo == 'radio')
@@ -806,13 +806,13 @@ var Corrigir = Class.create({
 			if(tipo == 'drag')
 				this.drag = true;
 		}
-		
-		
+
+
 		this.a = new Element('a', {href: '#', className: 'feedback'}).update('Corrigir item');
-		
-		
+
+
 		this.inputs = new Array();
-		
+
 		ids.each(function(item)
 		{
 			var it = $(item);
@@ -826,45 +826,45 @@ var Corrigir = Class.create({
 				if(key != Event.KEY_TAB)
 					this.nada();
 			}.bind(this));
-			
+
 			if (travado)
 				it.writeAttribute({disabled: 'disabled'});
-			
+
 		}.bind(this));
-		
+
 		if (travado)
 			this.a.writeAttribute({disabled: 'disabled'});
-		
+
 		if(divCont)
 			this.divCont = divCont;
 		else
 			this.divCont = this.inputs[0].up().up().up();
 
-		
+
 		this.divCont.insert(this.calcoPre = new Element('div', {rel: 'pre_calco', className: 'limpador'}));
 		this.divCont.insert(this.a);
 		this.divCont.insert(this.calcoPos = new Element('div', {rel: 'pos_calco', className: 'limpador'}));
-		
+
 		this.li = this.divCont.up();
 		if(msg)
 		{
 			this.MsgErro = new MsgErro(msg, this.ajustaPosCalco.bind(this));
 			this.li.insert(this.MsgErro.divCont);
 		}
-		
+
 		Event.observe(this.a, 'click', this.disparaCorrigir.bind(this));
 		Event.observe(this.a, 'click', this.seleciona.bind(this));
 		Event.observe(this.li, 'click', this.seleciona.bind(this));
-		
+
 		Event.observe(document, 'dom:afterLoaded', function(ev){
 			this.vizinho = this.li.next('div');
-			
+
 			if(!this.vizinho || !this.vizinho.hasClassName('questao_item'))
 				this.vizinho = this.li.previous('div');
-				
+
 			if(!this.vizinho || !this.vizinho.hasClassName('questao_item'))
 				this.vizinho = false;
-				
+
 			this.ajustaPreCalco(true);
 		}.bind(this));
 	},
@@ -874,13 +874,13 @@ var Corrigir = Class.create({
 		{
 			if(PegaQuestao(PosicaoAtual))
 				PegaQuestao(PosicaoAtual).desseleciona();
-				
+
 			if(PegaInicial(PosicaoAtual))
 				PegaInicial(PosicaoAtual).desseleciona();
-			
+
 			if(this.li.viewportOffset().top+this.li.getHeight()+60 > document.viewport.getHeight())
 				Effect.ScrollTo(this.li, {duration: 0.4, offset: -(document.viewport.getHeight()-this.li.getHeight()-60)});
-			
+
 			this.li.addClassName('selecionada');
 			this.selecionada = true;
 			try
@@ -888,14 +888,14 @@ var Corrigir = Class.create({
 				this.inputs[0].focus();
 			}
 			catch (err) {}
-			
+
 			if(this.correto == false && !this.jaAbriu)
 			{
 				this.MsgErro.abre();
 				//this.li.setStyle({height: this.li.getHeight()+'px'});
 				this.jaAbriu = true;
 			}
-			
+
 			if($('ir_applet'))
 			{
 				altura = this.li.cumulativeOffset().top;
@@ -903,16 +903,16 @@ var Corrigir = Class.create({
 				$('ir_applet').show();
 				$('voltar_questao').show();
 			}
-			
+
 			atividade = PosicaoAtual.Atividade;
 			PosicaoAtual = this.posicao;
 			PosicaoAtual.Atividade = atividade;
-			
+
 			var div = this.li.firstDescendant();
 			var ajuda = div.getElementsByClassName('ajuda');
 			if (ajuda[0])
 				ajuda[0].show();
-			
+
 			if (this.selecionou)
 				this.selecionou();
 		}
@@ -920,7 +920,7 @@ var Corrigir = Class.create({
 			NoValorInicial = false;
 	},
 	desseleciona: function ()
-	{		
+	{
 		this.li.removeClassName('selecionada');
 		this.selecionada = false;
 		var div = this.li.firstDescendant();
@@ -932,17 +932,17 @@ var Corrigir = Class.create({
 	{
 		var correcao = this.corrigir(this.valores());
 		var tudo_certo = true;
-		
+
 		if(evento)
 			evento.stop();
-		
+
 		if (!this.travado)
 		{
 			if (!correcao.compact().length)
 			{
 				tudo_certo = false;
 			}
-			
+
 			for(var a = 0; a < correcao.length; a++)
 			{
 				if(correcao[a] == true)
@@ -956,7 +956,7 @@ var Corrigir = Class.create({
 					tudo_certo = false;
 				}
 			}
-			
+
 			if(tudo_certo)
 			{
 				this.a.setStyle({backgroundImage: 'url(img_layout/certo.gif)'});
@@ -971,7 +971,7 @@ var Corrigir = Class.create({
 								window.setTimeout(function(){this.inputs[0].focus();}.bind(ProximoItem), 800);
 						}
 					}
-					
+
 					if(this.MsgErro)
 						this.MsgErro.fecha();
 				}
@@ -985,15 +985,15 @@ var Corrigir = Class.create({
 					this.MsgErro.abre();
 				}
 			}
-			
+
 			this.correto = tudo_certo;
-			
-			
+
+
 			// if (!tudo_certo)
 				// this.li.setStyle({height: ''});
-			
+
 			// this.li.setStyle({height: this.li.getHeight()+'px'});
-			
+
 			if (evento != false)
 			{
 				corrigindo = true;
@@ -1006,7 +1006,7 @@ var Corrigir = Class.create({
 	{
 		var correcao = this.corrigir(this.valores());
 		var tudo_certo = true;
-		
+
 		if(correcao)
 		{
 			if (!this.travado)
@@ -1015,7 +1015,7 @@ var Corrigir = Class.create({
 				{
 					tudo_certo = false;
 				}
-				
+
 				for(var a = 0; a < correcao.length; a++)
 				{
 					if(correcao[a] == false)
@@ -1029,7 +1029,7 @@ var Corrigir = Class.create({
 		{
 			tudo_certo = false;
 		}
-		
+
 		return tudo_certo;
 	},
 	valores: function()
@@ -1059,7 +1059,7 @@ var Corrigir = Class.create({
 			this.inputs[i].up().removeClassName('incorreto');
 			this.inputs[i].up().addClassName('correto');
 		}
-		
+
 	},
 	errado: function (i)
 	{
@@ -1112,14 +1112,14 @@ var Corrigir = Class.create({
 	{
 		if(!this.vizinho)
 			return;
-		
+
 		var altura_vizinho = this.vizinho.getHeight();
 		var altura_minha = this.li.getHeight();
-		
+
 		if(!mesmo_vizinho_travado)
 			if((this.vizinho.down('.esperando') && !this.li.down('.esperando')) || (!this.vizinho.down('.esperando') && this.li.down('.esperando')))
 				return;
-		
+
 		if(altura_minha < altura_vizinho)
 		{
 			this.calcoPre.setStyle({height: (altura_vizinho-altura_minha)+'px'});
@@ -1129,13 +1129,13 @@ var Corrigir = Class.create({
 	{
 		if(!this.vizinho || !this.MsgErro)
 			return;
-		
+
 		var altura = 0;
 		var pq_errei = this.MsgErro.divCont.visible()?this.MsgErro.divCont.getHeight():0;;
 		var pq_errei_vizinho = this.vizinho.down('.pq_errei').visible()?this.vizinho.down('.pq_errei').getHeight():0;
-		
+
 		var altura = pq_errei_vizinho - pq_errei;
-		
+
 		this.calcoPos.setStyle({height: (altura > 0 ? altura : 0)+'px'});
 		this.vizinho.down('div[rel=pos_calco]').setStyle({height: (altura < 0 ? -altura : 0)+'px'});
 	}
@@ -1146,13 +1146,13 @@ var MsgErro = Class.create({
 	initialize: function(msg, ajusta)
 	{
 		this.ajusta = ajusta;
-		
+
 		this.divCont = new Element('div', {className:'pq_errei'});
 		this.divCont.insert(new Element('p').update(msg));
 		this.divCont.insert(this.a = new Element('a',{href: '#'}).update('Fechar'));
 		this.divCont.insert(new Element('div', {className: 'limpador'}));
 		this.divCont.hide();
-		
+
 		Event.observe(this.a, 'click', this.fecha.bind(this));
 	},
 	abre: function()
@@ -1166,7 +1166,7 @@ var MsgErro = Class.create({
 	fecha: function (ev)
 	{
 		if(ev) ev.stop();
-			
+
 		this.a.up().up().select('a.feedback')[0].focus();
 		if(this.aberto)
 		{
@@ -1184,9 +1184,9 @@ var MultiplaEscolha = Class.create({
 		var name = 'a'+Math.round(Math.random()*1000);
 		this.ids = opcoes.keys();
 		var itens = opcoes.values();
-		
+
 		var div = new Element('div',{className: 'input_radio'});
-		
+
 		for (var a = 0; a < this.ids.length; a++)
 		{
 			input = new Element('input',{id: this.ids[a], type: 'radio', name: name, value: itens[a].value });
@@ -1200,22 +1200,22 @@ var MultiplaEscolha = Class.create({
 
 var Tabela = Class.create({
 	ids: new Array(), itens: new Array(),  divCont: null, tabela: null, id: null,
-	initialize: function(data, questao) 
+	initialize: function(data, questao)
 	{
 		var uniqueId = 'mtr' + Math.floor(Math.random()*10000);
 		this.id = uniqueId;
-		
+
 		var coluna = new Element('div', {className: 'seta_coluna', id: this.id+'seta_coluna'});
 		var linha = new Element('div', {className: 'seta_linha', id: this.id+'seta_linha'});
-		
+
 		this.itens = new Array();
 		this.tabela = new Element('table', {className: 'tabela margem_questao', id: this.id});
-		
+
 		this.divCont = new Element('div', {style: 'position: relative;'})
 			.insert(this.tabela)
 			.insert(linha)
 			.insert(coluna);
-		
+
 		var larguras = new Array();
 		var alturas = new Array();
 		var ids = new Array();
@@ -1229,7 +1229,7 @@ var Tabela = Class.create({
 				tmp = new Element('th', {className: 'sem_borda', id: this.id+'verificacao_altura_tabela0'});
 				tr.insert(tmp);
 			}
-			
+
 			if($H(data[0][a]).get('value'))
 			{
 				if(a != data[0].length)
@@ -1252,7 +1252,7 @@ var Tabela = Class.create({
 			}
 		}
 		thead.update(tr);
-		
+
 		//BODY:
 		var tmp;
 		var tbody = new Element('tbody');
@@ -1270,35 +1270,35 @@ var Tabela = Class.create({
 				}
 				else
 				{
-				
+
 					switch($H(data[y][x]).get('tipo'))
 					{
 						case 'input':
 							tmp = new Element('input', {type: 'text', style: 'width:'+(larguras[x]*20-10)+'px;', id: id});
-							
+
 							//posicionamento da setinha
 							Event.observe(tmp, 'focus', this.ajustaSetinha.bind(this));
 							Event.observe(tmp, 'blur', this.tiraSetinha.bind(this));
-							
+
 							tr.insert(new Element('td').update(tmp));
-							
+
 							this.itens.push(tmp);
 							if(id)
 							{
 								tmp.writeAttribute({id:id, name:id});
 								this.ids.push(id);
 							}
-							
-							
+
+
 						break;
-						
+
 						case 'texto':
 							tmp = new Element('td').update($H(data[y][x]).get('value'));
 							if(id)
 								tmp.writeAttribute({id: id});
 							tr.insert(tmp);
 						break;
-						
+
 						case 'calculado':
 							div = new Element('div', {className: 'calculado'}).update('&nbsp;');
 							tmp = new Element('td').update(div);
@@ -1307,7 +1307,7 @@ var Tabela = Class.create({
 							tr.insert(tmp);
 						break;
 
-						
+
 						default:
 							alerta('O item da linha '+y+' e coluna '+(x+1)+' da tabela da questão '+questao[1]+'\nnão possui o termo \'tipo\', ou está mal configurado;');
 						break;
@@ -1315,47 +1315,47 @@ var Tabela = Class.create({
 				}
 			}
 			tbody.insert(tr);
-			
-			
+
+
 		}
 		this.tabela.insert(thead);
 		this.tabela.insert(tbody);
-		
+
 		tmp = 0;
 		for(var a = 0; a < larguras.length; a++)
 			tmp+= larguras[a]*20;		//20 de cada módulo +4 de padding (2 de cada lado) +1 de borda
-		
+
 		paddings = (larguras.length)*2;
-		
+
 		this.divCont.setStyle({width: (tmp+paddings+31)+'px'});
 		this.divCont.insert(new Element('br', {className: 'limpador'}));
-		
-		
+
+
 
 	},
 	ajustaSetinha: function(ev)
 	{
 		var el = ev.findElement('input').addClassName('tabela_ativo');
 		var pai = el.up('table');
-		
+
 		var iLen = String(Event.element(ev).id).length-1;
 		var posicao_linha = String(Event.element(ev).id).substr(12, iLen - 12) - 1;
-		
-		
+
+
 		altura = 0;
 		for (a = 0; a<posicao_linha; a++)
 		{
-			altura = altura + $(pai.id+'verificacao_altura_tabela'+a).getHeight(); 
+			altura = altura + $(pai.id+'verificacao_altura_tabela'+a).getHeight();
 		}
-		
-		altura_atual = $(pai.id+'verificacao_altura_tabela'+posicao_linha).getHeight(); 
-		
+
+		altura_atual = $(pai.id+'verificacao_altura_tabela'+posicao_linha).getHeight();
+
 		var iLen = String(Event.element(ev).id).length;
 		var posicao_coluna = String(Event.element(ev).id).substring(iLen, iLen - 1);
-		
-		
+
+
 		posicao_linha = [altura+(altura_atual/2)-5,'px'].join('');
-		
+
 		tamanho = Event.element(ev).getWidth();
 		esquerda = Event.element(ev).cumulativeOffset().left;
 		posicao_coluna = [esquerda-60+(tamanho/2)-3,'px'].join('');
@@ -1375,31 +1375,31 @@ var Tabela = Class.create({
 
 var TabelaAdjacencia = Class.create({
 	ids: new Array(), itens: new Array(),  divCont: null, tabela: null, id: null,
-	initialize: function(data, questao) 
+	initialize: function(data, questao)
 	{
-		
+
 		var dateObject = new Date();
 		var uniqueId =
           dateObject.getFullYear() + '' +
           dateObject.getMonth() + '' +
           dateObject.getDate() + '' +
           dateObject.getTime();
-		
-	
+
+
 		this.id = uniqueId;
-		
+
 		this.itens = new Array();
 
-		
+
 		this.tabela = new Element('table', {className: 'tabela margem_questao', id: this.id});
-		
+
 		var linha = new Element('div', {className: 'seta_linha', id: this.id+'seta_linha'});
 		var coluna = new Element('div', {className: 'seta_coluna', id: this.id+'seta_coluna'});
-		
+
 		this.divCont = new Element('div', {style: 'position: relative;'}).insert(this.tabela);
 		this.divCont.insert(linha);
 		this.divCont.insert(coluna);
-		
+
 		var larguras = new Array();
 		var ids = new Array();
 
@@ -1407,7 +1407,7 @@ var TabelaAdjacencia = Class.create({
 		//HEAD:
 		for(var a = 0; a < data[0].length; a++)
 		{
-			
+
 			if($H(data[0][a]).get('value'))
 			{
 				if(!$H(data[0][a]).get('largura'))
@@ -1415,8 +1415,8 @@ var TabelaAdjacencia = Class.create({
 				larguras.push($H(data[0][a]).get('largura'));
 			}
 		}
-		
-		
+
+
 		//BODY:
 		var tmp;
 		var tbody = new Element('tbody');
@@ -1429,62 +1429,62 @@ var TabelaAdjacencia = Class.create({
 					id = $H(data[y][x]).get('id');
 				else
 					id = null;
-					
-				
+
+
 				if (x == data[y].length)
 				{
 					tmp = new Element('td', {id: this.id+'verificacao_altura_tabela'+y, className: 'sem_borda'}).update('');
 					tr.insert(tmp);
-				}				
+				}
 				else
-				{				
-					
+				{
+
 					switch($H(data[y][x]).get('tipo'))
 					{
 						case 'input':
 							tmp = new Element('input', {type: 'text', style: 'width:'+(larguras[x]*20-10)+'px;', id: id});
-							
+
 							//posicionamento da setinha
 							Event.observe(tmp, 'focus', function(ev){
-							
+
 								pai = this.up().up().up().up();
-									
+
 								Event.element(ev).addClassName('tabela_ativo');
 								var iLen = String(Event.element(ev).id).length-1;
 								var posicao_linha = String(Event.element(ev).id).substr(12, iLen - 12) - 1;
-								
-								
+
+
 								altura = 0;
 								for (a = 0; a<posicao_linha; a++)
 								{
-									altura = altura + $(pai.id+'verificacao_altura_tabela'+a).getHeight(); 
+									altura = altura + $(pai.id+'verificacao_altura_tabela'+a).getHeight();
 								}
-								
-								altura_atual = $(pai.id+'verificacao_altura_tabela'+posicao_linha).getHeight(); 
-							
+
+								altura_atual = $(pai.id+'verificacao_altura_tabela'+posicao_linha).getHeight();
+
 								Event.element(ev).addClassName('tabela_ativo');
 								var iLen = String(Event.element(ev).id).length-1;
 								var posicao_linha = String(Event.element(ev).id).substring(iLen, iLen - 1) - 1;
 								var iLen = String(Event.element(ev).id).length;
 								var posicao_coluna = String(Event.element(ev).id).substring(iLen, iLen - 1);
-								
+
 								posicao_linha = [altura+(altura_atual/2)-5,'px'].join('');
-								
+
 								tamanho = Event.element(ev).getWidth();
 								esquerda = Event.element(ev).positionedOffset().left + 60;
 								posicao_coluna = [esquerda-60+(tamanho/2)-3,'px'].join('');
 								$(pai.id+'seta_linha').setStyle({top: posicao_linha, display: 'block' });
 								$(pai.id+'seta_coluna').setStyle({left: posicao_coluna, display: 'block' });
 							});
-								
+
 							Event.observe(tmp, 'blur', function(ev){
 								pai = this.up().up().up().up();
-								
+
 								Event.element(ev).removeClassName('tabela_ativo');
 								$(pai.id+'seta_linha').setStyle({display: 'none' });
 								$(pai.id+'seta_coluna').setStyle({display: 'none' });
 							});
-							
+
 							tr.insert(new Element('td', {className: 'largura'+larguras[x]}).update(tmp));
 							this.itens.push(tmp);
 							if(id)
@@ -1492,31 +1492,31 @@ var TabelaAdjacencia = Class.create({
 								tmp.writeAttribute({id:id, name:id});
 								this.ids.push(id);
 							}
-							
-							
+
+
 						break;
-						
+
 						case 'texto':
 							tmp = new Element('td', {className: 'largura'+larguras[x]}).update($H(data[y][x]).get('value'));
 							if(id)
 								tmp.writeAttribute({id: id});
 							tr.insert(tmp);
 						break;
-						
+
 						case 'destacado':
 							tmp = new Element('th', {className: 'largura'+larguras[x]}).update($H(data[y][x]).get('value'));
 							if(id)
 								tmp.writeAttribute({id: id});
 							tr.insert(tmp);
 						break;
-						
+
 						case 'semi_destacado':
 							tmp = new Element('td', {className: 'largura'+larguras[x]+' semi_destacado'}).update($H(data[y][x]).get('value'));
 							if(id)
 								tmp.writeAttribute({id: id});
 							tr.insert(tmp);
 						break;
-						
+
 						case 'calculado':
 							div = new Element('div', {className: 'calculado'}).update('&nbsp;');
 							tmp = new Element('td', {className: 'largura'+larguras[x]}).update(div);
@@ -1524,7 +1524,7 @@ var TabelaAdjacencia = Class.create({
 								div.writeAttribute({id: id});
 							tr.insert(tmp);
 						break;
-						
+
 						default:
 							alerta('O item da linha '+y+' e coluna '+(x+1)+' da tabela da questão '+questao[1]+'\nnão possui o termo \'tipo\', ou está mal configurado;');
 						break;
@@ -1534,7 +1534,7 @@ var TabelaAdjacencia = Class.create({
 			tbody.insert(tr);
 		}
 		this.tabela.insert(tbody);
-		
+
 		tmp = 0;
 		for(var a = 0; a < larguras.length; a++)
 			tmp+= larguras[a]*20;		//20 de cada módulo +4 de padding (2 de cada lado) +1 de borda
@@ -1558,9 +1558,9 @@ var Matriz = Class.create({
 			this.divCont = new Element('div', {className: 'matriz margem_questao'});
 		this.divCont.insert(new Element('div', {className: 'supe_esq'}));
 		this.divCont.insert(new Element('div', {className: 'supe_dir'}));
-		
+
 		var tmp, tr;
-		
+
 		for (var a = 0; a < data.length; a++)
 		{
 			tr = new Element("tr");
@@ -1571,7 +1571,7 @@ var Matriz = Class.create({
 				else
 					id = null;
 				value = $H(data[a][b]).get('value');
-				
+
 				switch($H(data[a][b]).get('tipo'))
 				{
 					case 'input':
@@ -1587,21 +1587,21 @@ var Matriz = Class.create({
 						}
 						this.itens.push(tmp);
 					break;
-					
+
 					case 'texto':
 						tmp = new Element('span').update(value);
 						this.divCont.insert(tmp);
 						if(id)
 							tmp.writeAttribute({id: id});
 					break;
-					
+
 					case 'calculado':
 						tmp = new Element('span',{className: 'calculado'}).update(value);
 						this.divCont.insert(tmp);
 						if(id)
 							tmp.writeAttribute({id: id});
 					break;
-					
+
 					default:
 						alerta('O item da linha '+(a+1)+' e coluna '+(b+1)+' da matriz da questão '+questao[1]+'\nnão possui o termo \'tipo\', ou está mal configurado;');
 					break;
@@ -1609,7 +1609,7 @@ var Matriz = Class.create({
 			}
 			this.divCont.insert(new Element('br', {className: 'limpador'}));
 		}
-		
+
 		this.divCont.insert(new Element('div', {className: 'esquerda inferior infe_esq'}));
 		this.divCont.insert(new Element('div', {className: 'direita inferior infe_dir'}));
 	}
@@ -1625,9 +1625,9 @@ var Multiplo = Class.create({
 		var ativo = '';
 		var anterior = '';
 		this.itens = new Array();
-		
-		
-		
+
+
+
 		this.divCampos = new Element('div', {className: 'input_texto margem_questao'});
 		for (var a=0; a < data.length; a++)
 		{
@@ -1637,16 +1637,16 @@ var Multiplo = Class.create({
 				afastamento = '0;';
 				tamanho = '70px;';
 				var classe = 'input_'+data[a][b].tipo
-				
+
 				id = MontaID(questao[0], questao[1], questao[2], [a+1,b+1].join(''));
-				
+
 				if (classe == 'input_normal')
 				{
 					if (b == data[a].length - 1)
 						classe += ' sem_margem';
-					
+
 					this.input[a][b] = new Element('input', {type: 'text', id: id, className: classe});
-					
+
 					var label = new Element('label',{htmlFor: id}).update(new Element('span', {className: 'label_multiplo'}).update(data[a][b].label));
 					var divisinha = new Element('div', {className: 'a_esquerda', style: 'position: relative;'});
 					divisinha.insert(label);
@@ -1665,21 +1665,21 @@ var Multiplo = Class.create({
 							afastamento = '40px;';
 					}
 					this.input[a][b] = new Element('input', {type: 'text', id: id, className: classe});
-					
+
 					var label = new Element('label',{htmlFor: id}).update(new Element('div', {className: 'label_multiplo'}).update(data[a][b].label));
 					var divisinha = new Element('div', {className: 'com_quebra', style:'position: relative; margin-right:'+afastamento+ 'width:'+tamanho});
 					divisinha.insert(label);
 					divisinha.insert(new Element('br',{className: 'limpador'}));
 					divisinha.insert(this.input[a][b]);
 				}
-				
+
 				if (data[a][b].ajuda)
 				{
 					ajuda = new Element('a', {className: 'ajuda multiplo'});
-						
+
 					if(!this.input[a][b].hasClassName('input_normal'))
 						ajuda.addClassName('quebra');
-					
+
 					var popup = new PopupClick(ajuda, data[a][b].ajuda, ['seta_baixo','central'], 10);
 					popup.tempo = 3;
 					divisinha.insert(ajuda);
@@ -1689,19 +1689,19 @@ var Multiplo = Class.create({
 					Event.observe(this.input[a][b], 'blur', this.podeEsconder.bind(this));
 					Event.observe(this.input[a][b], 'focus', this.addFocus.bind(this));
 				}
-				
+
 				this.divCampos.insert(divisinha);
-				
+
 				Event.observe(this.input[a][b], 'focus', function(ev){
 					Event.element(ev).up().addClassName('multiplo_ativo');
 				});
-				
+
 				Event.observe(this.input[a][b], 'blur', function(ev){
 					Event.element(ev).up().removeClassName('multiplo_ativo');
 				});
-					
+
 				anterior = classe;
-				
+
 				this.itens.push(this.input[a][b]);
 				this.ids.push(id);
 			}
@@ -1739,8 +1739,8 @@ var MultiploUnidade = Class.create({
 		var desativo = '';
 		var ativo = '';
 		this.itens = new Array();
-		
-		
+
+
 		this.divCampos = new Element('div', {className: 'input_texto margem_questao'});
 		for (var a=0; a < data.length; a++)
 		{
@@ -1748,20 +1748,20 @@ var MultiploUnidade = Class.create({
 			for (var b=0; b < data[a].length; b++)
 			{
 				id = MontaID(questao[0], questao[1], questao[2], [a+1,b+1].join(''));
-				
+
 				this.input[a][b] = new Element('input', {type: 'text', id: id});
-				
+
 				var antes = '';
 				var depois = '';
-				
+
 				if (data[a][b].antes)	antes = new Element('span', {className:'a_esquerda antes_depois'}).insert(data[a][b].antes);
 				if (data[a][b].depois)	depois = new Element('span', {className:'a_esquerda antes_depois depois'}).insert(data[a][b].depois);
-				
+
 				var divisinha = new Element('div', {className: 'a_esquerda', style: 'position: relative;'});
 				divisinha.insert(antes);
 				divisinha.insert(this.input[a][b]);
 				divisinha.insert(depois);
-				
+
 				var largura = 0;
 				if (data[a][b].antes)
 					conteudo_antes = data[a][b].antes.trim();
@@ -1782,21 +1782,21 @@ var MultiploUnidade = Class.create({
 				{
 					largura = '65';
 				}
-					
-					
+
+
 				if (b == 0)
 					depois.setStyle({width: '43px'});
 				this.input[a][b].setStyle({marginRight: '5px', width: largura+'px', marginLeft: '0'});
-				
+
 				if (data[a][b].ajuda)
 				{
 					ajuda = new Element('a', {className: 'ajuda multiplo'});
-						
+
 					if(largura == '65')
 						ajuda.setStyle({marginRight: '0px', right: '40px'});
 					else
 						ajuda.setStyle({marginRight: '0px', right: '30px'});
-					
+
 					var popup = new PopupClick(ajuda, data[a][b].ajuda, ['seta_baixo','central'], 10);
 					popup.tempo = 3;
 					divisinha.insert(ajuda);
@@ -1806,7 +1806,7 @@ var MultiploUnidade = Class.create({
 					Event.observe(this.input[a][b], 'blur', this.podeEsconder.bind(this));
 					Event.observe(this.input[a][b], 'focus', this.addFocus.bind(this));
 				}
-				
+
 				this.divCampos.insert(divisinha);
 
 				this.itens.push(this.input[a][b]);
@@ -1842,7 +1842,7 @@ var MultiploUnidade = Class.create({
 function gerencia_corrige_tudo()
 {
 	if(!(interface_salva_local_loaded && interface_document_loaded)) return;
-	
+
 	if ($('corrigir_tudo'))
 		Event.observe('corrigir_tudo', 'click', corrige_tudo);
 	else
@@ -1858,26 +1858,26 @@ function gerencia_corrige_tudo()
 function gerencia_partes()
 {
 	if(!(interface_salva_local_loaded && interface_document_loaded)) return;
-	
+
 	if(nomeSoft == null)
 		return alerta('A variável nomeSoft não está definida.');
 	if(PosicaoAtual.Atividade == null)
 		return alerta('A atividade atual deve ser especificada na variável PosicaoAtual.Atividade.');
-	
+
 	var status = $('SalvaLocal').Pega(nomeSoft, 'automacao_atividade_'+PosicaoAtual.Atividade+'_parte_0');
 	if (status != '3')
 		$('SalvaLocal').Salva(nomeSoft, 'automacao_atividade_'+PosicaoAtual.Atividade+'_parte_0', '2');
-	
+
 	if(Partes != null)
 	{
 		if ($('partes'))
 			$('partes').update('');
-			
+
 		for(var b = 0; b < Partes.length; b++)
 		{
 			var status = $('SalvaLocal').Pega(nomeSoft, 'automacao_atividade_'+PosicaoAtual.Atividade+'_parte_'+b);
 			var li = new Element('li', {className:'partes'}).insert(Partes[b]);
-			
+
 			if (PosicaoAtual.Parte == b)
 			{
 				if (status != '2' && status != '3')
@@ -1885,29 +1885,29 @@ function gerencia_partes()
 					history.back();
 					break;
 				}
-				
+
 				if (status != '3')
 					$('SalvaLocal').Salva(nomeSoft, 'automacao_atividade_'+PosicaoAtual.Atividade+'_parte_'+b, '2');
-				
+
 				li.addClassName('parte_atual');
 			}
 			else
 			{
 				var link = 'atividade'+PosicaoAtual.Atividade+'_parte'+(b+1)+'.html';
 				var a = new Element('a', {href: link}).insert(Partes[b]);
-				
+
 				switch (status)
 				{
 					case '2':
 						li.addClassName('parte_quase_feita');
 						li.update(a);
 						break;
-					
+
 					case '3':
 						li.addClassName('parte_feita');
 						li.update(a);
 						break;
-					
+
 					default:
 						li.addClassName('parte_proxima');
 						break;
@@ -1962,8 +1962,8 @@ function removeEsperando(Item, msg)
 	}
 	else
 		filho.hide();
-	
-	QuestaoEsperando.a.removeAttribute('disabled');		
+
+	QuestaoEsperando.a.removeAttribute('disabled');
 	QuestaoEsperando.divCont.removeClassName('esperando');
 	QuestaoEsperando.ajustaPreCalco();
 	for (a = 0; a<QuestaoEsperando.inputs.length; a++)
@@ -1987,7 +1987,7 @@ function adicionaEsperando(Item)
 		netos[0].show();
 	}
 	filho.show();
-		
+
 	QuestaoEsperando.divCont.addClassName('esperando');
 	for (a = 0; a<QuestaoEsperando.inputs.length; a++)
 	{
@@ -2008,10 +2008,10 @@ function corrige_tudo()
 {
 	var deu_erro = false;
 	incorreta = false;
-	
-	
+
+
 	var QuestoesIds = $H(Questoes[PosicaoAtual.Parte]).keys();
-	
+
 	for(var a = 0; a < QuestoesIds.length; a++)
 	{
 		Itens = $H(Questoes[PosicaoAtual.Parte]).get(QuestoesIds[a]).itens;
@@ -2056,7 +2056,7 @@ function corrige_tudo()
 			$('corrigir_tudo').addClassName('algo_errado');
 			Event.stopObserving($('corrigir_tudo'), 'click');
 			Event.observe($('corrigir_tudo'), 'click', corrige_tudo);
-			window.setTimeout(function(){CorrigeTudoPopup.fecha();}, 7000); 
+			window.setTimeout(function(){CorrigeTudoPopup.fecha();}, 7000);
 		}
 		permiteContinuar(false);
 	}
@@ -2091,7 +2091,7 @@ function permiteContinuar(permite)
 			$('SalvaLocal').Salva(nomeSoft, 'automacao_atividade_'+PosicaoAtual.Atividade+'_parte_'+PosicaoAtual.Parte, '3');
 			if($('SalvaLocal').Pega(nomeSoft, 'automacao_atividade_'+PosicaoAtual.Atividade+'_parte_'+(PosicaoAtual.Parte+1)) != '3')
 				$('SalvaLocal').Salva(nomeSoft, 'automacao_atividade_'+PosicaoAtual.Atividade+'_parte_'+(PosicaoAtual.Parte+1), '2');
-			
+
 			gerencia_partes();
 		}
 		else
@@ -2116,30 +2116,20 @@ function irProMapa()
 	location.href= 'mapa.html';
 }
 
-function FlashTag(swf, id, largura, altura)
-{
-	return '<object type="application/x-shockwave-flash" data="applets/Mapinha.swf" width="275" height="80"><param name="menu" value="false" /><param name="movie" value="applets/Mapinha.swf" /></object>';
-	
-	var obj = new Element('object', {type:'application/x-shockwave-flash', data: swf, width: largura*60+(largura-1)*20, height: altura*60+(altura-1)*20});
-	obj.insert(new Element('param', {name: 'menu', value: 'false'}));
-	obj.insert(new Element('param', {name: 'movie', value: swf}));
-	return obj;
-}
-
-function setActiveStyleSheet(title) 
+function setActiveStyleSheet(title)
 {
 	var i, a, main;
-	for(i=0; (a = document.getElementsByTagName("link")[i]); i++) 
+	for(i=0; (a = document.getElementsByTagName("link")[i]); i++)
 	{
-	
-		if(a.getAttribute("rel").indexOf("style") != -1 && a.getAttribute("title")) 
+
+		if(a.getAttribute("rel").indexOf("style") != -1 && a.getAttribute("title"))
 		{
 			a.disabled = true;
 			if(a.getAttribute("title") == title) a.disabled = false;
 			createCookie('css', title);
 		}
 	}
-	
+
 	if (title == 'grande')
 		$('link_acessibilidade').href = 'javascript:setActiveStyleSheet("normal");';
 	else
@@ -2181,8 +2171,8 @@ function eraseCookie(name) {
 
 /*
 <!--[if !IE]>-->
-<object name="ggbApplet" 
-		classid="java:geogebra.GeoGebraApplet" 
+<object name="ggbApplet"
+		classid="java:geogebra.GeoGebraApplet"
 		type="application/x-java-applet"
 		archive="geogebras/Applet1/geogebra.jar"
 		height="340" width="450" >
@@ -2196,9 +2186,9 @@ function eraseCookie(name) {
 	<param name="showToolBarHelp" value="false" />
 	<param name="showAlgebraInput" value="false" />
 <!--<![endif]-->
-<object name="ggbApplet" classid="clsid:8AD9C840-044E-11D1-B3E9-00805F499D93" 
+<object name="ggbApplet" classid="clsid:8AD9C840-044E-11D1-B3E9-00805F499D93"
 		archive="geogebras/Applet1/geogebra.jar"
-		height="340" width="450" > 
+		height="340" width="450" >
 	<param name="codebase" value="./" />
 	<param name="code" value="geogebra.GeoGebraApplet" />
 	<param name="filename" value="geogebras/Applet1/teste1.ggb" />
@@ -2209,7 +2199,7 @@ function eraseCookie(name) {
 	<param name="showToolBar" value="false" />
 	<param name="showToolBarHelp" value="false" />
 	<param name="showAlgebraInput" value="false" />
-</object> 
+</object>
 <!--[if !IE]>-->
 </object>
 <!--<![endif]-->

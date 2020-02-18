@@ -1,0 +1,167 @@
+.mapinha {
+    height: 500px;
+    width: 576px;
+    background-color: #ffffff;
+}
+
+.l_panel_mapinha {
+    float: left;
+    overflow: auto;
+}
+
+.r_panel_mapinha {
+    float: right;
+    background-color: #ffffff;
+    width: 384px;
+    height: 500px;
+}
+
+.selected_hex_mapinha {
+    fill: #d2232a !important;
+}
+
+.card_mapinha {
+    margin-left: 0px;
+    margin-top: 50px;
+    width: 320px;
+    height: 350px;
+    border: 2px solid #CCC;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, .5);
+    padding: 20px;
+}
+
+.card_mapinha:hover {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, .4);
+}
+
+.titulo_mapinha * {
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 40px;
+}
+
+.obs_mapinha {
+    font-style: italic;
+    font-size: 12px;
+    text-align: center;
+    line-height: 30px;
+}
+
+.btn_close_mapinha {
+    float: right;
+    font-weight: bold;
+    background-color: #ffffff;
+    padding: 10px 10px;
+    cursor: pointer;
+}
+
+.btn_mapinha {
+    background-color: #fcef2f;
+    text-align: center;
+    border: 2px;
+    border-radius: 8px;
+    font-size: 16px;
+    padding: 10px;
+    color: #000000;
+    float: center;
+    margin-top: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, .4);
+    cursor: pointer;
+}
+
+.btn_mapinha:hover {
+    background-color: rgba(255, 238, 0, 0.712);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, .4);
+}
+
+.btn_mapinha:active {
+    transform: translateY(2px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn_mapinha:focus {
+    outline: 0;
+}
+
+.btn_curiosidade_mapinha {
+    width: 100%;
+}
+
+.span_mapinha {
+    width: 100%;
+    text-align: center;
+}
+
+.hex_mapinha {
+    stroke: #000000;
+    stroke-width: 4;
+    cursor: pointer;
+}
+
+.hex_pequeno_mapinha {
+    stroke: #000000;
+    stroke-width: 2;
+    cursor: pointer;
+}
+
+.hex_curiosidade_mapinha {
+    stroke: #000000;
+    stroke-width: 4;
+    cursor: help;
+}
+
+.hex_mapinha:hover {
+    fill: #d2232a;
+    transform: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7));
+    transition-timing-function: ease-in;
+    transition-duration: 0.3s;
+    stroke-width: 6;
+}
+
+.hex_pequeno_mapinha:hover {
+    fill: #d2232a;
+    transform: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7));
+    transition-timing-function: ease-in;
+    transition-duration: 0.3s;
+    stroke-width: 6;
+}
+
+.hex_curiosidade_mapinha:hover {
+    fill: #d2232a;
+    transform: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7));
+    transition-timing-function: ease-in;
+    transition-duration: 0.3s;
+    stroke-width: 6;
+}
+
+.line_mapinha {
+    stroke: #000000;
+    stroke-width: 5;
+}
+
+.line_dashed_mapinha {
+    stroke-dasharray: 5, 5;
+}
+
+.label_mapinha {
+    pointer-events: none;
+    fill: #000000;
+    font-family: "Lucida Sans Unicode";
+}
+
+.fill_0_mapinha {
+    fill: #3c3c3c;
+}
+
+.fill_1_mapinha {
+    fill: #ffffff;
+}
+
+.fill_2_mapinha {
+    fill: #ffffa0;
+}
+
+.fill_3_mapinha {
+    fill: #ffff30;
+}
