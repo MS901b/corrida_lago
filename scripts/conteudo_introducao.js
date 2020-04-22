@@ -6,8 +6,10 @@
 	Devem ser precedidas de uma barra '/'.
 	A palavra-chave subitem será usada somente em questões com mais de um campo
 */
- 
-var IdPadrao = [['parte/parte','q/questao','/itemletra','/subitem'],'_'];
+
+var IdPadrao = [
+    ['parte/parte', 'q/questao', '/itemletra', '/subitem'], '_'
+];
 
 /*
 	Questoes
@@ -30,11 +32,10 @@ var Questoes = null;
 	MeuBloco para preencher o seu conteúdo.
 */
 
-var MeuBloco = new Array(
-);
+var MeuBloco = new Array();
 
 
-Event.observe(window, 'load', function(){
-	BlocoNotas = new Blocao();
+Event.observe(window, 'load', function() {
+    BlocoNotas = new Bloco();
 
 });
