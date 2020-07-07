@@ -1,172 +1,185 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns = "http://www.w3.org/1999/xhtml"  xml:lang = "pt-br"  lang = "pt-br">
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
-		<link rel="stylesheet" type="text/css" href="css/estilo.css" media="screen, projection" title="normal"/>
-		<link rel="alternate stylesheet"  type="text/css" href="css/estilo2.css" title="grande" />
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-br" lang="pt-br">
 
-		<meta name=viewport content="width=device-width,initial-scale=1">
-        <script src="https://www.geogebra.org/apps/deployggb.js"></script>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
+    <link rel="stylesheet" type="text/css" href="css/estilo.css" media="screen, projection" title="normal" />
+    <link rel="alternate stylesheet" type="text/css" href="css/estilo2.css" title="grande" />
 
-		<link rel="stylesheet" type="text/css" href="css/popup.css" media="screen, projection" />
-		<link rel="stylesheet" type="text/css" href="css/notas.css" media="screen, projection" />
-		<link rel="stylesheet" type="text/css" href="css/bloco.css" media="screen, projection" />
-		<link rel="stylesheet" type="text/css" href="css/calculadora.css" media="screen, projection" />
-		<!--[if IE 7]>
+    <meta name=viewport content="width=device-width,initial-scale=1">
+    <script src="https://www.geogebra.org/apps/deployggb.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/popup.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/notas.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/bloco.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/calculadora.css" media="screen, projection" />
+    <!--[if IE 7]>
 			<link rel="stylesheet" type="text/css" href="css/estilo_ie7.css" media="screen, projection" />
 		<![endif]-->
-		<!--[if lte IE 6]>
+    <!--[if lte IE 6]>
 			<link rel="stylesheet" type="text/css" href="css/estilo_ie6.css" media="screen, projection" />
 		<![endif]-->
 
-		<script type="text/javascript" src="scripts/AC_RunActiveContent.js"></script>
-		<script type="text/javascript" src="scripts/protoaculous.js"></script>
-		<script type="text/javascript" src="scripts/salvaLocal.js"></script>
-		<script type="text/javascript" src="scripts/popup.js"></script>
-		<script type="text/javascript" src="scripts/notas.js"></script>
-		<script type="text/javascript" src="scripts/bloco.js"></script>
-		<script type="text/javascript" src="scripts/calculadora.js"></script>
-		<script type="text/javascript" src="scripts/rolagem.js"></script>
+    <script type="text/javascript" src="scripts/AC_RunActiveContent.js"></script>
+    <script type="text/javascript" src="scripts/protoaculous.js"></script>
+    <script type="text/javascript" src="scripts/salvaLocal.js"></script>
+    <script type="text/javascript" src="scripts/popup.js"></script>
+    <script type="text/javascript" src="scripts/notas.js"></script>
+    <script type="text/javascript" src="scripts/bloco.js"></script>
+    <script type="text/javascript" src="scripts/calculadora.js"></script>
+    <script type="text/javascript" src="scripts/rolagem.js"></script>
 
 
-		<!-- O arquivo referencias.js e curiosidades.js devem ser incluídos depois do interface -->
-		<script type="text/javascript" src="scripts/interface.js"></script>
-		<script type="text/javascript" src="scripts/referencias.js"></script>
-		<script type="text/javascript" src="scripts/curiosidades.js"></script>
+    <!-- O arquivo referencias.js e curiosidades.js devem ser incluídos depois do interface -->
+    <script type="text/javascript" src="scripts/interface.js"></script>
+    <script type="text/javascript" src="scripts/referencias.js"></script>
+    <script type="text/javascript" src="scripts/curiosidades.js"></script>
 
 
-		<!-- O arquivo exemplo_correcao.js que contem as funções que corrigem, deve ser incluido antes do exemplo_conteudo.js-->
+    <!-- O arquivo exemplo_correcao.js que contem as funções que corrigem, deve ser incluido antes do exemplo_conteudo.js-->
 
-		<script type="text/javascript" src="scripts/atividade2_correcao.js"></script>
-		<script type="text/javascript" src="scripts/atividade2_conteudo.js"></script>
-		<script type="text/javascript" src="scripts/corrida_lago.js"></script>
-		<script type="text/javascript" src="scripts/inputs.js"></script>
-		<script type="text/javascript">
+    <script type="text/javascript" src="scripts/atividade2_correcao.js"></script>
+    <script type="text/javascript" src="scripts/atividade2_conteudo.js"></script>
+    <script type="text/javascript" src="scripts/corrida_lago.js"></script>
+    <script type="text/javascript" src="scripts/inputs.js"></script>
+    <script type="text/javascript">
+        var PosicaoAtual = {
+            Atividade: 2,
+            Parte: 0
+        };
+        var ProximaParte = 'atividade2_parte2.html';
 
-			var PosicaoAtual = {Atividade: 2, Parte: 0};
-			var ProximaParte = 'atividade2_parte2.html';
+        var Popups = $H({
+            link_continuar: {
+                conteudo: 'Você não pode continuar',
+                layout: ['seta_baixo', 'direita'],
+                largura: 11
+            }
+        });
 
-			var Popups = $H({
-				link_continuar: {
-					conteudo: 'Você não pode continuar',
-					layout: ['seta_baixo', 'direita'],
-					largura: 11
-				}
-			});
+        var Links = $H({
+            corda: {
+                conteudo: 'Corda é o segmento que une dois pontos quaisquer de uma circunferência.',
+                layout: ['seta_baixo', 'esquerda'],
+                largura: 10
+            }
+        });
 
-			var Links = $H({
-				corda: {
-					conteudo: 'Corda é o segmento que une dois pontos quaisquer de uma circunferência.',
-					layout: ['seta_baixo', 'esquerda'],
-					largura: 10
-				}
-			});
+        var Perguntas = $H({
+            unset_inicial: {
+                conteudo: 'Você deseja alterar o valor, isto fará com que você precise refazer as questões que tinham como base este valor?',
+                layout: ['seta_baixo', 'direita'],
+                largura: 10,
+                callback: unset_inicial,
+                respostas: [{
+                    sim: 'Sim'
+                }, {
+                    nao: 'Não'
+                }]
+            }
+        });
+    </script>
+    <title>Corrida no lago</title>
+</head>
 
-			var Perguntas = $H({
-				unset_inicial: {
-					conteudo: 'Você deseja alterar o valor, isto fará com que você precise refazer as questões que tinham como base este valor?',
-					layout: ['seta_baixo','direita'],
-					largura: 10,
-					callback: unset_inicial,
-					respostas: [{sim: 'Sim'}, {nao: 'Não'}]
-				}
-			});
-		</script>
-		<title>Corrida no lago</title>
-	</head>
-	<body>
+<body>
 
-	<!--
+    <!--
 	Nunca crie um "onload" aqui, use a Classe Event do Prototype: Event.observe(window, 'load', funcaoAqui);
 	Veja um exemplo no arquivo exemplo_correcao.js
 	-->
-		<div id="container">
-			<div id="cabecalho">
-				<div id="onde_estou">
-					<div class="numero_atividade">2</div>
-					<h1>Corrida no lago</h1> <img src="img_layout/setinha-cabecalho.gif" alt=""/> <h2>Resolvendo o problema</h2>
-				</div>
-				<div id="logo"></div>
-				<div id="links">
-					<a id="mapa" href="mapa.html">Mapa</a>
-					<a href="introducao.html">Introdução</a>
-					<a href="index.html">Início</a>
-				</div>
+    <div id="container">
+        <div id="cabecalho">
+            <div id="onde_estou">
+                <div class="numero_atividade">2</div>
+                <h1>Corrida no lago</h1> <img src="img_layout/setinha-cabecalho.gif" alt="" />
+                <h2>Resolvendo o problema</h2>
+            </div>
+            <div id="logo"></div>
+            <div id="links">
+                <a id="mapa" href="mapa.html">Mapa</a>
+                <a href="introducao.html">Introdução</a>
+                <a href="index.html">Início</a>
+            </div>
 
-				<div class="limpador"></div>
-			</div><meta name=viewport content="width=device-width,initial-scale=1">
+            <div class="limpador"></div>
+        </div>
+        <meta name=viewport content="width=device-width,initial-scale=1">
         <script src="https://www.geogebra.org/apps/deployggb.js"></script>
-			<ul id="partes">
-			</ul>
+        <ul id="partes">
+        </ul>
 
-			<div id="software">
-				<div id="conteudo">
-					<div class="texto_solto">
-						<p>Agora, serão utilizados conceitos básicos de física e de matemática para encontrar a estratégia vencedora nesse tipo de disputa. Mas primeiramente você deve definir as velocidades de corrida e de nado a serem utilizadas como referências.</p>
-					</div>
-					<div id="valor_inicial" class="caixa valor_inicial">
-						<h2>Definir velocidades</h2>
-						<div class="item">
-							<p>Escolha duas velocidades médias:</p>
-							<div class="a_esquerda" style="position: relative; bottom: 0px; left:50px;  width:300px;">
-								<label for="valor01">
+        <div id="software">
+            <div id="conteudo">
+                <div class="texto_solto">
+                    <p>Agora, serão utilizados conceitos básicos de física e de matemática para encontrar a estratégia vencedora nesse tipo de disputa. Mas primeiramente você deve definir as velocidades de corrida e de nado a serem utilizadas como referências.</p>
+                </div>
+                <div id="valor_inicial" class="caixa valor_inicial">
+                    <h2>Definir velocidades</h2>
+                    <div class="item">
+                        <p>Escolha duas velocidades médias:</p>
+                        <div class="a_esquerda" style="position: relative; bottom: 0px; left:50px;  width:300px;">
+                            <label for="valor01">
 									<span style="float:left; font-size:12px; height: 50px; padding-right: 0px; width:160px; ">Velocidade média correndo</span>
 								</label>
-								<input id="init01" style="font-size:11px; height:20px; margin:0px 0px 0px 0x !important; padding:0 2px; width:50px;" type="text";/>
-								<span style="position:absolute; top:2px; font-size:11px; height: 10px; margin-left:10px; padding-right: 0px; width:10px;">m/s</span>
-							</div>
-							<div class="a_esquerda" style="position: relative; bottom: 0px; left:50px; width:300px;">
-								<label for="valor02">
+                            <input id="init01" style="font-size:11px; height:20px; margin:0px 0px 0px 0x !important; padding:0 2px; width:50px;" type="text" ;/>
+                            <span style="position:absolute; top:2px; font-size:11px; height: 10px; margin-left:10px; padding-right: 0px; width:10px;">m/s</span>
+                        </div>
+                        <div class="a_esquerda" style="position: relative; bottom: 0px; left:50px; width:300px;">
+                            <label for="valor02">
 									<span style="float:left; font-size:12px; height: 50px; padding-right: 0px; width:160px;">Velocidade média nadando</span>
 								</label>
-								<input id="init02" style="font-size:11px; height:20px; margin:0px 0px 0px 0x !important; padding:0 2px; width:50px;" type="text";/>
-								<span style="position:absolute; top:2px; font-size:11px; height: 10px; margin-left:10px; padding-right: 0px; width:10px;">m/s</span>
-							</div>
+                            <input id="init02" style="font-size:11px; height:20px; margin:0px 0px 0px 0x !important; padding:0 2px; width:50px;" type="text" ;/>
+                            <span style="position:absolute; top:2px; font-size:11px; height: 10px; margin-left:10px; padding-right: 0px; width:10px;">m/s</span>
+                        </div>
 
-							<br class="limpador">
-							<a id="link_valor_inicial" href="javascript:;" onclick="javascript:set_inicial();">Definir velocidades</a>
-							<a id="unset_inicial">Alterar velocidades</a>
-							<br class="limpador">
-							<p>Esses valores serão utilizados até o final desta atividade e estão anotados no seu bloco de notas.</p>
-						</div>
-					</div>
-					<script type="text/javascript">
-						$('unset_inicial').hide();
-					</script>
-					<div class="texto_solto">
-					<p>Primeiro, calcule a distância percorrida em terra e em água em função do ângulo x (agora dado em radianos) , a partir do qual o competidor troca de meio (lembre-se que o raio do lago é igual a 50 metros).</p>
-					</div>
-					<div id="questoes">
-						<div id="texto_generico">
-						</div>
+                        <br class="limpador">
+                        <a id="link_valor_inicial" href="javascript:;" onclick="javascript:set_inicial();">Definir velocidades</a>
+                        <a id="unset_inicial">Alterar velocidades</a>
+                        <br class="limpador">
+                        <p>Esses valores serão utilizados até o final desta atividade e estão anotados no seu bloco de notas.</p>
+                    </div>
+                </div>
+                <script type="text/javascript">
+                    $('unset_inicial').hide();
+                </script>
+                <div class="texto_solto">
+                    <p>Primeiro, calcule a distância percorrida em terra e em água em função do ângulo x (agora dado em radianos) , a partir do qual o competidor troca de meio (lembre-se que o raio do lago é igual a 50 metros).</p>
+                </div>
+                <div id="questoes">
+                    <div id="texto_generico">
+                    </div>
 
-						<div id="parte2_q1"></div>
-						<div id="parte2_q2"></div>
-						<div id="parte2_q3"></div>
-						<a id="link_continuar">
-							<span class="escondido">Continuar</span>
-						</a>
-						<div class="limpador"></div>
-					</div>
-				</div>
-				<div class="limpador"></div>
-		<div class="limpador"></div>
+                    <div id="parte2_q1"></div>
+                    <div id="parte2_q2"></div>
+                    <div id="parte2_q3"></div>
+                    <a href="javascript:" id="corrigir_tudo">Corrigir todas as questões</a>
+                    <a id="link_continuar">
+                        <span class="escondido">Continuar</span>
+                    </a>
+                    <div class="limpador"></div>
+                </div>
+            </div>
+            <div class="limpador"></div>
+            <div class="limpador"></div>
 
-			</div>
-			<br class="limpador" />
-			<div id="rodape">
-				<a target="blank"; href="http://m3.ime.unicamp.br">Sobre o Matemática Multimídia</a>
-			</div>
-		</div>
-		<div id="applet">
-			<div id="borda_applet" class="altura_applet_4 borda sem_fundo">
+        </div>
+        <br class="limpador" />
+        <div id="rodape">
+            <a target="blank" ; href="http://m3.ime.unicamp.br">Sobre o Matemática Multimídia</a>
+        </div>
+    </div>
+    <div id="applet">
+        <div id="borda_applet" class="altura_applet_4 borda sem_fundo">
 
-				<div id="ggbApplet"></div>
-                <script>
-                    var ggbApp = new GGBApplet({"appName": "classic",
-                    "width": 519, "height": 380,
+            <div id="ggbApplet"></div>
+            <script>
+                var ggbApp = new GGBApplet({
+                    "appName": "classic",
+                    "width": 519,
+                    "height": 380,
                     "filename": "applets/anima2.ggb",
                     "showResetIcon": false,
                     "enableRightClick": false,
@@ -176,31 +189,32 @@
                     "showAlgebraInput": false,
                     "enableShiftDragZoom": false,
                     "useBrowserForJS": true
-                    }, true);
-                    window.addEventListener("load", function() {
+                }, true);
+                window.addEventListener("load", function() {
                     ggbApp.inject('ggbApplet');
-                    });
-                </script>
+                });
+            </script>
 
-				<div class="canto sup_esq"></div>
-				<div class="canto sup_dir"></div>
-				<div class="canto inf_esq"></div>
-				<div class="canto inf_dir"></div>
-				<div id="associacao"></div>
-			</div>
+            <div class="canto sup_esq"></div>
+            <div class="canto sup_dir"></div>
+            <div class="canto inf_esq"></div>
+            <div class="canto inf_dir"></div>
+            <div id="associacao"></div>
+        </div>
 
-			<div id="comandos">
-				<br class="limpador" />
-			</div>
-		</div>
-		<div id="associado"></div>
-		<div id="ferramentas">
-			<a href="javascript:;" onclick="return false;" id="link_notas"><span class="escondido">referencias</span></a>
-			<a href="javascript:;" onclick="return false;" id="link_bloco"><span class="escondido">bloco de notas</span></a>
-			<!-- <a href="javascript:;" id="link_calculadora" onclick="javascript:calculadora();"><span class="escondido">calculadora</span></a>
+        <div id="comandos">
+            <br class="limpador" />
+        </div>
+    </div>
+    <div id="associado"></div>
+    <div id="ferramentas">
+        <a href="javascript:;" onclick="return false;" id="link_notas"><span class="escondido">referencias</span></a>
+        <a href="javascript:;" onclick="return false;" id="link_bloco"><span class="escondido">bloco de notas</span></a>
+        <!-- <a href="javascript:;" id="link_calculadora" onclick="javascript:calculadora();"><span class="escondido">calculadora</span></a>
 			<a href="javascript:;" id="link_acessibilidade"><span class="escondido">acessibilidade</span></a> -->
-		</div>
-		<div id="calc" class="escondido"></div>
+    </div>
+    <div id="calc" class="escondido"></div>
 
-	</body>
+</body>
+
 </html>

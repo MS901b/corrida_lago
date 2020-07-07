@@ -47,7 +47,7 @@ var Questoes = [{ //Parte 1
                     caracteres_especiais: true,
                     enunciado: 'Qual é a medida (em radianos) do ângulo indicado na figura em função do ângulo x.',
                     selecionada: selecionou_q_2_a,
-                    msgErro: 'Note que o ângulo é complementar de x.'
+                    msgErro: 'Note que o ângulo é suplementar de x.'
                 },
                 {
                     tipo: 'input',
@@ -58,7 +58,7 @@ var Questoes = [{ //Parte 1
                     caracteres_especiais: true,
                     enunciado: 'Qual a medida da <a id="corda">corda</a> D<sub>A</sub> indicada em vermelho?',
                     selecionada: selecionou_q_2_b,
-                    msgErro: 'Note que, com essa corda, você pode formar um triângulo isósceles com dois raios do círculo.'
+                    msgErro: 'Note que, com essa corda, você pode formar um triângulo isósceles com dois raios do círculo. Tente calcular pelo seno do ângulo encontrado no exercício anterior.'
                 }
             ]
         },
@@ -119,7 +119,7 @@ var Questoes = [{ //Parte 1
                     dependente: false,
                     associado: false,
                     enunciado: 'Qual o valor em graus desse ângulo?',
-                    msgErro: 'Converta o valor obtido no item anterior para graus. Lembre-se que pi pode ser aproximado para 3,14.'
+                    msgErro: 'Converta o valor obtido no item anterior para graus. Lembre-se que pi pode ser aproximado para 180º.'
                 }
             ]
         },
